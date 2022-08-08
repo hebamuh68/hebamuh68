@@ -11,7 +11,7 @@
 
 Programming language
 -----
-[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,py, cpp, r)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,py,cpp,r)](https://skills.thijs.gg)
 
 Quotes
 -----
