@@ -33,6 +33,13 @@ Operating systems
 -----
 ![Ubuntu (1)](https://user-images.githubusercontent.com/69214737/183475766-87db4839-088e-47cc-bbb9-e799e9eccd74.png)
 
+What I'll bring to the company
+-----
+![faceu_0_20211122145826936 (1)](https://user-images.githubusercontent.com/69214737/183481257-8a3b198b-12cc-4c68-adf7-40b903f967db.png)
+
+
+beside my skills, qualities, values, interests, academic knowledge, internships and life experience.
+
 Connect with me 
 -----------------------------------------------------
 [<img align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
