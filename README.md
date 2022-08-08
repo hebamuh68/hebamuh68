@@ -6,7 +6,7 @@
   [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
   [![](https://img.shields.io/github/followers/hebamuh68?label=GitHub%20Followers)](https://github.com/hebamuh68/hebamuh68)
   
-  Senior CS & Bioinformatics Student; UI/UX Designer, Fron-end Developer!
+  Senior CS & Bioinformatics Student; UI/UX Designer, and Front-end Developer.
 </div>
 
 Quotes
