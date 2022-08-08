@@ -1,16 +1,31 @@
-### Hi there 👋
+<div align="center">
+  
+  ### Hello there, I'm Heba Allah :rabbit:	
+  ![Hello](https://github.com/hebamuh68/hebamuh68/blob/main/AnimatedMajorEft-size_restricted.gif)
 
-<!--
-**hebamuh68/hebamuh68** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  [![](https://komarev.com/ghpvc/?username=ZiadMansourM&color=blue&label=Profile%20Views)](https://github.com/ZiadMansourM/ZiadMansourM)
+  [![](https://img.shields.io/github/followers/ZiadMansourM?label=GitHub%20Followers)](https://github.com/ZiadMansourM)
+  
+  Senior CS & Bioinformatics Student; UI/UX Designer, Fron-end Developer!
+</div>
 
-Here are some ideas to get you started:
+Quotes
+-----
+> Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations - `Steve Jobs`
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+About
+-----
+My name is Heba Allah Hashim. Generally interested in Software Engineering, starting from Design and ending with....well there's no end here!
+
+
+Connect with me 
+-----------------------------------------------------
+[<img align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/whatsapp.svg" />][whatsapp]
+[<img align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/facebook.svg" />][facebook]
+
+</br>
+
+[facebook]: https://www.facebook.com/hebamuh2
+[linkedin]: https://www.linkedin.com/in/heba-allah-hashim-5a9105216/
+[whatsapp]: https://wa.me/201062706792
