@@ -9,10 +9,6 @@
   Senior CS & Bioinformatics Student; UI/UX Designer, and Front-end Developer.
 </div>
 
-Programming language
------
-[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,py,cpp,r)](https://skills.thijs.gg)
-
 Quotes
 -----
 > Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations - `Steve Jobs`
@@ -21,6 +17,13 @@ About
 -----
 My name is Heba Allah Hashim. Generally interested in Software Engineering, Starting from Design and Ending with.hmmm...well there's no end!
 
+Languages
+-----
+[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,py,cpp,r)](https://skills.thijs.gg)
+
+Design Softwares
+-----
+Adobe Photoshop | Illustrator | Figma |  Adobe Xd 
 
 Connect with me 
 -----------------------------------------------------
