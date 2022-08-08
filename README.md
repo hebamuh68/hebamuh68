@@ -9,6 +9,10 @@
   Senior CS & Bioinformatics Student; UI/UX Designer, and Front-end Developer.
 </div>
 
+Programming language
+-----
+py	cpp
+
 Quotes
 -----
 > Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations - `Steve Jobs`
