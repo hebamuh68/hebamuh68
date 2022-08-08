@@ -23,7 +23,14 @@ Languages
 
 Design Softwares
 -----
-Adobe Photoshop | Illustrator | Figma |  Adobe Xd 
+![Adobe Illustrator](https://user-images.githubusercontent.com/69214737/183476315-63fe34f4-78d3-47b0-aa6a-9b02e93499fc.png)
+![Adobe Photoshop](https://user-images.githubusercontent.com/69214737/183476320-d9eefe63-e547-41cd-a60f-30cf1941b4b8.png)
+![Adobe Xd](https://user-images.githubusercontent.com/69214737/183476322-f53afc89-1ac1-443d-bbf2-8edef3855d25.png)
+![Figma](https://user-images.githubusercontent.com/69214737/183476324-92e5927b-c048-425e-8fac-5d96153abf95.png)
+
+Operating systems
+-----
+![Ubuntu (1)](https://user-images.githubusercontent.com/69214737/183475766-87db4839-088e-47cc-bbb9-e799e9eccd74.png)
 
 Connect with me 
 -----------------------------------------------------
