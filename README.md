@@ -37,8 +37,7 @@ What I'll bring to the company
 -----
 ![faceu_0_20211122145826936 (1)](https://user-images.githubusercontent.com/69214737/183481257-8a3b198b-12cc-4c68-adf7-40b903f967db.png)
 
-
-beside my skills, qualities, values, interests, academic knowledge, internships and life experience.
+<sub>beside my skills, qualities, values, interests, academic knowledge, internships and life experience.</sub>
 
 Connect with me 
 -----------------------------------------------------
