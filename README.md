@@ -15,7 +15,7 @@ Quotes
 
 About
 -----
-My name is Heba Allah Hashim. Generally interested in Software Engineering, Starting from Design and Ending with....well there's no end!
+My name is Heba Allah Hashim. Generally interested in Software Engineering, Starting from Design and Ending with.hmmm...well there's no end!
 
 
 Connect with me 
