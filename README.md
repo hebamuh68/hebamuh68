@@ -1,7 +1,6 @@
 <div align="center">
   
   ### Hello there, I'm Heba Allah 
-  /*![Hello](https://github.com/hebamuh68/hebamuh68/blob/main/9be930541d56bc8d13bbd076c150d9-unscreen.gif)*/
 
   
   [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
@@ -32,12 +31,6 @@ Design Softwares
 Operating systems
 -----
 ![Ubuntu (1)](https://user-images.githubusercontent.com/69214737/183475766-87db4839-088e-47cc-bbb9-e799e9eccd74.png)
-
-What I'll bring to the company
------
-![faceu_0_20211122145826936 (1)](https://user-images.githubusercontent.com/69214737/183481257-8a3b198b-12cc-4c68-adf7-40b903f967db.png)
-
-<sub>beside my skills, qualities, values, interests, academic knowledge, internships and life experience.</sub>
 
 Connect with me 
 -----------------------------------------------------
