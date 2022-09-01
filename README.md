@@ -35,9 +35,9 @@ Operating systems
 
 What I'll bring to the company
 -----
+beside my skills, qualities, values, interests, academic knowledge, internships and life experience, I'll bring you pasta
 ![faceu_0_20211122145826936 (1)](https://user-images.githubusercontent.com/69214737/183481257-8a3b198b-12cc-4c68-adf7-40b903f967db.png)
 
-<sub>beside my skills, qualities, values, interests, academic knowledge, internships and life experience.</sub>
 
 Connect with me 
 -----------------------------------------------------
