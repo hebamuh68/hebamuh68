@@ -34,6 +34,7 @@ Operating systems
 ![Ubuntu (1)](https://user-images.githubusercontent.com/69214737/183475766-87db4839-088e-47cc-bbb9-e799e9eccd74.png)
 
 
+
 Connect with me 
 -----------------------------------------------------
 [<img align="left" width="22px" src="https://www.svgrepo.com/show/157006/linkedin.svg" />][linkedin]
@@ -45,3 +46,10 @@ Connect with me
 [facebook]: https://www.facebook.com/hebamuh2
 [linkedin]: https://www.linkedin.com/in/heba-allah-hashim-5a9105216/
 [whatsapp]: https://wa.me/201062706792
+
+My GitHup Content 
+-----------------------------------------------------
+1. ### [**UI/UX**] (https://www.behance.net/hebamohamed3)
+2. ### **Front End Development**
+   1. [**JavaScript for Beginners Specialization**](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
+   
