@@ -51,6 +51,33 @@ My GitHup Content
 -----------------------------------------------------
 1. ### **UI/UX**
    -  [**Portofolio**](https://www.behance.net/hebamohamed3)
-3. ### **Front End Development**
+   -  [Redesign Assiut Univerity Hospitals Website](https://github.com/hebamuh68/Hospital-development-project-in-Assuit)
+   -  [Discourse Theme](https://github.com/hebamuh68/Disource-theme)
+ 
+2. ### **Front End Development**
    -  [**JavaScript for Beginners Specialization**](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
+   -  [**ITI Projects**](https://github.com/hebamuh68/ITI-Projects)
+
+3. ### **ML & Data Science**
+   -  [**Machine Learning Bookcamp Projects**](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
+   -  [**Hamoye Data Science Internship**](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
+   
+4. ### **Bioinformatics**
+   -  [**Genomic Data Science Specialization Public**](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
+   -  [**Bioinformatics Projects**](https://github.com/hebamuh68/Bioinformatics-Projects)
+   -  [**Bioinformatics Books**](https://github.com/hebamuh68/Bioinformatics-Books)
+
+5. ### **General CS Projects**
+   -  [**Operation System Simulation**](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
+
+5. ### **Problem Solving**
+   -  [**Leetcode Profile**](https://leetcode.com/Heba_Allah/)
+   -  [**General**](https://github.com/hebamuh68/Problem-Solving)
+
+
+
+
+
+
+
    
