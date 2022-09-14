@@ -68,6 +68,7 @@ My GitHup Content
    -  [Genomic Data Science Specialization Public](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
    -  [Bioinformatics Projects](https://github.com/hebamuh68/Bioinformatics-Projects)
    -  [Bioinformatics Books](https://github.com/hebamuh68/Bioinformatics-Books)
+   -  [Gut Check: Exploring Your Microbiome](https://github.com/hebamuh68/Gut-Check-Exploring-Your-Microbiome)
 
 5. ### **General CS Projects**
    -  [Operation System Simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
