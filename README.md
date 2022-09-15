@@ -65,7 +65,7 @@ My GitHup Content
    -  [Hamoye Data Science Internship](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
    
 4. ### **Bioinformatics**
-   -  [Genomic Data Science Specialization Public](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
+   -  [Genomic Data Science Specialization](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
    -  [Bioinformatics Projects](https://github.com/hebamuh68/Bioinformatics-Projects)
    -  [Bioinformatics Books](https://github.com/hebamuh68/Bioinformatics-Books)
    -  [Gut Check: Exploring Your Microbiome](https://github.com/hebamuh68/Gut-Check-Exploring-Your-Microbiome)
