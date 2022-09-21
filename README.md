@@ -62,6 +62,7 @@ My GitHup Content
 
 3. ### **ML & Data Science**
    -  [Machine Learning Bookcamp Projects](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
+   -  [Machine Learning Specialization](https://github.com/hebamuh68/Machine-Learning-Specialization)
    -  [Hamoye Data Science Internship](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
    
 4. ### **Bioinformatics**
