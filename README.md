@@ -54,6 +54,7 @@ My GitHup Content
 1. ### **UI/UX**
    -  [Portofolio](https://www.behance.net/hebamohamed3)
    -  [Redesign Assiut Univerity Hospitals Website](https://github.com/hebamuh68/Hospital-development-project-in-Assuit)
+   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
    -  [Discourse Theme](https://github.com/hebamuh68/Disource-theme)
  
 2. ### **Front End Development**
