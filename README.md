@@ -1,7 +1,7 @@
 <div align="center">
   
   ### Hello there, I'm Heba Allah 
-  ![Hello](![766a76ea78ae4af81e4a0fed6a14a619](https://user-images.githubusercontent.com/69214737/192626638-3a674e5c-b2f6-43cf-9036-045edee6daf0.gif))
+  ![Hello](![766a76ea78ae4af81e4a0fed6a14a619](https://user-images.githubusercontent.com/69214737/192626638-3a674e5c-b2f6-43cf-9036-045edee6daf0.gif)
 
   
   [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
