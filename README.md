@@ -53,12 +53,12 @@ My GitHup Content
 1. ### **UI/UX**
    -  [Portofolio](https://www.behance.net/hebamohamed3)
    -  [Redesign Assiut Univerity Hospitals Website](https://github.com/hebamuh68/Hospital-development-project-in-Assuit)
-   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
    -  [Discourse Theme](https://github.com/hebamuh68/Disource-theme)
+   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
  
 2. ### **Front End Development**
-   -  [JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
+   -  [JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
 
 3. ### **ML & Data Science**
    -  [Machine Learning Bookcamp Projects](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
