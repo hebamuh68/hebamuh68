@@ -81,7 +81,7 @@ My GitHup Content
    -  [General](https://github.com/hebamuh68/Problem-Solving)
 
 7. ### **Soft Skills**
-   -  [Business English Communication Skills Specialization]([https://leetcode.com/Heba_Allah/](https://github.com/hebamuh68/Soft-Skills/tree/main/Business%20English%20Communication%20Skills%20Specialization))
+   -  [Business English Communication Skills Specialization](https://github.com/hebamuh68/SoftSkills/tree/main/Business%20English%20Communication%20Skills%20Specialization)
 
 
 
