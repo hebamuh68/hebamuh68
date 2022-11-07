@@ -76,10 +76,12 @@ My GitHup Content
    -  [Operation System Simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
    -  [General Books](https://github.com/hebamuh68/BOOKS)
 
-5. ### **Problem Solving**
+6. ### **Problem Solving**
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
    -  [General](https://github.com/hebamuh68/Problem-Solving)
 
+7. ### **Soft Skills**
+   -  [Business English Communication Skills Specialization]([https://leetcode.com/Heba_Allah/](https://github.com/hebamuh68/Soft-Skills/tree/main/Business%20English%20Communication%20Skills%20Specialization))
 
 
 
