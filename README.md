@@ -76,7 +76,6 @@ My GitHup Content
 
 5. ### **General CS Projects**
    -  [Operation System Simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
-   -  [General Books](https://github.com/hebamuh68/BOOKS)
 
 6. ### **Problem Solving**
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
@@ -84,7 +83,7 @@ My GitHup Content
 
 7. ### **Soft Skills**
    -  [Business English Communication Skills Specialization](https://github.com/hebamuh68/Soft-Skills/tree/main/Business%20English%20Communication%20Skills%20Specialization)
-
+   -  [General CS Books](https://github.com/hebamuh68/BOOKS)
 
 
 
