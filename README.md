@@ -69,6 +69,7 @@ My GitHup Content
    -  [Hamoye Data Science Internship](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
    
 4. ### **Bioinformatics**
+   -  [Access swiss prot file content through GUI](https://github.com/hebamuh68/Swiss-Prot-GUI)
    -  [Genomic Data Science Specialization](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
    -  [Bioinformatics Projects](https://github.com/hebamuh68/Bioinformatics-Projects)
    -  [Bioinformatics Books](https://github.com/hebamuh68/Bioinformatics-Books)
