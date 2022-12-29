@@ -51,19 +51,20 @@ Connect with me
 
 My GitHup Content 
 -----------------------------------------------------
+
+ <details><summary><h3>Alx-africa Software Engineering Programme</h3></summary>
+  
+   -  [alx-system_engineering-devops](https://github.com/hebamuh68/alx-system_engineering-devops)
+   -  [alx-low_level_programming](https://github.com/hebamuh68/alx-system_engineering-devops)
+  
+</details>
+
 <details><summary><h3>UI/UX</h3></summary>
   
    -  [Portofolio](https://www.behance.net/hebamohamed3)
    -  [Redesign Assiut Univerity Hospitals Website](https://github.com/hebamuh68/Hospital-development-project-in-Assuit)
    -  [Discourse Theme](https://github.com/hebamuh68/Disource-theme)
    -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
-  
-</details>
- 
- <details><summary><h3>Alx-africa Software Engineering Programme</h3></summary>
-  
-   -  [alx-system_engineering-devops](https://github.com/hebamuh68/alx-system_engineering-devops)
-   -  [alx-low_level_programming](https://github.com/hebamuh68/alx-system_engineering-devops)
   
 </details>
 
