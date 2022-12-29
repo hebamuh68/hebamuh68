@@ -48,44 +48,71 @@ Connect with me
 
 
 
+
 My GitHup Content 
 -----------------------------------------------------
-1. ### **UI/UX**
+<details><summary><h3>UI/UX</h3></summary>
+  
    -  [Portofolio](https://www.behance.net/hebamohamed3)
    -  [Redesign Assiut Univerity Hospitals Website](https://github.com/hebamuh68/Hospital-development-project-in-Assuit)
    -  [Discourse Theme](https://github.com/hebamuh68/Disource-theme)
    -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
+  
+</details>
  
-2. ### **Front End Development**
-   -  Projects:
-      - [Fork-Resturant website](https://github.com/hebamuh68/Fork)
+ <details><summary><h3>Alx-africa Software Engineering Programme</h3></summary>
+  
+   -  [alx-system_engineering-devops](https://github.com/hebamuh68/alx-system_engineering-devops)
+   -  [alx-low_level_programming](https://github.com/hebamuh68/alx-system_engineering-devops)
+  
+</details>
+
+<details><summary><h3>Front End Development</h3></summary> 
+  
+   -  [Fork-Resturant website](https://github.com/hebamuh68/Fork)
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
    -  [JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
+  
+</details>
 
-3. ### **ML & Data Science**
+<details><summary><h3>Machine Learning</h3></summary>
+  
    -  [Machine Learning Bookcamp Projects](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
    -  [Machine Learning Specialization Coursera](https://github.com/hebamuh68/Machine-Learning-Specialization)
    -  [Data Mining Foundations and Practice Specialization](https://github.com/hebamuh68/Data-Mining-Foundations-and-Practice-Specialization)
    -  [Hamoye Data Science Internship](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
-   
-4. ### **Bioinformatics**
+  
+</details>
+
+<details><summary><h3>Bioinformatics</h3></summary>
+  
    -  [Access swiss prot file content through GUI](https://github.com/hebamuh68/Swiss-Prot-GUI)
    -  [Genomic Data Science Specialization](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
    -  [Bioinformatics Projects](https://github.com/hebamuh68/Bioinformatics-Projects)
    -  [Bioinformatics Books](https://github.com/hebamuh68/Bioinformatics-Books)
    -  [Gut Check: Exploring Your Microbiome](https://github.com/hebamuh68/Gut-Check-Exploring-Your-Microbiome)
+  
+</details>
 
-5. ### **General CS Projects**
+<details><summary><h3>General CS Projects</h3></summary>
+  
    -  [Operation System Simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
+  
+</details>
 
-6. ### **Problem Solving**
+<details><summary><h3>Problem Solving</h3></summary>
+  
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
    -  [General](https://github.com/hebamuh68/Problem-Solving)
+  
+</details>
 
-7. ### **Soft Skills**
+<details><summary><h3>Soft Skills</h3></summary>
+  
    -  [Business English Communication Skills Specialization](https://github.com/hebamuh68/Soft-Skills/tree/main/Business%20English%20Communication%20Skills%20Specialization)
    -  [General CS Books](https://github.com/hebamuh68/BOOKS)
-
+  
+</details>
 
 
 
