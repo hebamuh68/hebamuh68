@@ -55,7 +55,7 @@ My GitHup Content
  <details><summary><h3>Alx-africa Software Engineering Programme</h3></summary>
   
    -  [alx-system_engineering-devops](https://github.com/hebamuh68/alx-system_engineering-devops)
-   -  [alx-low_level_programming](https://github.com/hebamuh68/alx-system_engineering-devops)
+   -  [alx-low_level_programming](https://github.com/hebamuh68/alx-low_level_programming)
   
 </details>
 
