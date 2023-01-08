@@ -11,7 +11,7 @@
 
 Quotes
 -----
-> Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations - `Steve Jobs`
+> If I were given one hour to save the planet, I would spend 59 minutes defining the problem and one minute resolving it. - `Albert Einstein`
 
 About
 -----
