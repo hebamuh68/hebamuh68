@@ -27,6 +27,12 @@ My GitHup Content
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
    -  [Projects - JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
   
+  
+<h3>Fullstack Development</h3>
+
+   -  [Auto Diet - Website](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, js, HTML, CSS, Bootstrap
+   
+   
 <h3>Machine Learning</h3>
 
    -  [Machine Learning Bookcamp Projects](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
