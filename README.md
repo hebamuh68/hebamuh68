@@ -22,7 +22,7 @@ My GitHup Content
 
 <h3>Front End Development</h3>
 
-   -  [Find Your Study Partner](https://github.com/hebamuh68/Find-Study-Partner) . React.js, CSS, Bootstrap
+   -  [Find Your Study Partner](https://github.com/hebamuh68/Find-Study-Partner) . React.js
    -  [Turo - Website](https://github.com/hebamuh68/Turo) . HTML, CSS, Bootstrap
    -  [Fork-Resturant website](https://github.com/hebamuh68/Fork) . HTML, CSS, JS
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
@@ -31,7 +31,7 @@ My GitHup Content
   
 <h3>Fullstack Development</h3>
 
-   -  [Auto Diet - Website](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, js, HTML, CSS, Bootstrap
+   -  [Auto Diet - Website](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django
    
    
 <h3>Machine Learning</h3>
