@@ -33,7 +33,7 @@ My GitHup Content
 <h3>Fullstack Development</h3>
 
    -  [Student System - Website](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
-   -  [Auto Diet - Website](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, PostgreSQL
+   -  [Auto Diet - Website](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
    -  [Students system - Website](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
    
    
