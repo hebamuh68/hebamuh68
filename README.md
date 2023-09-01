@@ -37,7 +37,7 @@ My GitHup Content
   
 <h3>Fullstack Development</h3>
 
-   -  [Students System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
+   -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
    -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
    -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
 
