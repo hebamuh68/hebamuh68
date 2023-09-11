@@ -22,8 +22,7 @@ My GitHup Content
 
 <h3>Front-End Development</h3>
 
-   -  [Jack - Resturant](https://github.com/hebamuh68/Jack-Restaurant) . HTML . Tailwind Css
-   -  [Find Your Study Partner](https://github.com/hebamuh68/Find-Study-Partner) . React.js
+   -  [Jack - Resturant](https://github.com/hebamuh68/Jack-Restaurant) . HTML, Tailwind Css
    -  [Turo - Website](https://github.com/hebamuh68/Turo) . HTML, CSS, Bootstrap
    -  [Fork-Resturant website](https://github.com/hebamuh68/Fork) . HTML, CSS, JS
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
@@ -37,6 +36,7 @@ My GitHup Content
   
 <h3>Fullstack Development</h3>
 
+   -  [Farm Buddies 🚜🌽](https://github.com/hebamuh68/Farm-Buddies/tree/main) . Flask 
    -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
    -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
    -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
