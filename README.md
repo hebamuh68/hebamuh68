@@ -1,8 +1,6 @@
 <div align="center">
   
-  ### Hello There, I'm Heba Allah 👋 
-![Hello](https://github.com/hebamuh68/hebamuh68/blob/main/9be930541d56bc8d13bbd076c150d9-unscreen.gif)
-  
+  ### Hello There, I'm Heba Allah 👋  
   [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
   [![](https://img.shields.io/github/followers/hebamuh68?label=GitHub%20Followers)](https://github.com/hebamuh68/hebamuh68)
   
