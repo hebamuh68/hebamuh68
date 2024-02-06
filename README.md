@@ -40,36 +40,17 @@ My GitHup Content
    -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
    -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
    -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
-
-   
-<h3>Machine Learning</h3>
-
-   -  [Machine Learning Bookcamp Projects](https://github.com/hebamuh68/Machine-Learning-Bookcamp-Projects)
-   -  [Machine Learning Specialization Coursera](https://github.com/hebamuh68/Machine-Learning-Specialization)
-   -  [Data Mining Foundations and Practice Specialization](https://github.com/hebamuh68/Data-Mining-Foundations-and-Practice-Specialization)
-   -  [Hamoye Data Science Internship](https://github.com/hebamuh68/Hamoye-Data-Science-Internship)
   
-<h3>Bioinformatics</h3>
 
-   -  [Access swiss prot file content through GUI](https://github.com/hebamuh68/Swiss-Prot-GUI)
-   -  [Genomic Data Science Specialization](https://github.com/hebamuh68/Genomic-Data-Science-Specialization)
-   -  [Bioinformatics Projects](https://github.com/hebamuh68/Bioinformatics-Projects)
-   -  [Bioinformatics Books](https://github.com/hebamuh68/Bioinformatics-Books)
-   -  [Gut Check: Exploring Your Microbiome](https://github.com/hebamuh68/Gut-Check-Exploring-Your-Microbiome)
+<h3>Neuroinformatics</h3>
+
+-  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics-Challenges)
   
-<h3>General CS Projects</h3>
-
-   -  [Operation System Simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
   
 <h3>Problem Solving</h3>
 
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
    -  [General](https://github.com/hebamuh68/Problem-Solving)
-  
-<h3>Soft Skills</h3>
-
-   -  [Business English Communication Skills Specialization](https://github.com/hebamuh68/Soft-Skills/tree/main/Business%20English%20Communication%20Skills%20Specialization)
-   -  [General CS Books](https://github.com/hebamuh68/BOOKS)
   
 
   
