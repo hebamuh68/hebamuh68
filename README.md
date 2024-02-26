@@ -43,6 +43,9 @@ My GitHup Content
 <h3>Neuroinformatics</h3>
 
 -  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics-Challenges)
+-  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python)
+-  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus)
+-  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool)
   
   
 <h3>Problem Solving</h3>
