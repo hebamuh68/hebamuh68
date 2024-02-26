@@ -42,10 +42,10 @@ My GitHup Content
 
 <h3>Neuroinformatics</h3>
 
--  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics-Challenges)
--  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python)
--  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus)
--  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool)
+-  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics-Challenges) . Python, neuron, LFPy, Data Analysis
+-  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
+-  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
+-  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
   
   
 <h3>Problem Solving</h3>
