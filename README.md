@@ -12,11 +12,27 @@
 My GitHup Content 
 -----------------------------------------------------
 
-<h3>UI/UX</h3>
 
-   -  [Portofolio](https://www.behance.net/hebamohamed3)
-   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
-  
+<h3>Neuroinformatics</h3>
+
+-  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics) . Python, neuron, LFPy, Data Analysis
+-  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
+-  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
+-  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
+
+
+<h3>Fullstack Development</h3>
+
+   -  [Farm Buddies 🚜🌽](https://github.com/hebamuh68/Farm-Buddies/tree/main) . Django, MongoDB 
+   -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
+   -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
+   -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
+
+
+<h3>Back-End Development</h3>
+
+   -  [IBM-Back-End-Development-Professional-Certificate ](https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate)
+
 
 <h3>Front-End Development</h3>
 
@@ -26,26 +42,11 @@ My GitHup Content
    -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
    -  [Projects - JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
 
-  
-<h3>Back-End Development</h3>
 
-   -  [IBM-Back-End-Development-Professional-Certificate ](https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate)
+<h3>UI/UX</h3>
 
-  
-<h3>Fullstack Development</h3>
-
-   -  [Farm Buddies 🚜🌽](https://github.com/hebamuh68/Farm-Buddies/tree/main) . Django, MongoDB 
-   -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
-   -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
-   -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
-  
-
-<h3>Neuroinformatics</h3>
-
--  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics) . Python, neuron, LFPy, Data Analysis
--  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
--  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
--  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
+   -  [Portofolio](https://www.behance.net/hebamohamed3)
+   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
   
   
 <h3>Problem Solving</h3>
