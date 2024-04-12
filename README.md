@@ -9,7 +9,7 @@
 
 
 
-My GitHup Content 
+My GitHub Content 
 -----------------------------------------------------
 
 
