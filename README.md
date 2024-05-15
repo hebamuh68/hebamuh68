@@ -21,11 +21,6 @@ My GitHub Content
 -  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
 
 
-<h3>Data Science</h3>
-
--  [IBM Data Scientist](https://github.com/hebamuh68/IBM-Data-Scientist)
-
-
 
 <h3>Fullstack Development</h3>
 
@@ -38,7 +33,6 @@ My GitHub Content
 <h3>Back-End Development</h3>
 
    -  [IBM Back-End Development Professional Certificate ](https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate)
-   -  [Backend Python Engineer Roadmap](https://github.com/hebamuh68/Backend-Python-Engineer)
 
 
 <h3>Front-End Development</h3>
