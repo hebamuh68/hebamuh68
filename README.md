@@ -21,7 +21,7 @@ My GitHub Content
 -  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
 -  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
 -  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
--  [Neuroscience and Neuroimaging Specialization](Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
+-  [Neuroscience and Neuroimaging Specialization](https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
 
 
 
