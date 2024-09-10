@@ -57,11 +57,11 @@ My GitHub Content
 
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
    -  [General](https://github.com/hebamuh68/Problem-Solving)
+
   
 <h3>Python Projects</h3>
-   -  [File system](https://github.com/hebamuh68/CSProjects)
-   -  [General](https://github.com/hebamuh68/Problem-Solving)
 
+   -  [File System](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
 
   
 
