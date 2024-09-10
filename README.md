@@ -59,7 +59,9 @@ My GitHub Content
    -  [General](https://github.com/hebamuh68/Problem-Solving)
   
 <h3>Python Projects</h3>
-   -  [File system](https://github.com/hebamuh68/CSProjects/tree/main/Operation%20system%20simulation)
+   -  [File system](https://github.com/hebamuh68/CSProjects)
+   -  [General](https://github.com/hebamuh68/Problem-Solving)
+
 
   
 
