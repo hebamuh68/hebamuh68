@@ -61,7 +61,7 @@ My GitHub Content
   
 <h3>Python Projects</h3>
 
-   -  [File System](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
+   -  [OS simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
 
   
 
