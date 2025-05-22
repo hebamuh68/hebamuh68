@@ -14,17 +14,6 @@
 My GitHub Content 
 -----------------------------------------------------
 
-
-<h3>Neuroinformatics</h3>
-
--  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics) . Python, neuron, LFPy, Data Analysis
--  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
--  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
--  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
--  [Neuroscience and Neuroimaging Specialization](https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
-
-
-
 <h3>Fullstack Development</h3>
 
    -  [Authentication](https://github.com/hebamuh68/VueJS/tree/main/Authentecation) . Vue3, Django REST Framework
@@ -51,8 +40,17 @@ My GitHub Content
 
    -  [Portofolio](https://www.behance.net/hebamohamed3)
    -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
+     
   
-  
+<h3>Neuroinformatics</h3>
+
+-  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics) . Python, neuron, LFPy, Data Analysis
+-  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
+-  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
+-  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
+-  [Neuroscience and Neuroimaging Specialization](https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
+
+ 
 <h3>Problem Solving</h3>
 
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
