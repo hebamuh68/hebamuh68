@@ -50,7 +50,11 @@ My GitHub Content
 -  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
 -  [Neuroscience and Neuroimaging Specialization](https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
 
- 
+ <h3>Bioinformatics</h3>
+
+-  [Disease Data Bank ( DDB ) ](https://github.com/hebamuh68/Disease-Data-Bank) . Django · MongoDB · Data Analysis
+-  [Peptide identification ](https://github.com/hebamuh68/Go-lang/tree/main/DDB%20Project) . Go · MySQL · Git · HTML · CSS
+
 <h3>Problem Solving</h3>
 
    -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
