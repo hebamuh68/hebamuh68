@@ -11,61 +11,61 @@
 
 
 
-My GitHub Content 
------------------------------------------------------
+<!-- ----------  My GitHub Content  ---------- -->
 
-<h3>Fullstack Development</h3>
+<table>
+<tr>
+<td valign="top" width="50%">
 
-   -  [Authentication](https://github.com/hebamuh68/VueJS/tree/main/Authentecation) . Vue3, Django REST Framework
-   -  [Student System - Using Master Slave Architecture](https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html) . Go, MySQL
-   -  [Auto Diet](https://github.com/hebamuh68/Auto_Diet/tree/main) . Django, MongoDB
-   -  [Student System](https://github.com/hebamuh68/MongoDB) . Django, MongoDB
+<h3>💻 SWE</h3>
 
+<h4>Full-Stack Development</h4>
 
-<h3>Back-End Development</h3>
+- <a href="https://github.com/hebamuh68/VueJS/tree/main/Authentecation">Authentication</a> – Vue 3 · Django REST Framework  
+- <a href="https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html">Student System – Master/Slave</a> – Go · MySQL  
+- <a href="https://github.com/hebamuh68/Auto_Diet/tree/main">Auto Diet</a> – Django · MongoDB  
+- <a href="https://github.com/hebamuh68/MongoDB">Student System</a> – Django · MongoDB  
 
-   -  [IBM Back-End Development Professional Certificate ](https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate)
+<h4>Back-End Development</h4>
 
+- <a href="https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate">IBM Back-End Development Professional Certificate</a>  
 
-<h3>Front-End Development</h3>
+<h4>Front-End Development</h4>
 
-   -  [Jack - Resturant](https://github.com/hebamuh68/Jack-Restaurant) . HTML, Tailwind Css
-   -  [Turo - Website](https://github.com/hebamuh68/Turo) . HTML, CSS, Bootstrap
-   -  [Fork-Resturant website](https://github.com/hebamuh68/Fork) . HTML, CSS, JS
-   -  [ITI Projects - Front-end Development Track](https://github.com/hebamuh68/ITI-Projects)
-   -  [Projects - JavaScript for Beginners Specialization](https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md)
+- <a href="https://github.com/hebamuh68/Jack-Restaurant">Jack – Restaurant</a> – HTML · Tailwind CSS  
+- <a href="https://github.com/hebamuh68/Turo">Turo – Website</a> – HTML · CSS · Bootstrap  
+- <a href="https://github.com/hebamuh68/Fork">Fork – Restaurant Site</a> – HTML · CSS · JS  
+- <a href="https://github.com/hebamuh68/ITI-Projects">ITI Front-End Track Projects</a>  
+- <a href="https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md">JS for Beginners – Projects</a>  
 
+<h4>UI / UX</h4>
 
-<h3>UI/UX</h3>
+- <a href="https://www.behance.net/hebamohamed3">Portfolio on Behance</a>  
+- <a href="https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad">Google UX Design Specialization Notes</a>  
 
-   -  [Portofolio](https://www.behance.net/hebamohamed3)
-   -  [Google UX Design Specialization](https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad)
-     
-  
-<h3>Neuroinformatics</h3>
+</td>
 
--  [Neuroinformatics Laboratory Challenge Solutions](https://github.com/hebamuh68/Laboratory-of-Neuroinformatics) . Python, neuron, LFPy, Data Analysis
--  [kCSD-python - open source contribution](https://github.com/hebamuh68/kCSD-python) . Python
--  [neuroptimus - open source contribution](https://github.com/hebamuh68/neuroptimus) . Python, PyQt5, neuron
--  [Brainwave-Analysis-Tool](https://github.com/hebamuh68/Brainwave-Analysis-Tool) . Django, MySQL
--  [Neuroscience and Neuroimaging Specialization](https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization) . R . Neuroscience . Neuroimaging
+<td valign="top" width="50%">
 
- <h3>Bioinformatics</h3>
+<h3>🧠 Bio / Neuro</h3>
 
--  [Disease Data Bank ( DDB ) ](https://github.com/hebamuh68/Disease-Data-Bank) . Django · MongoDB · Data Analysis
--  [Peptide identification ](https://github.com/hebamuh68/Go-lang/tree/main/DDB%20Project) . Go · MySQL · Git · HTML · CSS
+<h4>Neuroinformatics</h4>
 
-<h3>Problem Solving</h3>
+- <a href="https://github.com/hebamuh68/Laboratory-of-Neuroinformatics">Neuroinformatics Laboratory Challenge Solutions</a> – Python · neuron · LFPy · Data Analysis  
+- <a href="https://github.com/hebamuh68/kCSD-python">kCSD-python — open-source contribution</a> – Python  
+- <a href="https://github.com/hebamuh68/neuroptimus">neuroptimus — open-source contribution</a> – Python · PyQt5 · neuron  
+- <a href="https://github.com/hebamuh68/Brainwave-Analysis-Tool">Brainwave-Analysis-Tool</a> – Django · MySQL  
+- <a href="https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization">Neuroscience &amp; Neuroimaging Specialization</a> – R · Neuroimaging  
 
-   -  [Leetcode Profile](https://leetcode.com/Heba_Allah/)
-   -  [General](https://github.com/hebamuh68/Problem-Solving)
+<h4>Bioinformatics</h4>
 
-  
-<h3>Python Projects</h3>
+- <a href="https://github.com/hebamuh68/Disease-Data-Bank">Disease Data Bank (DDB)</a> – Django · MongoDB · Data Analysis  
+- <a href="https://github.com/hebamuh68/Go-lang/tree/main/DDB%20Project">Peptide Identification</a> – Go · MySQL · Git · HTML · CSS  
 
-   -  [OS simulation](https://github.com/hebamuh68/CS-Projects/tree/main/Operation%20system%20simulation)
+</td>
 
-  
+</tr>
+</table>
 
 
 
