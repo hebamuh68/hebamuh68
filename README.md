@@ -52,15 +52,13 @@
 <h4>Neuroinformatics</h4>
 
 - <a href="https://github.com/hebamuh68/Laboratory-of-Neuroinformatics">Neuroinformatics Laboratory Challenge Solutions</a> – Python · neuron · LFPy · Data Analysis  
-- <a href="https://github.com/hebamuh68/kCSD-python">kCSD-python — open-source contribution</a> – Python  
-- <a href="https://github.com/hebamuh68/neuroptimus">neuroptimus — open-source contribution</a> – Python · PyQt5 · neuron  
-- <a href="https://github.com/hebamuh68/Brainwave-Analysis-Tool">Brainwave-Analysis-Tool</a> – Django · MySQL  
 - <a href="https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization">Neuroscience &amp; Neuroimaging Specialization</a> – R · Neuroimaging  
 
 <h4>Bioinformatics</h4>
 
 - <a href="https://github.com/hebamuh68/Disease-Data-Bank">Disease Data Bank (DDB)</a> – Django · MongoDB · Data Analysis  
 - <a href="https://github.com/hebamuh68/Go-lang/tree/main/DDB%20Project">Peptide Identification</a> – Go · MySQL · Git · HTML · CSS  
+- <a href="https://github.com/hebamuh68/57357-R-programming-for-Researchers">57357 R Programming for Researchers</a> –  R · Data wrangling . Biostat inference · Data visualization · Correlation and regression · PCA/PLS · ROC · Survival analysis
 
 </td>
 
