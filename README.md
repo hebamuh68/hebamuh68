@@ -18,6 +18,9 @@
 <td valign="top" width="50%">
 
 <h3>💻 SWE</h3>
+<h4>Open Source</h4>
+
+- <a href="https://github.com/hebamuh68/mini-editor">@hebamuh28/mini-editor (component for Vue 3 applications)</a> – Vue 3 · Tailwind CSS  
 
 <h4>Full-Stack Development</h4>
 
