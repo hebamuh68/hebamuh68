@@ -31,7 +31,9 @@
 
 <h4>Back-End Development</h4>
 
-- <a href="https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate">IBM Back-End Development Professional Certificate</a>  
+- <a href="https://github.com/hebamuh68/Real-Time-Collaborative-Notes-App">Real-Time Collaborative Notes API
+</a> – FastAPI · PostgreSQL · asyncpg · Pydantic · WebSockets   
+- <a href="https://github.com/hebamuh68/task_management_api">Task Management API</a> – FastAPI · SQLModel · Alembic · Pydantic · Docker   
 
 <h4>Front-End Development</h4>
 
