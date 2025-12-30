@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heba Muhammad - Full Stack Developer & Data Scientist</title>
+    <title>Heba Muhammad - Software Engineer</title>
+    <meta name="description" content="Software Engineer specializing in full-stack development and computational biology. Building intelligent systems at the intersection of web technology and life sciences.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --light: #f1f1f1;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --bg-primary: #0a0e27;
+            --bg-secondary: #111633;
+            --bg-tertiary: #1a2142;
+            --accent: #00d9ff;
+            --accent-glow: rgba(0, 217, 255, 0.3);
+            --text-primary: #e8edf4;
+            --text-secondary: #9ca5b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(26, 33, 66, 0.6);
         }
 
         * {
@@ -26,121 +28,174 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--light);
-            background: var(--primary);
-            overflow-x: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        /* Grid Background */
+        .grid-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.3;
         }
 
-        .bg-animation::before,
-        .bg-animation::after {
-            content: '';
-            position: absolute;
+        /* Glow Effect */
+        .glow-orb {
+            position: fixed;
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
             filter: blur(80px);
+            pointer-events: none;
+            z-index: -1;
             animation: float 20s ease-in-out infinite;
         }
 
-        .bg-animation::before {
-            width: 500px;
-            height: 500px;
-            background: var(--gradient-1);
+        .glow-orb:nth-child(1) {
             top: 10%;
-            left: 10%;
-            animation-delay: 0s;
+            left: 15%;
         }
 
-        .bg-animation::after {
-            width: 600px;
-            height: 600px;
-            background: var(--gradient-2);
-            bottom: 10%;
+        .glow-orb:nth-child(2) {
+            bottom: 20%;
             right: 10%;
-            animation-delay: 10s;
+            animation-delay: -10s;
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(100px, -100px) rotate(120deg); }
-            66% { transform: translate(-100px, 100px) rotate(240deg); }
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(50px, -50px); }
+            66% { transform: translate(-50px, 50px); }
         }
 
         /* Header */
         header {
-            padding: 2rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -1px;
         }
 
-        nav a {
-            color: var(--light);
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            margin-left: 2.5rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
             position: relative;
         }
 
-        nav a::after {
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-1);
-            transition: width 0.3s ease;
+            background: var(--accent);
+            transition: width 0.3s;
         }
 
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 0 5%;
-            position: relative;
+            padding: 6rem 0;
         }
 
         .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
+            max-width: 900px;
         }
 
-        @keyframes fadeInUp {
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: slideUp 0.8s ease-out 0.2s backwards;
+        }
+
+        @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -151,725 +206,915 @@
             }
         }
 
-        .hero-label {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1s ease-out 0.2s backwards;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
-        }
-
         .gradient-text {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, var(--accent) 0%, #00a8cc 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-secondary);
             margin-bottom: 2.5rem;
-            max-width: 600px;
-            animation: fadeInUp 1s ease-out 0.6s backwards;
+            max-width: 700px;
+            line-height: 1.7;
+            animation: slideUp 0.8s ease-out 0.4s backwards;
         }
 
-        .cta-buttons {
+        .hero-cta {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.8s backwards;
+            animation: slideUp 0.8s ease-out 0.6s backwards;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
+            font-size: 0.95rem;
+            transition: all 0.3s;
             display: inline-block;
-            position: relative;
-            overflow: hidden;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background: var(--gradient-1);
-            color: white;
+            background: var(--accent);
+            color: var(--bg-primary);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 30px var(--accent-glow);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
+            border-color: var(--accent);
+            background: rgba(0, 217, 255, 0.05);
         }
 
-        /* Skills Section */
+        /* Section Styles */
         .section {
-            padding: 8rem 5%;
-            position: relative;
+            padding: 8rem 0;
         }
 
         .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
 
-        .section-label {
-            font-size: 0.9rem;
+        .section-tag {
+            font-size: 0.85rem;
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
             margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
 
         .section-description {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.8;
         }
 
-        .skills-grid {
+        /* About Section */
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--accent);
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .tech-item {
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .tech-label {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .tech-value {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s;
             position: relative;
             overflow: hidden;
         }
 
-        .skill-card::before {
+        .expertise-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
         }
 
-        .skill-card:hover::before {
-            opacity: 0.1;
+        .expertise-card:hover::before {
+            transform: scaleX(1);
         }
 
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        .expertise-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
+        .expertise-icon {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
 
-        .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .expertise-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
             font-weight: 700;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
-        .skill-card p {
-            color: rgba(255, 255, 255, 0.7);
+        .expertise-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
             line-height: 1.7;
-            position: relative;
-            z-index: 1;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 1;
+            gap: 0.6rem;
         }
 
         .tag {
-            padding: 0.4rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.9rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.2);
             border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            color: var(--accent);
         }
 
         /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            gap: 2rem;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
         }
 
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: var(--gradient-1);
-            position: relative;
-            overflow: hidden;
+        .project-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .project-card:nth-child(2) .project-image {
-            background: var(--gradient-2);
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .project-card:nth-child(3) .project-image {
-            background: var(--gradient-3);
+        .project-tag {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 20px;
         }
 
-        .project-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+        .project-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .project-content {
             padding: 2rem;
+            flex-grow: 1;
         }
 
-        .project-category {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .project-card p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.7;
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
+        .tech-badge {
+            padding: 0.3rem 0.8rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
         }
 
         .project-link {
-            padding: 0.7rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
             text-decoration: none;
-            border-radius: 25px;
+            font-weight: 600;
             font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
         }
 
         .project-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
+            gap: 0.8rem;
         }
 
-        /* Certifications Section */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
         }
 
-        .cert-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.4s ease;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), transparent);
         }
 
-        .cert-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
         }
 
-        .cert-provider {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        .cert-card h3 {
-            font-size: 1.2rem;
+        .timeline-item:hover {
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
             margin-bottom: 1rem;
-            font-weight: 600;
         }
 
-        .cert-date {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
+        .timeline-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-org {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .timeline-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* Contact Section */
-        #contact {
-            background: rgba(255, 255, 255, 0.03);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
+        .contact-info h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
         .contact-links {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .contact-link {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: var(--light);
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
             text-decoration: none;
+            transition: all 0.3s;
             font-weight: 500;
-            transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-3px);
+            border-color: var(--accent);
+            background: rgba(0, 217, 255, 0.05);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
         }
 
         /* Footer */
         footer {
             padding: 3rem 5%;
+            border-top: 1px solid var(--border);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            nav {
+        @media (max-width: 968px) {
+            .nav-links {
                 display: none;
             }
 
-            .hero {
-                min-height: 80vh;
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            .section {
-                padding: 5rem 5%;
-            }
-
-            .projects-grid,
-            .skills-grid,
-            .certifications-grid {
+            .about-content,
+            .expertise-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .cta-buttons {
-                flex-direction: column;
+            .timeline {
+                padding-left: 2rem;
             }
 
-            .btn {
-                width: 100%;
-                text-align: center;
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 5rem 0;
             }
         }
 
-        /* Scroll Animations */
+        /* Scroll Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.2s; }
-        .fade-in:nth-child(3) { animation-delay: 0.3s; }
-        .fade-in:nth-child(4) { animation-delay: 0.4s; }
-        .fade-in:nth-child(5) { animation-delay: 0.5s; }
-        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <div class="grid-bg"></div>
+    <div class="glow-orb"></div>
+    <div class="glow-orb"></div>
 
     <header>
-        <div class="logo">HM</div>
         <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
+            <div class="logo">HM</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-label">👋 Welcome to my portfolio</div>
-            <h1>
-                Hi, I'm <span class="gradient-text">Heba Muhammad</span><br>
-                Full Stack Developer & Data Scientist
-            </h1>
-            <p>
-                Passionate about building innovative web applications and analyzing genomic data. 
-                Specialized in front-end development, back-end systems, and bioinformatics.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="section-header">
-            <div class="section-label">About Me</div>
-            <h2>Combining <span class="gradient-text">Code</span> & <span class="gradient-text">Science</span></h2>
-            <p class="section-description">
-                I'm a multidisciplinary developer with expertise spanning web development, data science, and genomics. 
-                My unique background allows me to bridge the gap between complex scientific problems and elegant technical solutions.
-            </p>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="section-header">
-            <div class="section-label">Expertise</div>
-            <h2>Technical <span class="gradient-text">Skills</span></h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🎨</div>
-                <h3>Front-End Development</h3>
-                <p>Creating responsive, interactive user interfaces with modern web technologies and best practices.</p>
-                <div class="skill-tags">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Bootstrap</span>
-                </div>
-            </div>
-
-            <div class="skill-card fade-in">
-                <div class="skill-icon">⚙️</div>
-                <h3>Back-End Development</h3>
-                <p>Building robust server-side applications with Python and modern frameworks, integrating AI services.</p>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Flask</span>
-                    <span class="tag">Watson AI</span>
-                    <span class="tag">APIs</span>
-                </div>
-            </div>
-
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🧬</div>
-                <h3>Genomic Data Science</h3>
-                <p>Analyzing DNA sequences, implementing bioinformatics algorithms, and processing genomic datasets.</p>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Bioinformatics</span>
-                    <span class="tag">DNA Sequencing</span>
-                    <span class="tag">Algorithms</span>
-                </div>
-            </div>
-
-            <div class="skill-card fade-in">
-                <div class="skill-icon">📊</div>
-                <h3>Data Analysis</h3>
-                <p>Processing and visualizing complex datasets, building statistical models and machine learning solutions.</p>
-                <div class="skill-tags">
-                    <span class="tag">Statistics</span>
-                    <span class="tag">R</span>
-                    <span class="tag">Visualization</span>
-                    <span class="tag">ML</span>
-                </div>
-            </div>
-
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🛠️</div>
-                <h3>Developer Tools</h3>
-                <p>Version control, collaborative development, and modern development workflows.</p>
-                <div class="skill-tags">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">Command Line</span>
-                    <span class="tag">VS Code</span>
-                </div>
-            </div>
-
-            <div class="skill-card fade-in">
-                <div class="skill-icon">🤖</div>
-                <h3>AI Integration</h3>
-                <p>Implementing emotion detection, sentiment analysis, and AI-powered features in web applications.</p>
-                <div class="skill-tags">
-                    <span class="tag">Watson AI</span>
-                    <span class="tag">NLP</span>
-                    <span class="tag">ML Models</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="section-header">
-            <div class="section-label">Portfolio</div>
-            <h2>Featured <span class="gradient-text">Projects</span></h2>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <div class="project-category">AI • Web Application</div>
-                    <h3>Emotion Detector</h3>
-                    <p>
-                        A sentiment analysis web application using Flask and IBM Watson AI. 
-                        Analyzes text to detect emotions including anger, disgust, fear, joy, and sadness with confidence scores.
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span>✦</span> Available for opportunities
+                    </div>
+                    <h1>
+                        Software Engineer<br>
+                        <span class="gradient-text">Full-Stack & Bioinformatics</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Building intelligent systems at the intersection of web technology and life sciences. 
+                        Specialized in creating scalable applications and computational solutions for genomic data analysis.
                     </p>
-                    <div class="project-links">
-                        <a href="https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate" class="project-link" target="_blank">View Code →</a>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card fade-in">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <div class="project-category">Bioinformatics • Python</div>
-                    <h3>DNA Sequencing Algorithms</h3>
-                    <p>
-                        Implementation of algorithms for DNA sequence analysis including pattern matching, 
-                        alignment algorithms, and genomic data processing techniques.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/hebamuh68/Genomic-Data-Science-Specialization" class="project-link" target="_blank">View Code →</a>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Introduction</div>
+                    <h2>Building Digital Solutions with <span class="gradient-text">Purpose</span></h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text fade-in">
+                        <p>
+                            I'm a software engineer with a unique combination of skills in <strong>web development</strong> and <strong>computational biology</strong>. 
+                            My journey began with front-end development, evolved into full-stack engineering, and expanded into the fascinating world of bioinformatics.
+                        </p>
+                        <p>
+                            What drives me is the challenge of translating complex scientific problems into elegant, user-friendly software solutions. 
+                            Whether building responsive web interfaces or analyzing DNA sequences, I bring the same dedication to clean code, 
+                            thoughtful architecture, and measurable impact.
+                        </p>
+                        <p>
+                            Currently focused on developing AI-powered applications and genomic analysis tools that make a real difference in research and healthcare.
+                        </p>
+                    </div>
+                    <div class="tech-stack fade-in">
+                        <div class="tech-item">
+                            <div class="tech-label">Primary Stack</div>
+                            <div class="tech-value">Python • JavaScript • Flask</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-label">Frontend</div>
+                            <div class="tech-value">HTML • CSS • Bootstrap</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-label">Bioinformatics</div>
+                            <div class="tech-value">Genomics • R • Algorithms</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-label">AI/ML</div>
+                            <div class="tech-value">Watson AI • NLP • Analysis</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-label">Tools</div>
+                            <div class="tech-value">Git • Command Line • VSCode</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-label">Focus Areas</div>
+                            <div class="tech-value">Full-Stack • Data Science</div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card fade-in">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <div class="project-category">Web Development • UI/UX</div>
-                    <h3>Front-End Projects</h3>
-                    <p>
-                        Collection of responsive websites including BioCode (HTML/CSS), Fishing (HTML/CSS/JS), 
-                        and Do (Bootstrap). Showcasing modern design and interactive features.
+        <!-- Expertise Section -->
+        <section id="expertise" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Core Competencies</div>
+                    <h2>Technical <span class="gradient-text">Expertise</span></h2>
+                    <p class="section-description">
+                        Comprehensive skill set spanning modern web development and computational biology, 
+                        enabling me to build end-to-end solutions from user interface to data processing pipelines.
                     </p>
-                    <div class="project-links">
-                        <a href="https://github.com/hebamuh68/ITI-Projects" class="project-link" target="_blank">View Code →</a>
+                </div>
+                <div class="expertise-grid">
+                    <div class="expertise-card fade-in">
+                        <div class="expertise-icon">⚡</div>
+                        <h3>Full-Stack Development</h3>
+                        <p>
+                            Building complete web applications with modern architecture. Proficient in both front-end interfaces and 
+                            back-end services, creating seamless user experiences backed by robust server logic.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag">Python/Flask</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">RESTful APIs</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card fade-in">
+                        <div class="expertise-icon">🧬</div>
+                        <h3>Bioinformatics & Genomics</h3>
+                        <p>
+                            Developing computational solutions for genomic data analysis. Implementing algorithms for DNA sequencing, 
+                            pattern matching, and statistical analysis of biological datasets.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag">DNA Sequencing</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Algorithms</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card fade-in">
+                        <div class="expertise-icon">🤖</div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>
+                            Integrating artificial intelligence into web applications. Experience with Watson AI for NLP tasks, 
+                            sentiment analysis, and building intelligent features that enhance user interaction.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag">Watson AI</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Sentiment Analysis</span>
+                            <span class="tag">ML Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card fade-in">
+                        <div class="expertise-icon">📊</div>
+                        <h3>Data Engineering</h3>
+                        <p>
+                            Processing and analyzing complex datasets. Building data pipelines, performing statistical analysis, 
+                            and creating visualizations that transform raw data into actionable insights.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag">Data Processing</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">Visualization</span>
+                            <span class="tag">Python/R</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="certifications" class="section">
-        <div class="section-header">
-            <div class="section-label">Education</div>
-            <h2>Certifications & <span class="gradient-text">Training</span></h2>
-        </div>
-        <div class="certifications-grid">
-            <div class="cert-card fade-in">
-                <div class="cert-provider">Coursera • Johns Hopkins University</div>
-                <h3>Genomic Data Science Specialization</h3>
-                <p class="cert-date">Completed courses in genomic technologies, Python for genomics, and DNA sequencing algorithms</p>
-            </div>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Portfolio</div>
+                    <h2>Featured <span class="gradient-text">Projects</span></h2>
+                    <p class="section-description">
+                        Selected works demonstrating practical application of full-stack development and computational biology skills.
+                    </p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-meta">
+                                <span class="project-tag">AI Application</span>
+                                <span class="project-tag">Production</span>
+                            </div>
+                            <h3>Emotion Detection System</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>
+                                Full-stack web application leveraging IBM Watson AI for real-time sentiment analysis. 
+                                Processes text input to detect emotional patterns including anger, joy, sadness, fear, and disgust with confidence scoring.
+                            </p>
+                            <div class="tech-used">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">Watson AI</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                            <a href="https://github.com/hebamuh68/IBM-Back-End-Development-Professional-Certificate" class="project-link" target="_blank">
+                                View Repository →
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="cert-card fade-in">
-                <div class="cert-provider">Coursera • IBM</div>
-                <h3>IBM Back-End Development Professional Certificate</h3>
-                <p class="cert-date">Comprehensive training in back-end development with Python, Flask, and AI integration</p>
-            </div>
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-meta">
+                                <span class="project-tag">Bioinformatics</span>
+                                <span class="project-tag">Research</span>
+                            </div>
+                            <h3>Genomic Analysis Pipeline</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>
+                                Computational toolkit for DNA sequence analysis implementing advanced algorithms for pattern matching, 
+                                sequence alignment, and genomic data processing. Built for accuracy and performance in large-scale analysis.
+                            </p>
+                            <div class="tech-used">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Algorithms</span>
+                                <span class="tech-badge">Bioinformatics</span>
+                                <span class="tech-badge">Data Analysis</span>
+                                <span class="tech-badge">Jupyter</span>
+                            </div>
+                            <a href="https://github.com/hebamuh68/Genomic-Data-Science-Specialization" class="project-link" target="_blank">
+                                View Repository →
+                            </a>
+                        </div>
+                    </div>
 
-            <div class="cert-card fade-in">
-                <div class="cert-provider">Coursera</div>
-                <h3>JavaScript for Beginners Specialization</h3>
-                <p class="cert-date">Mastered JavaScript fundamentals and modern web development practices</p>
+                    <div class="project-card fade-in">
+                        <div class="project-header">
+                            <div class="project-meta">
+                                <span class="project-tag">Web Development</span>
+                                <span class="project-tag">UI/UX</span>
+                            </div>
+                            <h3>Professional Web Applications</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>
+                                Collection of responsive, interactive web applications showcasing front-end expertise. 
+                                Features modern design patterns, smooth animations, and optimized user experiences across devices.
+                            </p>
+                            <div class="tech-used">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">Responsive</span>
+                            </div>
+                            <a href="https://github.com/hebamuh68/ITI-Projects" class="project-link" target="_blank">
+                                View Repository →
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="cert-card fade-in">
-                <div class="cert-provider">ITI</div>
-                <h3>UI/UX Front-End Development Track</h3>
-                <p class="cert-date">Intensive training in front-end development with hands-on projects</p>
-            </div>
-        </div>
-    </section>
+        <!-- Experience/Education Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Background</div>
+                    <h2>Education & <span class="gradient-text">Certifications</span></h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Genomic Data Science Specialization</div>
+                                <div class="timeline-org">Johns Hopkins University • Coursera</div>
+                            </div>
+                            <div class="timeline-date">2022</div>
+                        </div>
+                        <div class="timeline-content">
+                            Comprehensive program covering genomic technologies, Python for genomics, DNA sequencing algorithms, 
+                            command-line tools, statistics, and Bioconductor. Gained hands-on experience in computational biology 
+                            and data analysis for life sciences.
+                        </div>
+                    </div>
 
-    <section id="contact" class="section">
-        <div class="section-header">
-            <div class="section-label">Let's Connect</div>
-            <h2>Get in <span class="gradient-text">Touch</span></h2>
-            <p class="section-description">
-                I'm always open to discussing new projects, creative ideas, or opportunities to collaborate.
-            </p>
-        </div>
-        <div class="contact-content">
-            <div class="contact-links">
-                <a href="https://github.com/hebamuh68" class="contact-link" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="mailto:hebamuh68@example.com" class="contact-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    Email
-                </a>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">IBM Back-End Development Professional Certificate</div>
+                                <div class="timeline-org">IBM • Coursera</div>
+                            </div>
+                            <div class="timeline-date">2023</div>
+                        </div>
+                        <div class="timeline-content">
+                            Advanced training in server-side development with Python and Flask. Developed production applications 
+                            integrating IBM Watson AI services, RESTful APIs, and modern back-end architecture patterns.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">UI/UX Front-End Development Track</div>
+                                <div class="timeline-org">Information Technology Institute (ITI)</div>
+                            </div>
+                            <div class="timeline-date">2022</div>
+                        </div>
+                        <div class="timeline-content">
+                            Intensive program focused on modern web development. Built multiple production-ready projects 
+                            using HTML, CSS, JavaScript, and Bootstrap. Emphasis on responsive design and user experience best practices.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">JavaScript for Beginners Specialization</div>
+                                <div class="timeline-org">University of California, Davis • Coursera</div>
+                            </div>
+                            <div class="timeline-date">2022</div>
+                        </div>
+                        <div class="timeline-content">
+                            Mastered JavaScript fundamentals including DOM manipulation, asynchronous programming, 
+                            and modern ES6+ features. Applied skills in building interactive web applications.
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag">Let's Connect</div>
+                    <h2>Get in <span class="gradient-text">Touch</span></h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <h3>Open to Opportunities</h3>
+                        <p>
+                            I'm currently seeking roles in full-stack development, bioinformatics engineering, or positions 
+                            that combine web technology with computational biology. Let's discuss how I can contribute to your team.
+                        </p>
+                        <p>
+                            Whether you're looking to build a web application, need bioinformatics expertise, or want to explore 
+                            AI integration, I'd love to hear from you.
+                        </p>
+                    </div>
+                    <div class="contact-links fade-in">
+                        <a href="https://github.com/hebamuh68" class="contact-link" target="_blank">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub Profile
+                        </a>
+                        <a href="mailto:contact@hebamuh.dev" class="contact-link">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            Email Me
+                        </a>
+                        <a href="https://hebamuh68.github.io" class="contact-link" target="_blank">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            Portfolio Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Heba Muhammad. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Heba Muhammad. Crafted with precision and purpose.</p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Intersection Observer for scroll animations
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Add active state to navigation on scroll
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollY = window.pageYOffset;
-
+            let current = '';
             sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-                if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.style.opacity = '0.7';
-                    });
-                    navLink.style.opacity = '1';
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--accent)';
                 }
             });
         });
