@@ -125,10 +125,16 @@
       font-weight: 600;
       line-height: 1.15;
       color: var(--text);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    .hero h1 span { color: var(--green); }
+    .hero-sub {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.0rem);
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
 
     .hero p {
       font-size: 1.05rem;
@@ -478,7 +484,8 @@
   <!-- Hero -->
   <section class="hero">
     <div class="greeting">Software Engineer</div>
-    <h1>I'm Heba Allah Hashim.<br><span>I build things for the web.</span></h1>
+    <h1>I'm Heba Allah Hashim.</h1>
+    <h4 class="hero-sub"><span>Passionate about Software Engineering—from design to…well, there’s no end.</span></h4>
     <p>Full-stack developer with a background in bioinformatics. I craft clean APIs, intuitive interfaces, and data-driven solutions.</p>
     <div class="cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -566,14 +573,6 @@
         <p>Open-source Vue 3 component published on npm with multilingual RTL/LTR support and modular toolbar.</p>
         <div class="project-tags">
           <span>Vue 3</span><span>TypeScript</span><span>Tailwind</span><span>npm</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/hebamuh68/pd-voice-biomarker-dw" target="_blank" class="project-card">
-        <h3>Parkinson's Voice Data Warehouse <span class="arrow">&nearr;</span></h3>
-        <p>Data warehouse and ETL pipeline for Parkinson's disease voice analysis research.</p>
-        <div class="project-tags">
-          <span>Python</span><span>SQL</span><span>Data Engineering</span>
         </div>
       </a>
 
@@ -728,10 +727,7 @@
         <h3>Head of Technical Board</h3>
         <div class="company">Biocode Assiut Branch</div>
         <div class="location">Assiut, Egypt</div>
-        <ul>
-          <li>Led technical initiatives at a student bioinformatics community</li>
-          <li>Organized and taught Python, Biology, and Statistics courses</li>
-        </ul>
+        <p>Led technical initiatives at a student bioinformatics community. Organized and taught Python, Biology, and Statistics courses.</p>
       </div>
     </div>
 
