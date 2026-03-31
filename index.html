@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heba Allah Hashim — Software Engineer</title>
+  <title>Heba Allah Hashim — Full-Stack Developer</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@400;600&display=swap');
 
@@ -469,7 +469,7 @@
   <nav>
     <a href="#" class="logo">heba.</a>
     <div class="links" id="navLinks">
-      <a href="#about">About</a>
+      <a href="#about">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -483,10 +483,10 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="greeting">Software Engineer</div>
+    <div class="greeting">Full-Stack Developer</div>
     <h1>I'm Heba Allah Hashim.</h1>
-    <h4 class="hero-sub"><span>Passionate about Software Engineering—from design to…well, there’s no end.</span></h4>
-    <p>Full-stack developer with a background in bioinformatics. I craft clean APIs, intuitive interfaces, and data-driven solutions.</p>
+    <h4 class="hero-sub">Python | FastAPI | Django | React | Next.js </h4>
+    <p>I build scalable web applications end-to-end — from REST APIs and database design to responsive, production-ready frontends. 2+ years of remote experience across Saudi Arabia, Germany, and UAE.</p>
     <div class="cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -497,54 +497,55 @@
     <div class="divider"></div>
   </section>
 
-  <!-- About / Skills -->
+  <!-- Skills -->
   <section id="about" class="fade-in">
     <div class="section-label">Skills</div>
     <div class="section-title">What I Work With</div>
     <div class="skills-grid">
       <div class="skill-group">
-        <h3>Languages</h3>
-        <ul>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>Go</li>
-          <li>R</li>
-        </ul>
-      </div>
-      <div class="skill-group">
         <h3>Backend</h3>
         <ul>
-          <li>Django</li>
+          <li>Python</li>
           <li>FastAPI</li>
+          <li>Django</li>
           <li>DRF</li>
           <li>SQLAlchemy</li>
           <li>Alembic</li>
+          <li>Pydantic</li>
+          <li>Celery</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Databases</h3>
+        <ul>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>MySQL</li>
+          <li>Elasticsearch</li>
+          <li>Redis</li>
         </ul>
       </div>
       <div class="skill-group">
         <h3>Frontend</h3>
         <ul>
+          <li>React</li>
+          <li>Next.js</li>
           <li>Vue 3</li>
+          <li>React Query</li>
           <li>Tailwind CSS</li>
-          <li>Twig</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>UI/UX Design</h3>
-        <ul>
-          <li>Figma</li>
-          <li>Wireframing</li>
-          <li>Prototyping</li>
-          <li>User Flows</li>
-          <li>Design Systems</li>
+          <li>Pinia</li>
         </ul>
       </div>
       <div class="skill-group">
         <h3>Infrastructure</h3>
         <ul>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
           <li>Docker</li>
+          <li>Git</li>
+          <li>Linux</li>
+          <li>REST APIs</li>
+          <li>JWT / OAuth2</li>
+          <li>CI/CD</li>
+          <li>Vercel</li>
         </ul>
       </div>
     </div>
@@ -561,34 +562,18 @@
     <div class="projects-grid">
 
       <a href="https://github.com/hebamuh68/Roof" target="_blank" class="project-card">
-        <h3>Apartment Rental Platform <span class="arrow">&nearr;</span></h3>
-        <p>Full-stack rental platform for listing and renting apartments with search, filtering, and pagination.</p>
+        <h3>Roof — Rental Platform <span class="arrow">&nearr;</span></h3>
+        <p>Full-stack platform with FastAPI backend (40+ endpoints, JWT auth, RBAC, Elasticsearch) and Vue 3 frontend (5 languages, RTL, real-time messaging).</p>
         <div class="project-tags">
-          <span>FastAPI</span><span>Vue 3</span><span>PostgreSQL</span><span>Elasticsearch</span>
+          <span>FastAPI</span><span>Vue 3</span><span>PostgreSQL</span><span>Elasticsearch</span><span>TypeScript</span>
         </div>
       </a>
 
       <a href="https://github.com/hebamuh68/mini-editor" target="_blank" class="project-card">
-        <h3>Rich Text Editor <span class="arrow">&nearr;</span></h3>
-        <p>Open-source Vue 3 component published on npm with multilingual RTL/LTR support and modular toolbar.</p>
+        <h3>Mini Editor — npm Package <span class="arrow">&nearr;</span></h3>
+        <p>Open-source Vue 3 rich text editor published on npm. RTL/LTR support, media uploads, and customizable toolbar.</p>
         <div class="project-tags">
           <span>Vue 3</span><span>TypeScript</span><span>Tailwind</span><span>npm</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/hebamuh68/pd-voice-features" target="_blank" class="project-card">
-        <h3>Parkinson's Voice Detection <span class="arrow">&nearr;</span></h3>
-        <p>Explainable AI system for early Parkinson's detection through acoustic voice analysis and biomarker extraction.</p>
-        <div class="project-tags">
-          <span>Python</span><span>Parselmouth</span><span>Jupyter</span><span>XAI</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/hebamuh68/Disease-Data-Bank" target="_blank" class="project-card">
-        <h3>Biomedical Research Platform <span class="arrow">&nearr;</span></h3>
-        <p>Platform centralizing disease data from PDB, UNIPROT, OMIM, Ensembl, and CHEMBL into a unified research interface.</p>
-        <div class="project-tags">
-          <span>Django</span><span>MongoDB</span><span>BioPython</span><span>Bootstrap</span>
         </div>
       </a>
 
@@ -602,34 +587,32 @@
   <!-- Experience -->
   <section id="experience" class="fade-in">
     <div class="section-label">Experience</div>
-    <div class="section-title">Where I've Been</div>
-
-    <div class="exp-group-title">Development</div>
+    <div class="section-title">Where I've Worked</div>
 
     <div class="exp-item">
       <div class="exp-content">
         <h3>Frontend Developer</h3>
-        <div class="company">Mahjoz</div>
+        <div class="company">Mahjoz — Oct 2024 - Jan 2026</div>
         <div class="location">Riyadh, Saudi Arabia (Remote)</div>
         <ul>
-          <li>Built and maintained a Vue 3 + TypeScript enterprise SaaS dashboard for appointment and booking management</li>
-          <li>Translated Figma designs into pixel-perfect components and architected the component system</li>
-          <li>Established design patterns including centralized z-index system, BaseModal, and consistent color tokens</li>
-          <li>Implemented full Arabic RTL and English LTR support across the platform</li>
-          <li>Developed order management flows, auth pages, and 100+ reusable UI components with Tailwind CSS, Pinia, and vue-i18n</li>
+          <li>Built and maintained a large-scale SaaS dashboard with 43+ modules and 75+ API integrations</li>
+          <li>Managed complex state across 56 Pinia stores handling bookings, orders, and real-time notifications via WebSockets</li>
+          <li>Integrated 75+ RESTful API endpoints with typed Axios service layer, token-based auth, and error handling</li>
+          <li>Built 20+ reusable responsive UI components with Vue 3, TypeScript, and Tailwind CSS</li>
+          <li>Implemented full Arabic/English bilingual support with RTL/LTR layout switching</li>
         </ul>
       </div>
     </div>
 
     <div class="exp-item">
       <div class="exp-content">
-        <h3>Backend Development Intern</h3>
-        <div class="company">Buguard</div>
+        <h3>Backend Developer</h3>
+        <div class="company">Buguard — Jul 2025 - Oct 2025</div>
         <div class="location">Cairo, Egypt (Remote)</div>
         <ul>
-          <li>Developed RESTful APIs with FastAPI supporting security reporting workflows</li>
+          <li>Developed RESTful APIs with FastAPI for security scanning and reporting workflows</li>
           <li>Built internal Python tools for automated vulnerability assessment</li>
-          <li>Containerized applications with Docker</li>
+          <li>Containerized applications with Docker and debugged production issues</li>
         </ul>
       </div>
     </div>
@@ -637,97 +620,12 @@
     <div class="exp-item">
       <div class="exp-content">
         <h3>UI Developer</h3>
-        <div class="company">RayaGate</div>
+        <div class="company">RayaGate — Oct 2023 - Jan 2024</div>
         <div class="location">Berlin, Germany (Remote)</div>
         <ul>
-          <li>Developed and maintained user interfaces with React.js</li>
-          <li>Led UI design and information architecture enhancements for a Germany-based startup</li>
+          <li>Developed and maintained responsive user interfaces with Vue.js and Tailwind CSS</li>
+          <li>Led UI design and information architecture enhancements for a startup product</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="exp-group-title">Design</div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>UI Designer</h3>
-        <div class="company">Elmadrasah</div>
-        <div class="location">UAE (Remote)</div>
-        <ul>
-          <li>Designed websites, dashboards, and mobile applications for educational platforms</li>
-          <li>Created wireframes, user flows, and high-fidelity prototypes</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>UI Designer</h3>
-        <div class="company">Phraise</div>
-        <div class="location">Bayern, Germany (Remote)</div>
-        <ul>
-          <li>Improved SaaS product usability and scalability of the design system</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-group-title">Training</div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>R Researcher Trainee</h3>
-        <div class="company">Children's Cancer Hospital Egypt 57357</div>
-        <div class="location">Cairo, Egypt</div>
-        <ul>
-          <li>Statistical analysis on biomedical datasets using R</li>
-          <li>Regression, correlation analysis, PCA, and machine learning on clinical data</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>Data Science Trainee</h3>
-        <div class="company">DEPI</div>
-        <div class="location">Cairo, Egypt (Remote)</div>
-        <ul>
-          <li>Machine learning and MLOps with MLflow and Hugging Face</li>
-          <li>Data analysis with Python and SQL, interactive data visualization</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>Computational Neuroscience Trainee</h3>
-        <div class="company">AiN Summer School</div>
-        <div class="location">Cairo, Egypt (Remote)</div>
-        <ul>
-          <li>Neural data processing, statistics, and mathematical modeling for neuroscience</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>Bioinformatics Trainee</h3>
-        <div class="company">H3ABioNet</div>
-        <div class="location">Cairo, Egypt (Remote)</div>
-        <ul>
-          <li>Genomic data analysis, sequence alignment, and computational pipelines</li>
-          <li>Linux for bioinformatics workflows</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-group-title">Volunteering</div>
-
-    <div class="exp-item">
-      <div class="exp-content">
-        <h3>Head of Technical Board</h3>
-        <div class="company">Biocode Assiut Branch</div>
-        <div class="location">Assiut, Egypt</div>
-        <p>Led technical initiatives at a student bioinformatics community. Organized and taught Python, Biology, and Statistics courses.</p>
       </div>
     </div>
 
@@ -758,9 +656,9 @@
         Email
       </a>
 
-      <a href="https://www.behance.net/hebamohamed3" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 11c2.07 0 3.75-1.01 3.75-3.17C11.25 5.72 9.69 4.5 7.69 4.5H1.5v15h6.56c2.22 0 4.19-1.38 4.19-3.78 0-2.21-1.49-3.72-3.75-3.72h-1zm-4-4.5h3.75c1.1 0 1.99.67 1.99 1.88 0 1.12-.73 1.94-1.87 1.94H3.5V6.5zm4.13 11H3.5v-4.25h4.13c1.34 0 2.25.85 2.25 2.13 0 1.27-.95 2.12-2.25 2.12zM22.5 10h-7v1.5h7V10zM19 4.5c-3.04 0-5.5 2.46-5.5 5.5s2.46 5.5 5.5 5.5c2.04 0 3.93-1.12 4.89-2.92l-1.87-1.04c-.57 1.09-1.71 1.71-2.89 1.71-1.68 0-3.04-1.12-3.34-2.75h8.73c.07-.33.11-.66.11-1 0-3.04-2.19-5-5.13-5zm-3.06 4.25c.4-1.41 1.54-2.25 3.06-2.25 1.34 0 2.53.85 2.85 2.25h-5.91z"/></svg>
-        Behance
+      <a href="https://heba28.medium.com/" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
       </a>
 
     </div>
