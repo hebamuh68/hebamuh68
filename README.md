@@ -1,6 +1,6 @@
 # Heba Allah Hashim
 
-**Full-Stack Developer** | Python | FastAPI | Django | React | Next.js | Vue.js | TypeScript
+**Full-Stack Developer** | Python | FastAPI | Django | React | Next.js | Vue.js
 
 I build scalable web applications end-to-end — from REST APIs and database design to responsive, production-ready frontends.
 
@@ -9,7 +9,7 @@ I build scalable web applications end-to-end — from REST APIs and database des
 ## What I Work With
 
 **Backend:** Python, FastAPI, Django, PostgreSQL, SQLAlchemy, Elasticsearch, JWT, Docker, Celery, Redis
-**Frontend:** React, Next.js, Vue 3, TypeScript, Zustand, React Query, Pinia, Tailwind CSS
+**Frontend:** React, Next.js, Vue 3, React Query, Pinia, Tailwind CSS
 **Tools:** Docker, Git, Linux, CI/CD, Vercel
 
 ---
