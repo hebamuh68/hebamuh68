@@ -9,7 +9,9 @@ I build scalable web applications end-to-end — from REST APIs and database des
 ## What I Work With
 
 **Backend:** Python, FastAPI, Django, PostgreSQL, SQLAlchemy, Elasticsearch, JWT, Docker, Celery, Redis
+
 **Frontend:** React, Next.js, Vue 3, React Query, Pinia, Tailwind CSS
+
 **Tools:** Docker, Git, Linux, CI/CD, Vercel
 
 ---
