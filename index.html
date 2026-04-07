@@ -64,7 +64,24 @@
     }
 
     nav .links a:hover { color: var(--green); }
-
+    
+    .nav-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    
+    .nav-btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
     .burger {
       display: none;
       background: none;
@@ -473,7 +490,7 @@
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-      <a href="Heba_Allah_Hashim_CV.pdf" download class="btn btn-secondary"> Download CV </a>
+      <a href="Heba_Allah_Hashim_CV.pdf" download  class="nav-btn"> Download CV </a>
     </div>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span>
