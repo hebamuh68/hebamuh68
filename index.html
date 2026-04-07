@@ -52,8 +52,11 @@
       text-decoration: none;
     }
 
-    nav .links { display: flex; gap: 2rem; }
-
+    nav .links {
+      display: flex;
+      gap: 2rem;
+      align-items: center; /* 🔥 critical */
+    }
     nav .links a {
       text-decoration: none;
       color: var(--text-muted);
@@ -61,22 +64,26 @@
       font-weight: 500;
       letter-spacing: 0.02em;
       transition: color 0.3s;
+        display: inline-flex; 
+      align-items: center; 
+       height: 36px; 
     }
 
     nav .links a:hover { color: var(--green); }
     
-    .nav-btn {
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 0.45rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: all 0.3s;
-    }
+.nav-btn {
+  height: 36px;                /* SAME as links */
+  padding: 0 1rem;             /* horizontal only */
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s;
+}
     
     .nav-btn:hover {
       border-color: var(--green);
