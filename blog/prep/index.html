@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interview Prep — Heba Allah Hashim</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@400;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #faf8f4;
+  --bg-card: #f2efe8;
+  --text: #3b2f20;
+  --text-muted: #7a6b58;
+  --green: #4a7c59;
+  --green-light: #e8f0e6;
+  --brown: #8b6f47;
+  --brown-light: #c9b89a;
+  --border: #e2dbd0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav (same as portfolio) ── */
+nav {
+  position: fixed; top: 0; width: 100%;
+  padding: 1.25rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,248,244,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+nav .logo { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1.2rem; color: var(--green); text-decoration: none; }
+nav .links { display: flex; gap: 2rem; align-items: center; }
+nav .links a {
+  text-decoration: none; color: var(--text-muted); font-size: 0.875rem;
+  font-weight: 500; letter-spacing: 0.02em; transition: color 0.3s;
+  display: inline-flex; align-items: center; height: 36px;
+}
+nav .links a:hover, nav .links a.active { color: var(--green); }
+.nav-btn {
+  height: 36px; padding: 0 1rem; border: 1px solid var(--border);
+  border-radius: 6px; font-size: 0.85rem; font-weight: 500; color: var(--text);
+  text-decoration: none; display: inline-flex; align-items: center; transition: all 0.3s;
+}
+.nav-btn:hover { border-color: var(--green); color: var(--green); }
+.burger { display: none; background: none; border: none; cursor: pointer; padding: 0.25rem; z-index: 101; }
+.burger span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; transition: all 0.3s; }
+.burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ── Layout ── */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+.page-header { padding-top: 7rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+  text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s;
+}
+.back-link:hover { color: var(--green); }
+.section-label { font-size: 0.8rem; font-weight: 500; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.page-header h1 { font-family: 'Source Serif 4', serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.5rem; }
+.page-header p { font-size: 0.92rem; color: var(--text-muted); max-width: 520px; }
+
+/* ── Track nav pills ── */
+.track-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.track-pill {
+  padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 500;
+  border: 1px solid var(--border); border-radius: 100px;
+  background: transparent; color: var(--text-muted);
+  cursor: pointer; transition: all 0.2s; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.track-pill:hover { border-color: var(--brown-light); color: var(--brown); }
+.track-pill.active { background: var(--green); border-color: var(--green); color: #fff; }
+.track-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* ── Track sections ── */
+.track { display: none; }
+.track.active { display: block; }
+.track-header { margin-bottom: 1.5rem; }
+.track-header h2 { font-family: 'Source Serif 4', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem; }
+.track-header p { font-size: 0.83rem; color: var(--text-muted); }
+
+/* ── Category tabs ── */
+.cat-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.cat-tab {
+  padding: 0.3rem 0.85rem; font-size: 0.78rem; font-weight: 500;
+  border: 1px solid var(--border); border-radius: 100px;
+  background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+}
+.cat-tab:hover { border-color: var(--brown-light); color: var(--brown); }
+.cat-tab.active { background: var(--green-light); border-color: #c4d9bc; color: var(--green); }
+
+/* ── Question cards ── */
+.cat-group { display: none; }
+.cat-group.active { display: block; }
+.q-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.q-card:hover { border-color: var(--brown-light); box-shadow: 0 4px 12px rgba(59,47,32,0.05); }
+.q-card.open { border-color: var(--green); }
+.q-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.q-meta { display: flex; align-items: flex-start; gap: 0.75rem; flex: 1; }
+.q-num { font-size: 0.72rem; color: var(--brown-light); font-weight: 500; min-width: 20px; padding-top: 3px; }
+.q-inner { flex: 1; }
+.q-tag {
+  display: inline-block; font-size: 0.68rem; font-weight: 500;
+  color: var(--brown); background: var(--bg); border: 1px solid var(--border);
+  padding: 0.15rem 0.55rem; border-radius: 4px; margin-bottom: 0.4rem;
+}
+.q-text { font-size: 0.9rem; font-weight: 500; line-height: 1.5; color: var(--text); }
+.q-toggle { font-size: 1.3rem; color: var(--brown-light); flex-shrink: 0; line-height: 1; transition: transform 0.2s, color 0.2s; }
+.q-card.open .q-toggle { transform: rotate(45deg); color: var(--green); }
+.q-answer {
+  display: none;
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.84rem; color: var(--text-muted); line-height: 1.75;
+}
+.q-answer.open { display: block; }
+.q-answer strong { color: var(--text); font-weight: 600; }
+.q-answer code {
+  font-family: 'Courier New', monospace; font-size: 0.78rem;
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--green);
+}
+.q-answer pre {
+  font-family: 'Courier New', monospace; font-size: 0.78rem;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1rem 1.25rem; margin: 0.75rem 0;
+  overflow-x: auto; line-height: 1.6; color: var(--text);
+}
+.q-answer ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+.q-answer li { margin-bottom: 0.3rem; }
+
+.divider { width: 100%; height: 1px; background: var(--border); margin: 2.5rem 0; }
+footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(--brown-light); }
+
+@media (max-width: 680px) {
+  .burger { display: block; }
+  nav .links {
+    position: fixed; top: 0; right: -100%; width: 65%; height: 100vh;
+    flex-direction: column; background: var(--bg); padding: 5rem 2rem 2rem;
+    gap: 1.5rem; border-left: 1px solid var(--border); transition: right 0.3s;
+  }
+  nav .links.open { right: 0; }
+  nav .links a { font-size: 1rem; }
+  .page-wrap { padding: 0 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="logo">heba.</a>
+  <div class="links" id="navLinks">
+    <a href="../../#about">Skills</a>
+    <a href="../../#projects">Projects</a>
+    <a href="../../#experience">Experience</a>
+    <a href="../../#blog" class="active">Blog</a>
+    <a href="../../#contact">Contact</a>
+    <a href="../../Heba_Allah_Hashim_CV.pdf" download class="nav-btn">Download CV</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <a href="../../#blog" class="back-link">← Back to Blog</a>
+    <div class="section-label">Interview Prep</div>
+    <h1>Full Interview Preparation Guide</h1>
+    <p>Categorized question bank with detailed answers — covering backend, frontend, UI/UX, and ML tracks.</p>
+  </div>
+
+  <!-- Track Nav -->
+  <div class="track-nav">
+    <button class="track-pill active" data-track="backend"><span class="track-dot"></span>Backend SWE</button>
+    <button class="track-pill" data-track="frontend"><span class="track-dot"></span>Frontend SWE</button>
+    <button class="track-pill" data-track="ui-dev"><span class="track-dot"></span>UI Developer</button>
+    <button class="track-pill" data-track="uiux"><span class="track-dot"></span>UI/UX Design</button>
+    <button class="track-pill" data-track="ml"><span class="track-dot"></span>ML / Data Science</button>
+  </div>
+
+  <!-- ════════════════════ BACKEND SWE ════════════════════ -->
+  <div class="track active" id="track-backend">
+    <div class="track-header">
+      <h2>Backend SWE</h2>
+      <p>AI · Network · API · Data Structures · Database · Python · Django · FastAPI · Testing · OOP · Docker · Behavioral</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="be-ai">AI</button>
+      <button class="cat-tab" data-cat="be-network">Network</button>
+      <button class="cat-tab" data-cat="be-api">API</button>
+      <button class="cat-tab" data-cat="be-ds">Data Structures</button>
+      <button class="cat-tab" data-cat="be-db">Database</button>
+      <button class="cat-tab" data-cat="be-python">Python</button>
+      <button class="cat-tab" data-cat="be-django">Django</button>
+      <button class="cat-tab" data-cat="be-fastapi">FastAPI</button>
+      <button class="cat-tab" data-cat="be-testing">Testing</button>
+      <button class="cat-tab" data-cat="be-oop">OOP</button>
+      <button class="cat-tab" data-cat="be-docker">Docker</button>
+      <button class="cat-tab" data-cat="be-behavioral">Behavioral</button>
+    </div>
+
+    <div class="cat-group active" id="cat-be-ai">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">AI Integration</span><div class="q-text">How would you integrate OpenAI API into a backend?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Key steps:</strong> Install the SDK (<code>pip install openai</code>), store API key in env vars, create a service layer to wrap calls. Use <code>openai.chat.completions.create()</code> with model, messages, and temperature.<br><br><strong>Production considerations:</strong> retry logic with exponential backoff for rate limits, streaming responses for better UX, token budgeting to control costs, async calls with <code>httpx</code> to avoid blocking, structured outputs via function calling or JSON mode, and logging every request/response with a correlation ID.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">AI Integration</span><div class="q-text">What are tokens?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Tokens are the units LLMs use to process text — roughly 4 characters or ¾ of a word in English. "ChatGPT is great!" ≈ 6 tokens.<br><br>Why it matters: API costs are per token (input + output), context windows have token limits (GPT-4 = 128k). Use <code>tiktoken</code> to count tokens programmatically before building features.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Coding Task</span><div class="q-text">Build an endpoint that summarizes text using AI.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>@app.post("/summarize")
+async def summarize(text: str):
+    response = await openai_client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": "Summarize concisely."},
+            {"role": "user", "content": text}
+        ],
+        max_tokens=300
+    )
+    return {"summary": response.choices[0].message.content}</pre>
+<strong>Add in production:</strong> input length validation, rate limiting per user, cost tracking, error handling for <code>RateLimitError</code> and <code>APIConnectionError</code>.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-network">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Network</span><div class="q-text">Tell me the whole process of a search, from typing in the browser to getting the result.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Full journey:</strong><br>1. Browser checks cache (memory → disk → OS)<br>2. DNS resolution: browser → OS resolver → ISP DNS → root nameserver → TLD → authoritative NS → returns IP<br>3. TCP 3-way handshake (SYN → SYN-ACK → ACK)<br>4. TLS handshake for HTTPS (certificate exchange, session keys)<br>5. HTTP request sent<br>6. Server: load balancer → web server → app server → cache → DB<br>7. Response travels back, browser parses HTML, fetches sub-resources<br>8. DOM → CSSOM → Render tree → Layout → Paint → Composite</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-api">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">API</span><div class="q-text">What is REST and why is it stateless?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">REST (Representational State Transfer) is an architectural style. Key constraints: <strong>stateless</strong> (each request contains all info needed — no server-side session), client-server separation, uniform interface (resource-based URLs, HTTP verbs), cacheable, layered system.<br><br>Statelessness enables: horizontal scaling (any server handles any request), reliability, simpler caching. Auth is via tokens (JWT) sent with each request.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">API</span><div class="q-text">Status codes — 200, 404, 500 and the important ones.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>2xx:</strong> 200 OK, 201 Created, 204 No Content<br><strong>3xx:</strong> 301 Moved Permanently, 304 Not Modified<br><strong>4xx:</strong> 400 Bad Request, 401 Unauthorized (not authenticated), 403 Forbidden (authenticated but not allowed), 404 Not Found, 409 Conflict, 422 Unprocessable Entity (FastAPI validation)<br><strong>5xx:</strong> 500 Internal Server Error, 502 Bad Gateway, 503 Unavailable<br><br>Key: 401 = "who are you?", 403 = "I know you, you can't do this."</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">API</span><div class="q-text">API is slow — what do you do?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Diagnose first:</strong> add timing logs, check DB query plans (<code>EXPLAIN ANALYZE</code>), use APM (Sentry, Datadog).<br><br><strong>Common fixes:</strong> N+1 queries → use <code>joinedload</code>; missing indexes → add them; slow external calls → cache or make async; sync code blocking event loop → switch to async <code>httpx.AsyncClient</code>; high traffic → add Redis caching + rate limiting.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">04</span><div class="q-inner"><span class="q-tag">API</span><div class="q-text">What is serialization and how did you handle validation?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Serialization</strong> converts Python objects to JSON for HTTP transfer. In FastAPI, Pydantic models handle both directions — validate incoming JSON and serialize responses.<br><br><strong>Validation:</strong> Pydantic defines schema with types and constraints (<code>min_length</code>, <code>ge=0</code>, <code>regex</code>). FastAPI validates automatically, returning 422 on failure. Custom validators via <code>@field_validator</code>. Business logic validation in the service layer, not the router.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-ds">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Data Structures</span><div class="q-text">Difference between graph and trees.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A <strong>tree</strong> is a connected, acyclic graph with a root node and parent-child hierarchy. A <strong>graph</strong> is a general structure — can have cycles, multiple components, and directionality. Every tree is a graph, not every graph is a tree. Trees for hierarchical data; graphs for networks.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Data Structures</span><div class="q-text">Array vs Linked List. Dynamic Programming vs Greedy.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Array:</strong> contiguous memory, O(1) random access, O(n) insert/delete.<br><strong>Linked List:</strong> scattered nodes with pointers, O(n) access, O(1) insert/delete at known node.<br><br><strong>Greedy:</strong> locally optimal choice at each step. Fast, works when problem has greedy choice property.<br><strong>DP:</strong> overlapping subproblems, memoize each. Guarantees global optimum. More expensive but correct where greedy fails.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Problem Solving</span><div class="q-text">You have 1 million records and need to find duplicates efficiently.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Use a <strong>hash set</strong>: iterate once — if item in set it's a duplicate, else add it. O(n) time, O(n) space.<br><br>Alternatives: sort first O(n log n) then scan adjacent — O(1) extra space. In DB: <code>GROUP BY + HAVING COUNT(*) > 1</code>. For data beyond memory: hash partitioning.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-db">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Database</span><div class="q-text">What is ACID compliance?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Atomicity:</strong> all-or-nothing — if one step fails, all roll back.<br><strong>Consistency:</strong> DB moves from one valid state to another, all constraints respected.<br><strong>Isolation:</strong> concurrent transactions behave as if sequential — no dirty reads.<br><strong>Durability:</strong> committed transactions survive crashes (WAL).<br><br>PostgreSQL is fully ACID-compliant. Critical for healthcare and financial data.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Database</span><div class="q-text">What are database indexes and when to use them?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Indexes (B-tree by default in PostgreSQL) allow O(log n) lookup instead of O(n) full table scan.<br><br><strong>Add on:</strong> columns in WHERE, JOIN ON, ORDER BY, GROUP BY. Always index foreign keys.<br><strong>Trade-offs:</strong> speed up reads, slow down writes, use extra disk space.<br><strong>Check:</strong> <code>EXPLAIN ANALYZE</code> to verify index usage.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Database</span><div class="q-text">What is a JOIN? How do you design a schema?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>JOIN</strong> combines rows from tables on a related column. INNER JOIN = only matches. LEFT JOIN = all left + matching right. FULL OUTER JOIN = all rows from both.<br><br><strong>Schema design:</strong> identify entities → attributes → relationships → normalize (3NF) → strategic denormalization → add constraints → plan indexes. Every table: <code>id</code>, <code>created_at</code>, <code>updated_at</code>. JSONB for flexible metadata. Alembic for migrations.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">04</span><div class="q-inner"><span class="q-tag">Database</span><div class="q-text">Multi-threading, Deadlocks, and Aggregation.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Multi-threading:</strong> threads share process memory. Python GIL limits CPU parallelism — use <code>asyncio</code> for I/O-bound, <code>multiprocessing</code> for CPU-bound.<br><br><strong>Deadlock:</strong> two transactions each hold a lock the other needs. PostgreSQL detects and kills one. Prevent by: consistent lock order, short transactions, <code>SELECT FOR UPDATE SKIP LOCKED</code> for queues.<br><br><strong>Aggregation:</strong> <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MAX</code>, <code>MIN</code> with <code>GROUP BY</code>. Use <code>HAVING</code> to filter after aggregation.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">05</span><div class="q-inner"><span class="q-tag">SQL Challenge</span><div class="q-text">Design a posts+comments schema like Twitter. Write a query for highest avg confidence score with min 50 predictions.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>-- Schema
+users(id, username, email, created_at)
+posts(id, user_id FK, content, like_count, created_at)
+comments(id, post_id FK, user_id FK, parent_comment_id FK, content, created_at)
+likes(user_id FK, post_id FK, created_at)  -- composite PK
+
+-- Query
+SELECT category, AVG(confidence_score) AS avg_score
+FROM predictions
+GROUP BY category
+HAVING COUNT(*) >= 50
+ORDER BY avg_score DESC
+LIMIT 1;</pre>
+Key: <code>HAVING</code> filters after aggregation (vs <code>WHERE</code> before). Self-referencing <code>parent_comment_id</code> enables nested replies.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-python">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Python</span><div class="q-text">list vs tuple. What are generators?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>List</strong> (<code>[]</code>): mutable, can add/remove items.<br><strong>Tuple</strong> (<code>()</code>): immutable, hashable, ~10-15% faster. Use for fixed data, dict keys, multi-return values.<br><br><strong>Generators</strong>: functions that <code>yield</code> values lazily — only the current item in memory. Critical for large files, streaming, infinite sequences.<br><pre>def large_range(n):
+    i = 0
+    while i < n:
+        yield i; i += 1</pre>
+Use <code>(x*2 for x in range(1_000_000))</code> instead of a list when you don't need all values at once.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Python</span><div class="q-text">Why is a mutable default argument dangerous? Explain decorators.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Mutable default:</strong> default args evaluate once at definition — a list default persists state across calls.<br><pre># WRONG
+def append_to(item, lst=[]):
+    lst.append(item); return lst
+# CORRECT: use None as default, create inside</pre>
+<strong>Decorator:</strong> a function that wraps another to add behavior without modifying it.<br><pre>from functools import wraps
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        import time; start = time.time()
+        result = func(*args, **kwargs)
+        print(f"{func.__name__}: {time.time()-start:.3f}s")
+        return result
+    return wrapper</pre>
+FastAPI uses decorators for all route registration.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Python</span><div class="q-text">What does SOLID stand for?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>S</strong>ingle Responsibility — one class, one job.<br><strong>O</strong>pen/Closed — open for extension, closed for modification.<br><strong>L</strong>iskov Substitution — subclasses replace parent without breaking behavior.<br><strong>I</strong>nterface Segregation — don't force unused interface implementations.<br><strong>D</strong>ependency Inversion — depend on abstractions, not concrete implementations.<br><br>In FastAPI: DI via <code>Depends()</code> is literally the D in SOLID.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-django">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Django</span><div class="q-text">What is Django REST Framework and when to use it vs FastAPI?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>DRF:</strong> batteries-included — Serializers, ViewSets, Routers, browsable API, Token/JWT auth, permissions. Best when: existing Django project, need admin panel, standard CRUD.<br><br><strong>FastAPI:</strong> async-first, auto OpenAPI docs, Pydantic validation, faster performance. Best for: microservices, AI/ML APIs, new projects where speed matters.<br><br>Your answer: "I use both — Django for projects needing admin + ORM power, FastAPI for new APIs (like Roof) where async and performance matter."</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Django</span><div class="q-text">How to build authentication with DRF?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+# urls.py
+urlpatterns = [
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
+]</pre>
+POST credentials to <code>/api/token/</code> → get access + refresh tokens. Send <code>Authorization: Bearer &lt;token&gt;</code> on protected routes.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-fastapi">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">FastAPI</span><div class="q-text">How does FastAPI work and how do you structure a project?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">FastAPI is built on Starlette (async HTTP) + Pydantic (validation). Type hints drive automatic validation, serialization, and OpenAPI docs. Async routes run on the event loop; sync routes run in a thread pool.<br><br><pre>app/
+├── main.py           # include routers
+├── core/config.py    # BaseSettings
+├── routers/          # APIRouter per domain
+├── schemas/          # Pydantic models
+├── models/           # SQLAlchemy models
+├── services/         # Business logic
+├── db/session.py     # Engine + SessionLocal
+└── tests/</pre></div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">FastAPI</span><div class="q-text">What is dependency injection in FastAPI?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><code>Depends()</code> declares reusable dependencies injected into routes — DB sessions, auth, rate limiting.<br><pre>async def get_db():
+    db = SessionLocal()
+    try: yield db
+    finally: db.close()
+
+async def get_current_user(
+    token: str = Depends(oauth2_scheme),
+    db: Session = Depends(get_db)
+):
+    return verify_token(token, db)
+
+@app.get("/me")
+async def read_me(user = Depends(get_current_user)):
+    return user</pre>
+Benefits: testable (swap real DB for test DB), composable, automatic cleanup with <code>yield</code>.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">FastAPI</span><div class="q-text">Sync vs async in FastAPI. Background tasks.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>async:</strong> I/O-bound work (DB queries, HTTP calls). <code>async def</code> routes run on the event loop — never block with sync calls inside them (use <code>run_in_executor</code>).<br><strong>sync:</strong> CPU-bound or existing sync libraries — FastAPI runs these in a thread pool automatically.<br><br><strong>Background tasks:</strong><br><pre>@app.post("/notify")
+async def notify(bg: BackgroundTasks, email: str):
+    bg.add_task(send_email, email)
+    return {"status": "queued"}</pre>
+For heavy jobs (ML inference): Celery + Redis broker.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-testing">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Testing</span><div class="q-text">Example of a test you wrote. What's your testing strategy?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">From Roof — testing auth endpoint:<br><pre>from fastapi.testclient import TestClient
+from app.main import app
+
+client = TestClient(app)
+
+def test_create_property_requires_auth():
+    r = client.post("/v1/properties/", json={...})
+    assert r.status_code == 401
+
+def test_create_property_success(auth_headers):
+    r = client.post("/v1/properties/",
+        json={"title": "Test", "price": 1000},
+        headers=auth_headers)
+    assert r.status_code == 201
+    assert r.json()["title"] == "Test"</pre>
+<strong>Strategy:</strong> unit tests for services, integration tests with a test DB (transactions that roll back), API tests with <code>TestClient</code>. Mock external calls with <code>respx</code>.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-oop">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">OOP</span><div class="q-text">Explain OOP principles. Inheritance vs composition.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Encapsulation:</strong> bundle data + methods, hide internals.<br><strong>Inheritance:</strong> child class inherits from parent — "is-a" relationship.<br><strong>Polymorphism:</strong> same interface, different implementations.<br><strong>Abstraction:</strong> hide implementation, expose only the interface.<br><br><strong>Inheritance vs Composition:</strong> Inheritance = "is-a" (Dog is-a Animal). Composition = "has-a" (Car has-a Engine). Rule: favor composition — more flexible, easier to test, avoids fragile hierarchies.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-docker">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Docker</span><div class="q-text">How do you Dockerize a FastAPI app?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Multi-stage build: <code>python:3.11-slim</code> base, copy <code>requirements.txt</code> first (layer caching), then app code. <code>uvicorn</code> as ASGI server. Secrets via env vars / Azure Key Vault, never baked in. Health check at <code>/health</code>. Non-root user, <code>.dockerignore</code>, pinned deps.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Docker</span><div class="q-text">How does Docker layer caching benefit CI/CD?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Each Dockerfile instruction creates a cached layer. If two engineers share a base image and copy <code>requirements.txt</code> before app code, the dependency installation layer is cached — only changed app code rebuilds.<br><br><strong>CI/CD benefit:</strong> builds go from 5 minutes to 30 seconds when only code changed. Requires: copy <code>requirements.txt</code> before source, same base image tag, push layer cache to registry (<code>--cache-from</code> in Docker Buildx).</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-be-behavioral">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">Tell me about yourself.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">"I'm a Full-Stack Developer specializing in Python backend — FastAPI, PostgreSQL, RESTful APIs. At Buguard I built APIs for security workflows. Before that I built Roof — 40+ FastAPI endpoints, JWT auth, RBAC, PostgreSQL + SQLAlchemy, Elasticsearch. What makes me different: I build frontends too, so I design APIs from both sides of the contract. I'm looking for a role where I can go deeper on backend architecture."</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">Tell me about a project. Biggest challenge? How do you debug?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Roof:</strong> "40+ endpoints, JWT + RBAC, PostgreSQL + Elasticsearch. Hardest part: RBAC design — different users (owner, agent, seeker) needed different access everywhere. Solved with a composable FastAPI dependency chain. Building the frontend meant API contracts were cleaner."<br><br><strong>Debug process:</strong> reproduce first → isolate → read full stack trace → check logs + recent changes → form hypothesis → fix → add regression test. Tools: <code>breakpoint()</code>, DB query logging, <code>EXPLAIN ANALYZE</code>.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">How do engineers collaborate with product/design?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">"I join design reviews early — before any code — to flag technical constraints before they become expensive. I translate designs to API contracts and review with product first. I ask 'why' about requirements, not just 'what', so I can sometimes suggest a simpler solution that achieves the same goal."</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ FRONTEND SWE ════════════════════ -->
+  <div class="track" id="track-frontend">
+    <div class="track-header">
+      <h2>Frontend SWE</h2>
+      <p>JavaScript · TypeScript · React/Vue · State Management · Performance · Testing · Version Control · Behavioral</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="fe-js">JavaScript</button>
+      <button class="cat-tab" data-cat="fe-ts">TypeScript</button>
+      <button class="cat-tab" data-cat="fe-frameworks">Frameworks</button>
+      <button class="cat-tab" data-cat="fe-state">State Management</button>
+      <button class="cat-tab" data-cat="fe-perf">Performance</button>
+      <button class="cat-tab" data-cat="fe-vcs">Version Control</button>
+      <button class="cat-tab" data-cat="fe-behavioral">Behavioral</button>
+    </div>
+
+    <div class="cat-group active" id="cat-fe-js">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">JavaScript</span><div class="q-text">Difference between sync and async in JavaScript.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Synchronous:</strong> code executes line by line, blocking — each operation waits for the previous one.<br><strong>Asynchronous:</strong> non-blocking — operations (API calls, timers, I/O) are dispatched and a callback/promise handles the result when ready, while other code continues.<br><br>Mechanisms: callbacks (old) → Promises (<code>.then/.catch</code>) → <code>async/await</code> (modern sugar over Promises). The event loop processes async results from the callback queue when the call stack is empty.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">JavaScript</span><div class="q-text">What's a closure? What is hoisting?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Closure:</strong> a function that remembers its outer scope after the outer function returns.<br><pre>function makeCounter() {
+  let count = 0;
+  return () => ++count;
+}
+const counter = makeCounter();
+counter(); // 1, counter(); // 2</pre>
+<strong>Hoisting:</strong> declarations move to the top of scope at compile time. <code>var</code> initializes as <code>undefined</code>. <code>function</code> declarations are fully hoisted. <code>let</code>/<code>const</code> are hoisted but not initialized (temporal dead zone — accessing before declaration throws ReferenceError).</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">JavaScript</span><div class="q-text">Event delegation. Local Storage vs Session Storage.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Event delegation:</strong> attach one handler to a parent instead of many to children. Works for dynamically added elements via event bubbling.<br><pre>document.querySelector('.list').addEventListener('click', e => {
+  if (e.target.matches('.item')) { /* handle */ }
+});</pre>
+<strong>localStorage:</strong> persists until cleared, ~5-10MB, all tabs.<br><strong>sessionStorage:</strong> cleared on tab close, per tab.<br><br>Never store tokens in either (XSS vulnerability) — use httpOnly cookies.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-ts">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">TypeScript</span><div class="q-text">Why TypeScript over JavaScript? Key features you use.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">TypeScript adds static typing — catches type errors at compile time, not runtime. Key features in practice: <code>interface</code>/<code>type</code> for API response shapes, <code>generics</code> for reusable components/services, <code>enums</code> for constants, <code>strict</code> mode to catch nullability bugs, and typed Axios service layers.<br><br>At Mahjoz: typed 75+ API integrations with Axios — catching shape mismatches at compile time saved hours of debugging. Pinia stores typed with generic state shapes.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">TypeScript</span><div class="q-text">Interface vs type alias. Generics example.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>interface:</strong> extendable, declarative merging (two declarations merge), best for object shapes.<br><strong>type:</strong> can represent unions, tuples, primitives — more flexible.<br><pre>// Interface (preferred for API shapes)
+interface User { id: number; name: string; }
+interface Admin extends User { role: 'admin'; }
+
+// Generic utility
+type ApiResponse&lt;T&gt; = { data: T; error: string | null; meta: { page: number } };
+const res: ApiResponse&lt;User[]&gt; = await fetchUsers();</pre></div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-frameworks">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Vue 3</span><div class="q-text">Vue 3 Composition API — why use it over Options API?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Composition API groups logic by <strong>feature</strong> instead of by option type (data/methods/computed). Advantages: better TypeScript support, logic reuse via composables (vs mixins), co-locate related code, smaller bundle with tree-shaking.<br><br>At Mahjoz: 56 Pinia stores + complex booking state would be unmaintainable with Options API. Composition API + <code>&lt;script setup&gt;</code> + typed Pinia made each module self-contained.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Vue 3</span><div class="q-text">How did you handle RTL/LTR bilingual support?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">At Mahjoz (Arabic/English): set <code>dir="rtl"/"ltr"</code> on <code>&lt;html&gt;</code> based on active locale. CSS logical properties (<code>margin-inline-start</code> instead of <code>margin-left</code>) for layout that flips automatically. i18n with <code>vue-i18n</code> — all strings in <code>ar.json</code>/<code>en.json</code>. RTL-aware Tailwind classes where needed. Tested by switching locale in dev and checking all 43 modules for layout breaks.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">React</span><div class="q-text">Key React hooks and when to use each.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><code>useState</code>: local component state.<br><code>useEffect</code>: side effects (data fetching, subscriptions, DOM manipulation). Cleanup function prevents memory leaks.<br><code>useCallback</code>: memoize functions to prevent child re-renders.<br><code>useMemo</code>: memoize expensive computations.<br><code>useRef</code>: persist values without re-rendering, access DOM nodes.<br><code>useContext</code>: consume context without prop drilling.<br><br>Rule: don't over-memoize — <code>useCallback</code>/<code>useMemo</code> have overhead too. Profile first.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-state">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">State Management</span><div class="q-text">How did you manage complex state at Mahjoz with Pinia?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">56 Pinia stores — one per feature domain (bookings, orders, notifications, auth, etc.). Each store: state typed with TypeScript interfaces, actions for async operations (API calls), getters for derived state.<br><br>Key patterns: normalized state (IDs as keys, not arrays) for O(1) lookup, optimistic updates for UI responsiveness, WebSocket events dispatched directly to relevant store actions. Stores composed (a booking store could import from a user store) — Pinia allows this cleanly unlike Vuex.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">State Management</span><div class="q-text">React Query vs manual fetch — when and why?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">React Query handles the full async data lifecycle: caching, background refetching, loading/error states, pagination, optimistic updates, and deduplication of concurrent requests.<br><br>Manual fetch: fine for fire-and-forget mutations or one-off calls. React Query: any server state you display — it eliminates 80% of <code>useEffect(fetch)</code> boilerplate and makes stale-while-revalidate trivial.<br><br>Rule: if you're storing API response in <code>useState</code>, you probably want React Query.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-perf">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Performance</span><div class="q-text">How do you optimize a slow frontend? What's code splitting?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Diagnose first:</strong> Chrome DevTools Performance tab, Lighthouse audit, Network tab for bundle sizes.<br><br><strong>Common fixes:</strong> code splitting (lazy-load routes/components), image optimization (WebP, lazy loading, proper dimensions), virtual scrolling for long lists, memoization for expensive renders, reduce re-renders (track with React DevTools), move large dependencies to CDN, eliminate unused CSS.<br><br><strong>Code splitting:</strong> split the JS bundle so users only download what they need. In Vue: <code>defineAsyncComponent(() => import('./Heavy.vue'))</code>. In React: <code>React.lazy()</code> + <code>Suspense</code>.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-vcs">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Version Control</span><div class="q-text">What's the point of a Pull Request? What's your Git workflow?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>PR purpose:</strong> code review, CI/CD gates, discussion, documentation, audit trail. Good PR: small focused change, clear description, link to issue, tests included, self-review before requesting.<br><br><strong>Git workflow (feature branch):</strong> <code>main</code> is always deployable → create <code>feature/my-feature</code> → commit with conventional commits (<code>feat:</code>, <code>fix:</code>, <code>chore:</code>) → open PR → review + fix → squash merge → delete branch. At Mahjoz: 43 modules meant branch naming convention was critical to avoid confusion.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fe-behavioral">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">Tell me about a complex frontend challenge you solved.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Use Mahjoz: "The booking module had real-time state — WebSocket updates, optimistic mutations, and 8+ filter states that all had to stay in sync. I designed a Pinia store with normalized state (IDs as keys), WebSocket listeners that dispatched directly to store actions, and optimistic updates that rolled back on API error. It went from a confusing tangled component to a predictable, testable data flow."</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">What kind of AI features are you building? Do you use FastAPI or Django?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>AI features:</strong> integrating LLM APIs (OpenAI, Anthropic) for text processing, building endpoints that stream AI responses to the frontend, structuring prompts for consistent structured outputs, and logging/monitoring AI calls with correlation IDs.<br><br><strong>FastAPI vs Django:</strong> "FastAPI for new APIs — async, fast, auto-docs. Django when a project needs admin panel or inherits existing Django ORM. On Roof I chose FastAPI because of the async requirements and AI API integrations."</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ UI DEVELOPER ════════════════════ -->
+  <div class="track" id="track-ui-dev">
+    <div class="track-header">
+      <h2>UI Developer</h2>
+      <p>HTML · CSS · JavaScript Basics · jQuery · Responsive Design · Accessibility · Behavioral</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="uid-html">HTML</button>
+      <button class="cat-tab" data-cat="uid-css">CSS</button>
+      <button class="cat-tab" data-cat="uid-js">JavaScript</button>
+      <button class="cat-tab" data-cat="uid-jquery">jQuery</button>
+      <button class="cat-tab" data-cat="uid-responsive">Responsive</button>
+      <button class="cat-tab" data-cat="uid-a11y">Accessibility</button>
+      <button class="cat-tab" data-cat="uid-behavioral">Behavioral</button>
+    </div>
+
+    <div class="cat-group active" id="cat-uid-html">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">HTML</span><div class="q-text">Difference between &lt;div&gt; and &lt;span&gt;. Explain semantic HTML.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><code>&lt;div&gt;</code> = block-level (full width, new line). <code>&lt;span&gt;</code> = inline (content-width, stays in flow).<br><br><strong>Semantic HTML</strong> uses elements that describe their meaning: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;time&gt;</code>. Benefits: accessibility (screen readers), SEO, readability. Anti-pattern: <code>&lt;div class="header"&gt;</code> when you mean <code>&lt;header&gt;</code>.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-css">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">CSS</span><div class="q-text">CSS Box Model. How does flexbox work?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Box Model</strong> (inside out): content → padding → border → margin. <code>box-sizing: border-box</code> includes padding + border in width/height (what you usually want).<br><br><strong>Flexbox:</strong> 1D layout. Container: <code>display: flex</code>, <code>flex-direction</code>, <code>justify-content</code> (main axis), <code>align-items</code> (cross axis), <code>gap</code>. Children: <code>flex: 1</code> (grow), <code>align-self</code>. For 2D use CSS Grid.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">CSS</span><div class="q-text">Center a div vertically and horizontally. inline vs block vs inline-block.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>/* Flexbox */
+.parent { display: flex; justify-content: center; align-items: center; }
+/* Grid */
+.parent { display: grid; place-items: center; }
+/* Absolute */
+.child { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }</pre>
+<strong>block:</strong> full width, new line, all box model properties work.<br><strong>inline:</strong> content-width, no new line, ignores width/height/vertical margin.<br><strong>inline-block:</strong> flows inline, but respects all box model properties — good for buttons, badges.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-js">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">JavaScript</span><div class="q-text">let vs var vs const. == vs ===.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>var:</strong> function-scoped, hoisted as <code>undefined</code>, can re-declare. Avoid.<br><strong>let:</strong> block-scoped, can reassign, temporal dead zone.<br><strong>const:</strong> block-scoped, must initialize, cannot reassign. Default choice.<br><br><strong>==</strong> coerces types: <code>0 == "0"</code> → true. <strong>===</strong> strict, no coercion: <code>0 === "0"</code> → false. Always use <code>===</code>.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-jquery">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">jQuery</span><div class="q-text">Why jQuery in 2025? Core patterns.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Honest answer: for new projects you wouldn't. But it exists in legacy codebases (WordPress, enterprise). At Vodafone/Advansys: likely maintaining jQuery-heavy existing systems.<br><br><strong>Core patterns:</strong><br><pre>$('#id')  // select by id
+$('.cls').toggleClass('active');
+$('#btn').on('click', fn);
+$.ajax({ url: '/api', method: 'GET', success: cb });
+$(document).on('click', '.dynamic-item', fn); // delegation</pre>
+<strong>$(document).ready()</strong> = DOM parsed, images may not be loaded. <strong>window.onload</strong> = everything loaded including images.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-responsive">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Responsive</span><div class="q-text">How do you ensure responsive design? Translate Figma to code?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Responsive:</strong> mobile-first CSS (<code>min-width</code> media queries), fluid layouts (<code>%</code>, <code>fr</code>), <code>clamp()</code> for fluid typography, responsive images (<code>srcset</code>, <code>picture</code>), touch targets min 44×44px, real device testing.<br><br><strong>Figma to code:</strong> extract design tokens first (colors, spacing, typography) as CSS variables. Build bottom-up (atoms → components). Use Dev Mode for exact values. Clarify hover/focus/error states early — they're often missing from Figma.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-a11y">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Accessibility</span><div class="q-text">How do you meet WCAG standards?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">WCAG 2.1 AA is the common target: color contrast 4.5:1 (normal text), keyboard navigation throughout, visible focus indicators, semantic HTML, ARIA labels where HTML isn't enough, <code>aria-live</code> for dynamic content, <code>alt</code> text on images, <code>&lt;label&gt;</code> for every input, form errors via <code>aria-describedby</code>.<br><br>Test with: axe browser extension, keyboard-only navigation, VoiceOver/NVDA screen reader.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-uid-behavioral">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">Why Vodafone/Advansys? Tight deadline project. Group disagreement on design.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Why Vodafone/Advansys:</strong> scale (millions of users — UI decisions have real impact), the challenge of modernizing legacy UIs without disrupting existing users, national-scale product impact.<br><br><strong>Tight deadline:</strong> scope down intelligently, not just work faster. Communicate risks early. Ship something working then iterate.<br><br><strong>Group disagreement:</strong> reframe from opinions to criteria — "Does this meet the user's needs?" Bring data (analytics, usability tests). Propose A/B testing when genuinely uncertain.</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ UI/UX ════════════════════ -->
+  <div class="track" id="track-uiux">
+    <div class="track-header">
+      <h2>UI/UX Design</h2>
+      <p>Usability & Accessibility · Tools & Techniques · Behavioural · Advanced · Senior Role</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="ux-usability">Usability</button>
+      <button class="cat-tab" data-cat="ux-tools">Tools</button>
+      <button class="cat-tab" data-cat="ux-behavioral">Behavioral</button>
+      <button class="cat-tab" data-cat="ux-advanced">Advanced</button>
+      <button class="cat-tab" data-cat="ux-senior">Senior</button>
+    </div>
+    <div class="cat-group active" id="cat-ux-usability">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Usability</span><div class="q-text">What makes a UI/UX design accessible? Common usability principles?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Accessible design:</strong> 4.5:1 color contrast, keyboard-navigable, screen reader support (semantic HTML, ARIA), focus indicators, alt text, captions for video, 16px+ body text, 44×44px touch targets, never use color alone to convey meaning.<br><br><strong>Usability principles (Nielsen's 10):</strong> visibility of system status, match real-world conventions, user control and freedom, consistency, error prevention, recognition over recall, flexibility for novice/expert, aesthetic minimalism, error recovery, help & documentation.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Usability</span><div class="q-text">What are heuristic principles in UX design?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Heuristic evaluation uses established principles (Nielsen's 10) to find usability issues without user testing. Evaluators independently assess the UI against each heuristic, rate severity (0–4), compile findings.<br><br>Process: gather evaluators (3–5 ideal), evaluate independently, consolidate, prioritize by severity × frequency. Good for early reviews and design audits of existing products.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ux-tools">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Tools</span><div class="q-text">A/B testing. Microinteractions.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>A/B testing:</strong> show two versions to different user segments, measure on defined metric (conversion, click-through). Process: hypothesis → success metric → split traffic → statistical significance → implement winner. Test one variable at a time.<br><br><strong>Microinteractions:</strong> small moments of feedback — button press, loading spinner, toggle switch, form validation. 4 parts (Saffer): trigger → rules → feedback → loops/modes. Done well: invisible but missed when absent.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ux-behavioral">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Behavioral</span><div class="q-text">Challenging project. Design critiques. Prioritization. User-centered design.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Design critique:</strong> separate work from self. Listen fully. Ask "why" before responding. Distinguish taste (push back with rationale) from usability issues (act on them).<br><br><strong>Prioritization:</strong> impact vs effort matrix. Prioritize flows blocking core tasks. Use data: where do users drop off?<br><br><strong>User-centered:</strong> research first (interviews, analytics, heatmaps), test prototypes with 5 real users (catches 85% of issues — Nielsen), iterate on findings not opinions. In constrained environments: guerrilla testing, support ticket analysis.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ux-advanced">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Advanced</span><div class="q-text">Material Design vs HIG. Cognitive psychology in UX. Information Architecture.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Material Design (Google):</strong> elevation/shadows, bold colors, cross-platform. <strong>HIG (Apple):</strong> feels native to iOS/macOS, translucency, system fonts, strong navigation patterns. Follow HIG for iOS apps.<br><br><strong>Cognitive psychology:</strong> working memory limits (7±2 chunks) → progressive disclosure. Mental models → match UI to real-world metaphors. Gestalt (proximity, similarity, closure) → how users group elements.<br><br><strong>Information Architecture:</strong> how content is organized so users can find it. Methods: card sorting, tree testing, user flows, sitemaps. Good IA is invisible.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ux-senior">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Senior</span><div class="q-text">Progressive disclosure. Designing for novice and expert users. Conflicting stakeholder feedback.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Progressive disclosure:</strong> show only what's needed at each step, reveal complexity gradually. Reduces cognitive overload for new users, allows experts to go deeper. Examples: Gmail's "More options", iOS Settings advanced section.<br><br><strong>Novice + expert:</strong> simple default path + discoverable power features. Keyboard shortcuts + tooltips, "simple mode" toggle, defaults that work for 80% + customization for the rest.<br><br><strong>Conflicting stakeholders:</strong> bring evidence over opinions. Map feedback to business goals. Use rapid prototyping + testing to resolve "we don't know" disagreements. Document decisions to prevent them resurfacing.</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ ML / DATA SCIENCE ════════════════════ -->
+  <div class="track" id="track-ml">
+    <div class="track-header">
+      <h2>ML / Data Science</h2>
+      <p>Pipelines & Data Leakage · Pandas · NLP</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="ml-pipelines">Pipelines</button>
+      <button class="cat-tab" data-cat="ml-pandas">Pandas</button>
+      <button class="cat-tab" data-cat="ml-nlp">NLP</button>
+    </div>
+    <div class="cat-group active" id="cat-ml-pipelines">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Pipeline</span><div class="q-text">In train.py you use Pipeline. What problem does it solve, and what is data leakage?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>sklearn Pipeline</strong> chains preprocessing + model into one object: reproducibility, prevents data leakage, simplifies cross-validation, enables <code>pipeline.predict()</code> on raw data.<br><br><strong>Data leakage:</strong> information from test set (future data) influences training → inflated metrics that don't generalize. Classic mistake: fit scaler on entire dataset before splitting → test statistics contaminate training.<br><br>Pipeline fixes this: fit only on training data, transform consistently using training statistics.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ml-pandas">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Pandas</span><div class="q-text">Difference between .loc and .iloc in Pandas.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>.loc:</strong> label-based — select by index label or column name. <code>df.loc[2, 'name']</code> = row with label 2.<br><strong>.iloc:</strong> integer position-based. <code>df.iloc[2, 0]</code> = always 3rd row, 1st column.<br><br>Common gotcha: if index is 0,1,2... they look the same. After filtering/resetting, indices may not match positions — that's when the distinction matters.</div></div>
+    </div>
+    <div class="cat-group" id="cat-ml-nlp">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">NLP</span><div class="q-text">Top 3 most common words from AG News dataset excluding stopwords.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>from collections import Counter
+from nltk.corpus import stopwords
+import nltk; nltk.download('stopwords')
+
+stop_words = set(stopwords.words('english'))
+all_words = ' '.join(df['text']).lower().split()
+filtered = [w for w in all_words if w.isalpha() and w not in stop_words]
+top_3 = Counter(filtered).most_common(3)</pre>
+For scale (1M+ rows): use <code>CountVectorizer</code> from sklearn or process in chunks. Add lemmatization for cleaner results.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">NLP</span><div class="q-text">What is TF-IDF? Naive Bayes vs Logistic Regression for text classification.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>TF-IDF</strong> = Term Frequency × Inverse Document Frequency. TF: how often a word appears in a doc. IDF: penalizes words appearing in many docs. Result: words important to one doc but rare across all docs score highest.<br><br><strong>Naive Bayes:</strong> generative, assumes feature independence. Fast, works well with small data and high-dimensional sparse features.<br><strong>Logistic Regression:</strong> discriminative, better accuracy with more data, handles correlated features, more interpretable.<br><br>Practice: NB is a great baseline; LR usually wins with sufficient data.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+</div>
+
+<footer>Heba Allah Hashim · Interview Prep 2026</footer>
+
+<script>
+// Nav burger
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Track switching
+document.querySelectorAll('.track-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.track-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.track').forEach(t => t.classList.remove('active'));
+    pill.classList.add('active');
+    const track = document.getElementById('track-' + pill.dataset.track);
+    if (track) { track.classList.add('active'); }
+  });
+});
+
+// Category tabs — scoped per track
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const track = tab.closest('.track');
+    track.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    track.querySelectorAll('.cat-group').forEach(g => g.classList.remove('active'));
+    tab.classList.add('active');
+    const target = document.getElementById('cat-' + tab.dataset.cat);
+    if (target) target.classList.add('active');
+  });
+});
+
+// Q&A accordion
+function toggle(card) {
+  const ans = card.querySelector('.q-answer');
+  const tog = card.querySelector('.q-toggle');
+  const isOpen = ans.classList.contains('open');
+  const group = card.closest('.cat-group');
+  group.querySelectorAll('.q-answer.open').forEach(a => a.classList.remove('open'));
+  group.querySelectorAll('.q-card.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) { ans.classList.add('open'); card.classList.add('open'); }
+}
+</script>
+</body>
+</html>
