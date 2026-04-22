@@ -1,42 +1,75 @@
-# Heba Allah Hashim
+<div align="center">
+  
+  ### Hello There, I'm Heba Allah 👋  
+  ![image](https://github.com/hebamuh68/hebamuh68/assets/69214737/efb4103b-054b-4b80-91d9-d221323617b7)
 
-**Full-Stack Developer** | Python | FastAPI | Django | React | Next.js | Vue.js
+  [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
+  [![](https://img.shields.io/github/followers/hebamuh68?label=GitHub%20Followers)](https://github.com/hebamuh68/hebamuh68)
+  
+  Generally interested in Software Engineering, Starting from Design and <br> Ending with...hmmm...well there's no end!<br><br>
+</div>
 
-I build scalable web applications end-to-end — from REST APIs and database design to responsive, production-ready frontends.
 
----
 
-## What I Work With
+<!-- ----------  My GitHub Content  ---------- -->
 
-**Backend:** Python, FastAPI, Django, PostgreSQL, SQLAlchemy, Elasticsearch, JWT, Docker, Celery, Redis
+<table>
+<tr>
+<td valign="top" width="50%">
 
-**Frontend:** React, Next.js, Vue 3, React Query, Pinia, Tailwind CSS
+<h3>💻 SWE</h3>
+<h4>Open Source</h4>
 
-**Tools:** Docker, Git, Linux, CI/CD, Vercel
+- <a href="https://github.com/hebamuh68/mini-editor">@hebamuh28/mini-editor (component for Vue 3 applications)</a> – Vue 3 · Tailwind CSS  
 
----
+<h4>Full-Stack Development</h4>
 
-## Featured Projects
+- <a href="https://github.com/hebamuh68/VueJS/tree/main/Authentecation">Authentication</a> – Vue 3 · Django REST Framework  
+- <a href="https://github.com/hebamuh68/Go-lang/tree/main/GFS/GFS%20v1.3.html">Student System – Master/Slave</a> – Go · MySQL  
+- <a href="https://github.com/hebamuh68/Auto_Diet/tree/main">Auto Diet</a> – Django · MongoDB  
+- <a href="https://github.com/hebamuh68/MongoDB">Student System</a> – Django · MongoDB  
 
-### [Roof](https://github.com/hebamuh68/Roof) — Full-Stack Rental Platform
-Full-stack apartment rental platform with FastAPI backend (40+ endpoints, JWT auth, RBAC, Elasticsearch, PostgreSQL) and Vue 3 frontend (5 languages, RTL support, real-time messaging).
+<h4>Back-End Development</h4>
 
-### [Mini Editor](https://www.npmjs.com/package/@hebamuh28/mini-editor) — Published npm Package
-Rich text editor component built with Vue 3 + TypeScript. RTL/LTR support, media uploads, customizable toolbars.
+- <a href="https://github.com/hebamuh68/Real-Time-Collaborative-Notes-App">Real-Time Collaborative Notes API
+</a> – FastAPI · PostgreSQL · asyncpg · Pydantic · WebSockets   
+- <a href="https://github.com/hebamuh68/task_management_api">Task Management API</a> – FastAPI · SQLModel · Alembic · Pydantic · Docker   
 
----
+<h4>Front-End Development</h4>
 
-## Experience
+- <a href="https://github.com/hebamuh68/Jack-Restaurant">Jack – Restaurant</a> – HTML · Tailwind CSS  
+- <a href="https://github.com/hebamuh68/Turo">Turo – Website</a> – HTML · CSS · Bootstrap  
+- <a href="https://github.com/hebamuh68/Fork">Fork – Restaurant Site</a> – HTML · CSS · JS  
+- <a href="https://github.com/hebamuh68/ITI-Projects">ITI Front-End Track Projects</a>  
+- <a href="https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md">JS for Beginners – Projects</a>  
 
-- **Frontend Developer** @ Mahjoz — Large-scale SaaS dashboard, 43+ modules, 75+ APIs (Vue 3, TypeScript, Pinia)
-- **Backend Developer** @ Buguard — Security tools & REST APIs (FastAPI, Python, Docker)
-- **UI Developer** @ RayaGate — Startup UI development (Vue.js, Tailwind CSS)
+<h4>UI / UX</h4>
 
----
+- <a href="https://www.behance.net/hebamohamed3">Portfolio on Behance</a>  
+- <a href="https://young-archer-ce0.notion.site/UX-ec0d515875f7481f9200c5fc867310ad">Google UX Design Specialization Notes</a>  
 
-## Get in Touch
+</td>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/heba333/)
-[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://heba28.medium.com/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:hebaallah.hashim68@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-4a7c59?style=flat&logo=google-chrome&logoColor=white)](https://hebamuh68.github.io/hebamuh68/)
+<td valign="top" width="50%">
+
+<h3>🧠 Bio / Neuro</h3>
+
+<h4>Neuroinformatics</h4>
+
+- <a href="https://github.com/hebamuh68/Laboratory-of-Neuroinformatics">Neuroinformatics Laboratory Challenge Solutions</a> – Python · neuron · LFPy · Data Analysis  
+- <a href="https://github.com/hebamuh68/Neuroscience-and-Neuroimaging-Specialization">Neuroscience &amp; Neuroimaging Specialization</a> – R · Neuroimaging  
+
+<h4>Bioinformatics</h4>
+
+- <a href="https://github.com/hebamuh68/Disease-Data-Bank">Disease Data Bank (DDB)</a> – Django · MongoDB · Data Analysis  
+- <a href="https://github.com/hebamuh68/Go-lang/tree/main/DDB%20Project">Peptide Identification</a> – Go · MySQL · Git · HTML · CSS  
+- <a href="https://github.com/hebamuh68/57357-R-programming-for-Researchers">57357 R Programming for Researchers</a> –  R · Data wrangling . Biostat inference · Data visualization · Correlation and regression · PCA/PLS · ROC · Survival analysis
+
+</td>
+
+</tr>
+</table>
+
+
+
+   
