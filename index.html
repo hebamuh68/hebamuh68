@@ -247,75 +247,6 @@ section {
   border-radius: 50%;
   background: var(--brown-light);
 }
-
-/* ── Blog section ── */
-.blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-.blog-card {
-  padding: 1.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--text);
-  transition: all 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-.blog-card:hover {
-  border-color: var(--brown-light);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(59, 47, 32, 0.06);
-}
-.blog-card .blog-tag {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--green);
-  background: var(--green-light);
-  padding: 0.2rem 0.6rem;
-  border-radius: 100px;
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  align-self: flex-start;
-}
-.blog-card h3 {
-  font-size: 0.97rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-.blog-card h3 .arrow { font-size: 1.1rem; color: var(--brown-light); flex-shrink: 0; transition: transform 0.3s, color 0.3s; }
-.blog-card:hover h3 .arrow { transform: translate(3px, -3px); color: var(--green); }
-.blog-card p { font-size: 0.83rem; color: var(--text-muted); flex: 1; line-height: 1.6; }
-/* Interview prep card — full width, special treatment */
-.blog-card.featured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  background: var(--green-light);
-  border-color: #c4d9bc;
-}
-.blog-card.featured:hover { border-color: var(--green); }
-.blog-card.featured .featured-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-  line-height: 1;
-}
-.blog-card.featured .featured-body { flex: 1; }
-.blog-card.featured .blog-tag { background: rgba(74,124,89,0.15); }
-.blog-card.featured h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
-.blog-card.featured p { font-size: 0.85rem; }
-.blog-card.featured .featured-meta {
-  font-size: 0.75rem;
-  color: var(--green);
-  margin-top: 0.75rem;
-  font-weight: 500;
-}
-
 .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 .contact-link {
   display: inline-flex;
@@ -334,6 +265,8 @@ section {
 .contact-link:hover { border-color: var(--green); color: var(--green); }
 .contact-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(--brown-light); }
+footer a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; opacity: 0.75; transition: opacity 0.2s, color 0.2s; }
+footer a:hover { opacity: 1; color: var(--green); }
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
@@ -347,8 +280,6 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
   nav .links.open { right: 0; }
   nav .links a { font-size: 1rem; }
   .projects-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-card.featured { flex-direction: column; gap: 1rem; }
   .exp-item { flex-direction: column; gap: 0.25rem; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -367,7 +298,6 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
     <a href="#about">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
     <a href="Heba_Allah_Hashim_CV.pdf" download class="nav-btn">Download CV</a>
   </div>
@@ -492,41 +422,6 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
 
 <section><div class="divider"></div></section>
 
-<!-- ── Blog ── -->
-<section id="blog" class="fade-in">
-  <div class="section-label">Blog</div>
-  <div class="section-title">Writing & Resources</div>
-  <div class="blog-grid">
-
-    <!-- Featured: Interview Prep -->
-    <a href="blog/prep/" class="blog-card featured">
-      <div class="featured-icon">📋</div>
-      <div class="featured-body">
-        <span class="blog-tag">Interview Prep</span>
-        <h3>Full Interview Preparation Guide <span class="arrow">&nearr;</span></h3>
-        <p>A comprehensive, categorized question bank covering Backend SWE, Frontend SWE, UI Developer, UI/UX Design, and ML/Data Science — with detailed answers for each.</p>
-        <div class="featured-meta">5 tracks · 100+ questions · Updated April 2026</div>
-      </div>
-    </a>
-
-    <!-- External blog links -->
-    <a href="https://dev.to/heba_allah" target="_blank" class="blog-card">
-      <span class="blog-tag">dev.to</span>
-      <h3>Articles on Dev.to <span class="arrow">&nearr;</span></h3>
-      <p>Technical writing on Python, Vue.js, and full-stack development patterns.</p>
-    </a>
-
-    <a href="https://heba28.medium.com/" target="_blank" class="blog-card">
-      <span class="blog-tag">Medium</span>
-      <h3>Posts on Medium <span class="arrow">&nearr;</span></h3>
-      <p>Deep dives into backend architecture, API design, and developer workflows.</p>
-    </a>
-
-  </div>
-</section>
-
-<section><div class="divider"></div></section>
-
 <section id="contact" class="fade-in">
   <div class="section-label">Contact</div>
   <div class="section-title">Let's Connect</div>
@@ -550,7 +445,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
   </div>
 </section>
 
-<footer>Heba Allah Hashim</footer>
+<footer>Heba Allah Hashim &nbsp;·&nbsp; <a href="blog/prep/index.html">Interview Prep</a></footer>
 
 <script>
 const observer = new IntersectionObserver(

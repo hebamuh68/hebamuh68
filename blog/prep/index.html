@@ -171,7 +171,6 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
     <a href="../../#about">Skills</a>
     <a href="../../#projects">Projects</a>
     <a href="../../#experience">Experience</a>
-    <a href="../../#blog" class="active">Blog</a>
     <a href="../../#contact">Contact</a>
     <a href="../../Heba_Allah_Hashim_CV.pdf" download class="nav-btn">Download CV</a>
   </div>
@@ -180,7 +179,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
 
 <div class="page-wrap">
   <div class="page-header">
-    <a href="../../#blog" class="back-link">← Back to Blog</a>
+    <a href="../../" class="back-link">← Back to Portfolio</a>
     <div class="section-label">Interview Prep</div>
     <h1>Full Interview Preparation Guide</h1>
     <p>Categorized question bank with detailed answers — covering backend, frontend, UI/UX, and ML tracks.</p>
@@ -193,13 +192,15 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
     <button class="track-pill" data-track="ui-dev"><span class="track-dot"></span>UI Developer</button>
     <button class="track-pill" data-track="uiux"><span class="track-dot"></span>UI/UX Design</button>
     <button class="track-pill" data-track="ml"><span class="track-dot"></span>ML / Data Science</button>
+    <button class="track-pill" data-track="django"><span class="track-dot"></span>Django</button>
+    <button class="track-pill" data-track="fullstack"><span class="track-dot"></span>Full-Stack</button>
   </div>
 
   <!-- ════════════════════ BACKEND SWE ════════════════════ -->
   <div class="track active" id="track-backend">
     <div class="track-header">
       <h2>Backend SWE</h2>
-      <p>AI · Network · API · Data Structures · Database · Python · Django · FastAPI · Testing · OOP · Docker · Behavioral</p>
+      <p>AI · Network · API · Data Structures · Database · Python · FastAPI · Testing · OOP · Docker · Behavioral</p>
     </div>
     <div class="cat-tabs">
       <button class="cat-tab active" data-cat="be-ai">AI</button>
@@ -208,7 +209,6 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
       <button class="cat-tab" data-cat="be-ds">Data Structures</button>
       <button class="cat-tab" data-cat="be-db">Database</button>
       <button class="cat-tab" data-cat="be-python">Python</button>
-      <button class="cat-tab" data-cat="be-django">Django</button>
       <button class="cat-tab" data-cat="be-fastapi">FastAPI</button>
       <button class="cat-tab" data-cat="be-testing">Testing</button>
       <button class="cat-tab" data-cat="be-oop">OOP</button>
@@ -245,7 +245,7 @@ async def summarize(text: str):
     </div>
 
     <div class="cat-group" id="cat-be-ds">
-      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Data Structures</span><div class="q-text">Difference between graph and trees.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A <strong>tree</strong> is a connected, acyclic graph with a root node and parent-child hierarchy. A <strong>graph</strong> is a general structure — can have cycles, multiple components, and directionality. Every tree is a graph, not every graph is a tree. Trees for hierarchical data; graphs for networks.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Data Structures</span><div class="q-text">What is the difference between a graph and a tree?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A <strong>tree</strong> is a connected, acyclic graph with a root node and parent-child hierarchy. A <strong>graph</strong> is a general structure — can have cycles, multiple components, and directionality. Every tree is a graph, not every graph is a tree. Trees for hierarchical data; graphs for networks.</div></div>
       <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Data Structures</span><div class="q-text">Array vs Linked List. Dynamic Programming vs Greedy.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Array:</strong> contiguous memory, O(1) random access, O(n) insert/delete.<br><strong>Linked List:</strong> scattered nodes with pointers, O(n) access, O(1) insert/delete at known node.<br><br><strong>Greedy:</strong> locally optimal choice at each step. Fast, works when problem has greedy choice property.<br><strong>DP:</strong> overlapping subproblems, memoize each. Guarantees global optimum. More expensive but correct where greedy fails.</div></div>
       <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Problem Solving</span><div class="q-text">You have 1 million records and need to find duplicates efficiently.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Use a <strong>hash set</strong>: iterate once — if item in set it's a duplicate, else add it. O(n) time, O(n) space.<br><br>Alternatives: sort first O(n log n) then scan adjacent — O(1) extra space. In DB: <code>GROUP BY + HAVING COUNT(*) > 1</code>. For data beyond memory: hash partitioning.</div></div>
     </div>
@@ -292,24 +292,9 @@ def timer(func):
     return wrapper</pre>
 FastAPI uses decorators for all route registration.</div></div>
       <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Python</span><div class="q-text">What does SOLID stand for?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>S</strong>ingle Responsibility — one class, one job.<br><strong>O</strong>pen/Closed — open for extension, closed for modification.<br><strong>L</strong>iskov Substitution — subclasses replace parent without breaking behavior.<br><strong>I</strong>nterface Segregation — don't force unused interface implementations.<br><strong>D</strong>ependency Inversion — depend on abstractions, not concrete implementations.<br><br>In FastAPI: DI via <code>Depends()</code> is literally the D in SOLID.</div></div>
-    </div>
-
-    <div class="cat-group" id="cat-be-django">
-      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Django</span><div class="q-text">What is Django REST Framework and when to use it vs FastAPI?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>DRF:</strong> batteries-included — Serializers, ViewSets, Routers, browsable API, Token/JWT auth, permissions. Best when: existing Django project, need admin panel, standard CRUD.<br><br><strong>FastAPI:</strong> async-first, auto OpenAPI docs, Pydantic validation, faster performance. Best for: microservices, AI/ML APIs, new projects where speed matters.<br><br>Your answer: "I use both — Django for projects needing admin + ORM power, FastAPI for new APIs (like Roof) where async and performance matter."</div></div>
-      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Django</span><div class="q-text">How to build authentication with DRF?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-}
-# urls.py
-urlpatterns = [
-    path('api/token/', TokenObtainPairView.as_view()),
-    path('api/token/refresh/', TokenRefreshView.as_view()),
-]</pre>
-POST credentials to <code>/api/token/</code> → get access + refresh tokens. Send <code>Authorization: Bearer &lt;token&gt;</code> on protected routes.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">04</span><div class="q-inner"><span class="q-tag">Python</span><div class="q-text">How does Python run your code? What is a runtime error vs a syntax error?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>How Python runs code:</strong> Python first parses your file and compiles it to bytecode (<code>.pyc</code>). Then the CPython interpreter executes that bytecode line by line — you don't compile manually, this is automatic.<br><br><strong>Syntax error:</strong> caught at parse time, before any code runs.<br><pre>if True  # SyntaxError: missing colon</pre><strong>Runtime error:</strong> code is syntactically valid but fails during execution.<br><pre>name = None
+print(name.upper())   # AttributeError at runtime
+x = 1 / 0             # ZeroDivisionError at runtime</pre><strong>Key fact:</strong> Python is dynamically typed — type errors only surface at runtime, not before execution like in Java or TypeScript.</div></div>
     </div>
 
     <div class="cat-group" id="cat-be-fastapi">
@@ -562,6 +547,196 @@ filtered = [w for w in all_words if w.isalpha() and w not in stop_words]
 top_3 = Counter(filtered).most_common(3)</pre>
 For scale (1M+ rows): use <code>CountVectorizer</code> from sklearn or process in chunks. Add lemmatization for cleaner results.</div></div>
       <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">NLP</span><div class="q-text">What is TF-IDF? Naive Bayes vs Logistic Regression for text classification.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>TF-IDF</strong> = Term Frequency × Inverse Document Frequency. TF: how often a word appears in a doc. IDF: penalizes words appearing in many docs. Result: words important to one doc but rare across all docs score highest.<br><br><strong>Naive Bayes:</strong> generative, assumes feature independence. Fast, works well with small data and high-dimensional sparse features.<br><strong>Logistic Regression:</strong> discriminative, better accuracy with more data, handles correlated features, more interpretable.<br><br>Practice: NB is a great baseline; LR usually wins with sufficient data.</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ DJANGO ════════════════════ -->
+  <div class="track" id="track-django">
+    <div class="track-header">
+      <h2>Django</h2>
+      <p>Settings · Views &amp; Endpoints · ORM · Django REST Framework</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="pd-settings">Settings</button>
+      <button class="cat-tab" data-cat="pd-views">Views</button>
+      <button class="cat-tab" data-cat="pd-orm">ORM</button>
+      <button class="cat-tab" data-cat="pd-drf">DRF</button>
+    </div>
+
+    <div class="cat-group active" id="cat-pd-settings">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Settings</span><div class="q-text">What is ALLOWED_HOSTS in settings.py? Write the syntax.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A list of hostnames your Django app is allowed to serve. Requests from any host not in the list get a 400 error. This protects against HTTP Host header attacks.<br><pre># settings.py
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mysite.com']
+
+# All hosts — never use in production
+ALLOWED_HOSTS = ['*']</pre>When <code>DEBUG = False</code>, ALLOWED_HOSTS must be set. When <code>DEBUG = True</code>, Django ignores it (localhost always works).</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Settings</span><div class="q-text">What does DEBUG = True vs DEBUG = False do?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre># settings.py
+DEBUG = True   # development
+DEBUG = False  # production</pre><strong>DEBUG = True:</strong> Django shows a detailed error page with full stack trace, local variables, and request info. Static files are served by Django automatically.<br><br><strong>DEBUG = False:</strong> No error details exposed to users (generic 500 page). <code>ALLOWED_HOSTS</code> must be set. Django does NOT serve static files — you need WhiteNoise, nginx, or a CDN.<br><br>Rule: always <code>False</code> in production. Never commit <code>True</code> to a live server.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-pd-views">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Views</span><div class="q-text">What are the different ways to create an API endpoint in Django?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Three main approaches in DRF:<br><br><strong>1. Function-Based View (FBV)</strong> — use <code>@api_view</code> decorator:<br><pre>@api_view(['GET', 'POST'])
+def book_list(request):
+    if request.method == 'GET':
+        books = Book.objects.all()
+        return Response(BookSerializer(books, many=True).data)</pre><strong>2. Class-Based View (CBV)</strong> — extend <code>APIView</code>:<br><pre>class BookList(APIView):
+    def get(self, request):
+        books = Book.objects.all()
+        return Response(BookSerializer(books, many=True).data)</pre><strong>3. ModelViewSet + Router</strong> — auto-generates all CRUD URLs:<br><pre>class BookViewSet(ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+router = DefaultRouter()
+router.register('books', BookViewSet)
+urlpatterns += router.urls</pre></div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">Views</span><div class="q-text">What is the difference between function-based views and class-based views?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Function-Based View (FBV):</strong> a plain function decorated with <code>@api_view</code>. You handle each HTTP method with if/else. Simple to read, easy to debug, good for custom logic.<br><br><strong>Class-Based View (CBV):</strong> a class where each method name matches the HTTP verb (<code>get</code>, <code>post</code>, <code>put</code>, <code>delete</code>). Less if/else, more organized for standard CRUD. DRF generic views (<code>ListCreateAPIView</code>, <code>RetrieveUpdateDestroyAPIView</code>) let you write almost no code:<br><pre>class BookDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer</pre>Rule: FBV for custom logic. CBV for standard CRUD — less repetition.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">Views</span><div class="q-text">What is the difference between a query parameter and a request body? When do you prefer the body?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>Query parameter:</strong> appended to the URL after <code>?</code>. Visible in the URL, can be bookmarked, used for filtering or pagination on GET requests.<br><pre>GET /books/?genre=fiction&amp;page=2
+request.query_params.get('genre')  # access in DRF</pre><strong>Request body (form data / JSON):</strong> sent inside the HTTP request body, not visible in the URL. Used when creating or updating a resource (POST, PUT, PATCH).<br><pre>POST /books/
+Body: {"title": "1984", "author_id": 5}
+request.data.get('title')  # access in DRF</pre><strong>When to prefer the body:</strong> any time you're sending data to create or update something, or when the data is sensitive (password, payment info), large, or complex (nested objects). Never put sensitive data in query params — they end up in server logs and browser history.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-pd-orm">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">ORM</span><div class="q-text">Write the syntax for a ForeignKey (one-to-many) and a ManyToManyField in Django models.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre>class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+
+    # One-to-many: many books → one author
+    author = models.ForeignKey(
+        Author,
+        on_delete=models.CASCADE,
+        related_name='books'
+    )
+
+    # Many-to-many: a book can have many genres
+    genres = models.ManyToManyField('Genre', blank=True)
+
+class Genre(models.Model):
+    name = models.CharField(max_length=50)</pre>Access:<br><pre>book.author           # the author object
+author.books.all()    # all books by this author
+book.genres.all()     # all genres of this book
+book.genres.add(genre_obj)  # add a genre</pre></div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">ORM</span><div class="q-text">What is the difference between .get() and .filter()?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre># .get() — returns one object or raises an exception
+book = Book.objects.get(id=1)
+# Raises DoesNotExist if not found
+# Raises MultipleObjectsReturned if more than one match
+
+# .filter() — returns a QuerySet (empty, one, or many)
+books = Book.objects.filter(genre='fiction')  # QuerySet
+book = Book.objects.filter(id=1).first()      # safe single fetch</pre><strong>Rule:</strong> use <code>.get()</code> only when you're certain exactly one record exists (e.g., by primary key or unique field). Use <code>.filter()</code> for anything else — it never raises an exception for zero or many results.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">ORM</span><div class="q-text">What does get_or_create() do? Write the syntax.</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Returns the existing object if found, or creates it if not. Always returns a tuple: <code>(object, created)</code> where <code>created</code> is a boolean.<br><pre>author, created = Author.objects.get_or_create(
+    name='George Orwell',           # lookup field
+    defaults={'bio': 'British novelist'}  # only used when creating
+)
+
+if created:
+    print("New author added")
+else:
+    print("Author already existed")</pre><code>defaults</code> are only applied on creation, not used in the lookup. This is a single atomic database query — safer than doing <code>.get()</code> then <code>.create()</code> separately, which could fail under concurrent requests.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-pd-drf">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">DRF</span><div class="q-text">What is Django REST Framework and when would you use it over FastAPI?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><strong>DRF</strong> is batteries-included: Serializers, ViewSets, Routers, browsable API, Token/JWT auth, permissions system. Built on top of Django so you get the admin panel and ORM for free.<br><br><strong>Use DRF when:</strong> you're already on Django, need the admin panel, or building standard CRUD with minimal setup.<br><strong>Use FastAPI when:</strong> you need async performance, building microservices or AI/ML APIs, or starting a new project where speed matters.<br><br>Short answer: "DRF for projects that benefit from Django's ecosystem. FastAPI for new async APIs — like Roof, where I needed async endpoints and AI integrations."</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">02</span><div class="q-inner"><span class="q-tag">DRF</span><div class="q-text">How do you set up JWT authentication in DRF?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre># settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+# urls.py
+urlpatterns = [
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
+]</pre>POST credentials to <code>/api/token/</code> → get access + refresh tokens. Send <code>Authorization: Bearer &lt;token&gt;</code> on protected routes. Install: <code>pip install djangorestframework-simplejwt</code>.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">03</span><div class="q-inner"><span class="q-tag">DRF</span><div class="q-text">What is a ModelViewSet? What endpoints does it generate automatically?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A <code>ModelViewSet</code> combines all CRUD actions into one class. Register it with a Router and it auto-creates all URLs.<br><pre># views.py
+class BookViewSet(ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+# urls.py
+router = DefaultRouter()
+router.register('books', BookViewSet)
+urlpatterns += router.urls</pre>Auto-generated routes:<br><ul><li><code>GET /books/</code> — list all</li><li><code>POST /books/</code> — create</li><li><code>GET /books/{id}/</code> — retrieve one</li><li><code>PUT /books/{id}/</code> — full update</li><li><code>PATCH /books/{id}/</code> — partial update</li><li><code>DELETE /books/{id}/</code> — delete</li></ul>You can restrict actions: <code>http_method_names = ['get', 'post']</code> or use <code>ReadOnlyModelViewSet</code>.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">04</span><div class="q-inner"><span class="q-tag">DRF</span><div class="q-text">What is the difference between Serializer and ModelSerializer?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Both convert between Python objects and JSON. <code>ModelSerializer</code> auto-generates fields from a model.<br><br><strong>Serializer</strong> — define all fields manually, also define <code>create()</code> and <code>update()</code> yourself:<br><pre>class BookSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    title = serializers.CharField(max_length=200)
+
+    def create(self, validated_data):
+        return Book.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.title = validated_data.get('title', instance.title)
+        instance.save()
+        return instance</pre><strong>ModelSerializer</strong> — auto-generates fields and <code>create()</code>/<code>update()</code> from the model:<br><pre>class BookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = ['id', 'title', 'author']
+        # or: fields = '__all__'</pre>Use <code>ModelSerializer</code> for standard model CRUD. Use plain <code>Serializer</code> for non-model data (like a login form) or complex custom logic.</div></div>
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">05</span><div class="q-inner"><span class="q-tag">DRF</span><div class="q-text">How do you receive an image from a user and save it?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer"><pre># models.py
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='avatars/')
+
+# serializers.py
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ['avatar']
+
+# views.py
+class ProfileView(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        serializer = ProfileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)</pre>Also needed in <code>settings.py</code>:<br><pre>MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'</pre>And in <code>urls.py</code> for development:<br><pre>urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</pre>Install <code>Pillow</code> — Django's <code>ImageField</code> requires it: <code>pip install Pillow</code>.<br>Frontend: send as <code>multipart/form-data</code>, not JSON.</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ FULL-STACK ════════════════════ -->
+  <div class="track" id="track-fullstack">
+    <div class="track-header">
+      <h2>Full-Stack</h2>
+      <p>Architecture · Design Principles</p>
+    </div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-cat="fs-architecture">Architecture</button>
+      <button class="cat-tab" data-cat="fs-design">Design Principles</button>
+    </div>
+
+    <div class="cat-group active" id="cat-fs-architecture">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Architecture</span><div class="q-text">What is event-driven architecture?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">A pattern where components communicate by producing and consuming events instead of calling each other directly. A producer emits an event ("order placed"), and consumers react to it independently.<br><br><strong>Three parts:</strong><br><ul><li><strong>Producer</strong> — emits events (an API endpoint, a webhook, a user action)</li><li><strong>Event broker</strong> — routes events (Kafka, RabbitMQ, Redis pub/sub, Celery)</li><li><strong>Consumer</strong> — listens and processes events (background worker, another service)</li></ul><strong>Example with Celery (Django):</strong><br><pre># Producer — Django view
+@api_view(['POST'])
+def register(request):
+    user = User.objects.create(**request.data)
+    send_welcome_email.delay(user.id)  # emit event
+    return Response({'id': user.id}, status=201)
+
+# Consumer — Celery task
+@shared_task
+def send_welcome_email(user_id):
+    user = User.objects.get(id=user_id)
+    # send the email</pre><strong>Why use it:</strong> the register endpoint doesn't wait for the email to send (faster response). The email worker is decoupled — you can replace or scale it without touching the view.</div></div>
+    </div>
+
+    <div class="cat-group" id="cat-fs-design">
+      <div class="q-card" onclick="toggle(this)"><div class="q-header"><div class="q-meta"><span class="q-num">01</span><div class="q-inner"><span class="q-tag">Design</span><div class="q-text">What is modularity in software development?</div></div></div><span class="q-toggle">+</span></div><div class="q-answer">Modularity means splitting your code into separate, self-contained units where each one handles one responsibility. A module has a clear interface and hides its internal details.<br><br><strong>In Django — each app is a module:</strong><br><pre>myproject/
+├── users/         ← handles auth, profiles
+├── orders/        ← handles orders
+├── payments/      ← handles payments
+└── notifications/ ← handles emails, push</pre>Each Django app has its own <code>models.py</code>, <code>views.py</code>, <code>urls.py</code>, and <code>serializers.py</code>. Apps communicate through imports or events — they don't reach into each other's internals.<br><br><strong>Benefits:</strong><br><ul><li>Easy to understand one module without reading the whole codebase</li><li>Easy to test each module in isolation</li><li>Teams can work on different modules at the same time</li><li>You can replace or remove one module without breaking others</li></ul><strong>In code:</strong> functions do one thing, classes group related behavior, and you import only what you need.</div></div>
     </div>
   </div>
 
