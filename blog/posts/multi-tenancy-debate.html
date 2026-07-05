@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thread, Decoded — Multi-Tenancy Debate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDEEE6;
+    --paper-raised: #F6F6F1;
+    --ink: #1C2321;
+    --ink-soft: #52564F;
+    --ink-faint: #8B8C82;
+    --amber: #C9992A;
+    --amber-soft: #F1E2B8;
+    --teal: #2F5D5A;
+    --teal-soft: #E3EDEB;
+    --line: #D8D8CC;
+    --thread-line: #C7C7BA;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  [lang="ar"]{
+    font-family:'Cairo', 'Inter', sans-serif;
+  }
+
+  .page{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 24px 130px;
+  }
+
+  header.masthead{
+    margin-bottom:44px;
+    padding-bottom:32px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--amber);
+    border-radius:50%;
+    display:inline-block;
+  }
+
+  h1.title{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:clamp(28px, 3.6vw, 42px);
+    line-height:1.14;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+
+  .subtitle{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:680px;
+    line-height:1.6;
+    margin:0;
+  }
+
+  .legend{
+    margin-top:24px;
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--ink-faint);
+    font-family:'JetBrains Mono', monospace;
+  }
+  .legend span{display:flex; align-items:center; gap:8px;}
+  .legend .swatch{
+    width:14px;height:14px;border-radius:3px;
+    background:var(--amber-soft);
+    border:1.5px solid var(--amber);
+  }
+  .legend .swatch.note{
+    background:var(--teal-soft);
+    border-color:var(--teal);
+    border-radius:50%;
+  }
+  .legend .swatch.repeat{
+    background:var(--paper);
+    border:1.5px dashed var(--ink-faint);
+  }
+
+  .primer{
+    margin-bottom:52px;
+  }
+  .primer-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:14px;
+  }
+  .primer-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+  }
+  .primer-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-top:3px solid var(--teal);
+    border-radius:10px;
+    padding:18px 18px 20px;
+  }
+  .primer-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px;
+    margin:0 0 8px;
+    font-weight:600;
+  }
+  .primer-card p{
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .pros-cons{
+    border-top:1px dashed var(--line);
+    padding-top:10px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .pc{
+    font-size:12.5px;
+    line-height:1.5;
+  }
+  .pc span{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:700;
+    padding:1px 7px;
+    border-radius:4px;
+    margin-right:7px;
+  }
+  .pc.pro span{
+    background:var(--teal-soft);
+    color:var(--teal);
+  }
+  .pc.con span{
+    background:var(--amber-soft);
+    color:#8A6415;
+  }
+  .primer-verdict{
+    margin:18px 2px 0;
+    font-size:13px;
+    color:var(--ink-faint);
+    font-style:italic;
+    line-height:1.6;
+    max-width:760px;
+  }
+
+  @media (max-width: 860px){
+    .primer-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Thread: one row per tweet, notes locked beside it ---------- */
+  .thread-col{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .thread-row{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,580px) minmax(270px, 360px);
+    column-gap:44px;
+    align-items:start;
+  }
+
+  .row-svg{
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    overflow:visible;
+    z-index:1;
+  }
+
+  .connector-path{
+    fill:none;
+    stroke:var(--teal);
+    stroke-width:1.6;
+    stroke-dasharray:1 5;
+    stroke-linecap:round;
+    opacity:0.7;
+  }
+  .connector-dot{
+    fill:var(--teal);
+  }
+
+  .tweet{
+    position:relative;
+    z-index:2;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 22px 22px;
+  }
+
+  .tweet-op{
+    border-top:2px solid var(--amber);
+  }
+  .op-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#8A6415;
+    background:var(--amber-soft);
+    border-radius:5px;
+    padding:3px 9px;
+    margin-bottom:14px;
+  }
+
+  .tweet-head{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-bottom:12px;
+  }
+
+  .avatar{
+    width:40px;height:40px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--teal), var(--ink));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    flex-shrink:0;
+  }
+
+  .who{
+    display:flex;
+    flex-direction:column;
+    line-height:1.25;
+  }
+  .name{
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+  .handle-row{
+    font-size:13px;
+    color:var(--ink-faint);
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  .tweet-text{
+    font-size:15.5px;
+    line-height:1.75;
+    color:var(--ink);
+  }
+
+  .tweet-text[dir="rtl"]{
+    text-align:right;
+    line-height:2;
+    font-size:15.5px;
+  }
+
+  .tweet-text .term{
+    position:relative;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:500;
+    font-size:0.9em;
+    background:var(--amber-soft);
+    padding:1.5px 6px;
+    border-radius:4px;
+    border-bottom:2px solid var(--amber);
+    cursor:default;
+    unicode-bidi:isolate;
+  }
+
+  .tweet-text[dir="rtl"] .term{
+    font-family:'Cairo', 'JetBrains Mono', sans-serif;
+    font-size:0.92em;
+  }
+
+  .tweet-text .term.term-repeat{
+    background:transparent;
+    border-bottom:1.5px dashed var(--ink-faint);
+    color:var(--ink-soft);
+  }
+
+  .tweet-meta{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid var(--line);
+    display:flex;
+    gap:20px;
+    font-size:13px;
+    color:var(--ink-faint);
+  }
+
+  .inline-note{
+    display:none;
+  }
+
+  .row-notes{
+    position:relative;
+    z-index:2;
+  }
+
+  .note-card{
+    position:absolute;
+    left:0;
+    width:100%;
+    background:var(--teal-soft);
+    border:1px solid var(--teal);
+    border-radius:10px;
+    padding:13px 15px;
+    font-size:13px;
+    line-height:1.5;
+    color:var(--ink);
+  }
+
+  .note-card .note-term{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:11.5px;
+    letter-spacing:0.02em;
+    color:var(--teal);
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+
+  @media (max-width: 860px){
+    .thread-row{
+      grid-template-columns:1fr;
+    }
+    .row-svg{display:none;}
+    .row-notes{display:none !important;}
+    .inline-note{
+      display:block;
+      margin:10px 0 0;
+      background:var(--teal-soft);
+      border:1px solid var(--teal);
+      border-left:3px solid var(--teal);
+      border-radius:8px;
+      padding:10px 13px;
+      font-size:13px;
+      line-height:1.5;
+      text-align:left;
+      direction:ltr;
+    }
+    .inline-note .note-term{
+      display:block;
+      font-family:'JetBrains Mono', monospace;
+      font-weight:600;
+      font-size:11px;
+      letter-spacing:0.02em;
+      color:var(--teal);
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+  }
+
+  footer.hint{
+    margin-top:60px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-faint);
+    font-family:'JetBrains Mono', monospace;
+    line-height:1.7;
+  }
+  footer.hint code{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    padding:1px 6px;
+    border-radius:4px;
+  }
+  footer.hint a{
+    color:var(--teal);
+    text-decoration:none;
+    border-bottom:1px solid var(--teal-soft);
+    transition:border-color 0.2s;
+  }
+  footer.hint a:hover{
+    border-bottom-color:var(--teal);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">Thread, Decoded</div>
+    <h1 class="title">The multi-tenancy database debate</h1>
+    <p class="subtitle">A real Cairo-dev-Twitter thread on how to keep one customer's data from leaking into another's — argued in a mix of Arabic and English, the way it actually happened. Jargon is highlighted right where it appears, with a plain note sitting directly beside that tweet the first time it comes up.</p>
+    <div class="legend">
+      <span><span class="swatch"></span> first mention = full note</span>
+      <span><span class="swatch note"></span> note = what it actually means</span>
+      <span><span class="swatch repeat"></span> repeat mention = already explained above</span>
+    </div>
+  </header>
+
+  <div class="primer">
+    <div class="primer-label">Before the thread — the three approaches everyone's comparing</div>
+    <div class="primer-grid">
+      <div class="primer-card">
+        <h3>Application-Level Only</h3>
+        <p>The database is wide open. Your backend code (Python, Node, Go...) is trusted to add <code>WHERE tenant_id = X</code> to every single query itself.</p>
+        <div class="pros-cons">
+          <div class="pc pro"><span>Pros</span>Easy to scale, change, and migrate. All logic stays in one place.</div>
+          <div class="pc con"><span>Cons</span>High risk of data leaks — one forgotten filter on a new endpoint exposes another tenant's data.</div>
+        </div>
+      </div>
+      <div class="primer-card">
+        <h3>Row-Level Security (RLS)</h3>
+        <p>A database feature (e.g. PostgreSQL) that blocks any query from returning rows outside the current tenant — enforced by the database engine itself.</p>
+        <div class="pros-cons">
+          <div class="pc pro"><span>Pros</span>Excellent safety net. Even a buggy query can't leak data across tenants.</div>
+          <div class="pc con"><span>Cons</span>Pushes logic into the database, complicates local testing, and can complicate connection pooling.</div>
+        </div>
+      </div>
+      <div class="primer-card">
+        <h3>Separate DB / Schema per Tenant</h3>
+        <p>Every tenant gets their own physical database or schema. Nothing is shared, so isolation is structural, not enforced by a rule.</p>
+        <div class="pros-cons">
+          <div class="pc pro"><span>Pros</span>Perfect isolation. Easiest option to delete or move a single tenant's data.</div>
+          <div class="pc con"><span>Cons</span>Migrations multiply fast — 500 tenants means 500 migrations to run.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thread-col" id="threadCol">
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet tweet-op">
+        <div class="op-tag">Started the thread</div>
+        <div class="tweet-head">
+          <div class="avatar">M</div>
+          <div class="who">
+            <span class="name">Mohie</span>
+            <span class="handle-row">@Mohhie · 13h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          سؤال لو بتبني <span class="term" data-note="multi-tenant-saas">multi-tenant SaaS</span> باستخدام <span class="term" data-note="shared-schema">shared schema</span>، هل بتفضل تستخدم <span class="term" data-note="rls">RLS</span> على مستوي الdb ولا بتخلي ال<span class="term" data-note="application-code">application code</span> هو اللي يضمن
+        </div>
+        <div class="inline-note"><span class="note-term">Multi-tenant SaaS</span>A single software platform — like Slack or Shopify — that serves many separate business customers from one shared piece of infrastructure.</div>
+        <div class="inline-note"><span class="note-term">Shared schema</span>All customers' data lives in the exact same database tables. A tenant_id column is what separates Company A's rows from Company B's.</div>
+        <div class="inline-note"><span class="note-term">RLS</span>A database feature that blocks any query from returning rows outside the current tenant — enforced by the database engine itself, not by trusting the code.</div>
+        <div class="inline-note"><span class="note-term">Application code</span>The backend code (Python, Node, Go...) is trusted to add WHERE tenant_id = X to every query itself, rather than the database enforcing it.</div>
+        <div class="tweet-meta"><span>💬 12</span><span>🔁 38</span><span>❤ 180</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">AA</div>
+          <div class="who">
+            <span class="name">Alaa' Attya</span>
+            <span class="handle-row">@AlaaAttya · 30m</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          هوا الأضمن انه تحطه علي مستوي ال database لان أكيد هتبقي واثق انه ال <span class="term" data-note="tenant-isolation">tenants isolation</span> متطبق ولكن دا هيجي بشويه صداع وقت ما تيجي تعدل علي ال schema
+          ولكن برضه لو حبيت تغير ال <span class="term" data-note="tenancy-model">tenancy model</span> الموضوع هيبقي أصعب من لو كنت عملته علي ال application level
+          حاجه كمان لازم تعرف ازاي هت handle ال <span class="term" data-note="connection-pooling">connection pooling</span> ف حاله انك هتفصل ال tenants في اكتر من schema (بس اعتقد معظم ال orms بتقدر تظبطها)
+          برضه لازم تفكر في مشكله ال constraints لو انت فاصل كل tenant في schema هيكون صعب انك تحقق الموضوع دا لأنك لازم تتاكد ان مثلا لو عندك <span class="term" data-note="unique-constraint">unique constraint</span> دا مطبق علي كل ال schema في حين لو shared schema الموضوع سهل
+          مشكله كمان هيا ال indexing لو shared schema هتحتاج بنسبه كبير ان كل ال indexes تبقي <span class="term" data-note="composite-indexes">composite indexes</span> عشان دايما يبقي معاك ال tenant id و تخيل بقي لو في tenant منهم حجمه كبر هيبدأ يعملك مشاكل
+          <br><br>
+          أنا حاولت أحط كل اللي جه ف دماغي بس قولي لو نسيت حاجه
+        </div>
+        <div class="inline-note"><span class="note-term">Tenants isolation</span>Making sure one customer's data is fully walled off from another's — the core problem this whole thread is about.</div>
+        <div class="inline-note"><span class="note-term">Tenancy model</span>The overall strategy for how tenants are separated. Switching strategies later means rebuilding the data layer.</div>
+        <div class="inline-note"><span class="note-term">Connection pooling</span>Reusing a shared set of open database connections instead of creating a new one per request. RLS needs the database to know "who's asking" per query — pooled, reused connections can complicate that.</div>
+        <div class="inline-note"><span class="note-term">Unique constraint</span>A rule that a value can't repeat. Enforcing it consistently is harder when each tenant has a separate schema.</div>
+        <div class="inline-note"><span class="note-term">Composite indexes</span>A search index built from more than one column at once (tenant_id + another) — needed to keep shared-schema queries fast.</div>
+        <div class="tweet-meta"><span>💬 12</span><span>🔁 40</span><span>❤ 210</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">AS</div>
+          <div class="who">
+            <span class="name">Ahmed Sheta</span>
+            <span class="handle-row">@a_shetta · 8h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="ltr" lang="en">
+          Neither is the full answer imo, <span class="term" data-note="rls">RLS</span> is a good safety net if you're already using <span class="term" data-note="shared-schema">shared schema</span>, but true tenant isolation is usually separate DB/schema per tenant. The tradeoff is ops complexity vs stronger <span class="term" data-note="blast-radius">blast-radius</span> control.
+        </div>
+        <div class="inline-note"><span class="note-term">Blast radius</span>How far damage spreads if something goes wrong. Smaller = fewer customers affected.</div>
+        <div class="tweet-meta"><span>💬 8</span><span>🔁 21</span><span>❤ 95</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">M</div>
+          <div class="who">
+            <span class="name">Mohie</span>
+            <span class="handle-row">@Mohhie · 2h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="ltr" lang="en">
+          I wouldn't go DB/schema per tenant unless I have to.
+          For a shared schema, I don't really see the downside of adding <span class="term" data-note="rls">RLS</span> as another layer of defense but I read PlanetScale are advising against it because of <span class="term" data-note="connection-pooling">connection pooling quirks</span>.
+        </div>
+        <div class="tweet-meta"><span>💬 6</span><span>🔁 15</span><span>❤ 60</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">A</div>
+          <div class="who">
+            <span class="name">Abdelrahman</span>
+            <span class="handle-row">@AN4553R · 5h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          على حسب السيستم بتاعي شكله عامل ازاي، وأساسي ال<span class="term" data-note="threat-model">threat model</span> هو اللي هيحدد عشان بفترض ان كل layer ممكن يحصل فيها مشكلة او تget compromised فكل اجابة لwhat could go wrong هفكر في ال<span class="term" data-note="mitigation">mitigation</span> بتاعها.
+          كمان لو توسعت و عاوز ابعت notifications/logs/events لل customers بقى عندي كمان مشكلة <span class="term" data-note="routing-correctness">routing correctness</span> المفروض افكر في ال <span class="term" data-note="isolation-enforcement">isolation enforcement</span> في الboundaries بتاعتها
+        </div>
+        <div class="inline-note"><span class="note-term">Threat model</span>A structured guess at how your system could be attacked or broken — used to decide which risks are worth defending against.</div>
+        <div class="inline-note"><span class="note-term">Mitigation</span>The specific fix or safeguard put in place to reduce a given risk.</div>
+        <div class="inline-note"><span class="note-term">Routing correctness</span>Making sure a notification, log line, or event is actually delivered to the right tenant, not just that the database rows are separated.</div>
+        <div class="inline-note"><span class="note-term">Isolation enforcement</span>Actively making sure tenant boundaries are respected at every layer — not just the database, but wherever data moves.</div>
+        <div class="tweet-meta"><span>💬 4</span><span>🔁 9</span><span>❤ 44</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">AO</div>
+          <div class="who">
+            <span class="name">Ahmed Osama</span>
+            <span class="handle-row">@AhmedOsamaFT · 4h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          انا كنت قريت رأي ان بلاش تحط business logic ف ال database layer لان وارد ان ده يتغير ف طبعا تغيرات ال DB و ال <span class="term" data-note="migrations">migrations</span> هتكون صعبة اكتر من الكود
+        </div>
+        <div class="inline-note"><span class="note-term">Migrations</span>Scripted changes to a database's structure. Harder to roll back and coordinate than a normal code deploy.</div>
+        <div class="tweet-meta"><span>💬 3</span><span>🔁 5</span><span>❤ 22</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">M</div>
+          <div class="who">
+            <span class="name">Mohie</span>
+            <span class="handle-row">@Mohhie · 1h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          ما هو ال<span class="term" data-note="tenant-isolation">tenant isolation</span> ده <span class="term" data-note="security-invariant">security invariant</span> مش هيتغير الا لو قررنا منبقاش multitenant فان يكون فيه <span class="term" data-note="defense-in-depth">defense in depth</span> mechanism اعتقد مقبول احنا مش بنعمل <span class="term" data-note="stored-procedure">stored procedure</span>
+        </div>
+        <div class="inline-note"><span class="note-term">Security invariant</span>A rule that must always hold true no matter what, unlike normal business logic which is expected to change over time.</div>
+        <div class="inline-note"><span class="note-term">Defense in depth</span>Stacking multiple independent safeguards, so if one fails, another still catches the problem.</div>
+        <div class="inline-note"><span class="note-term">Stored procedure</span>A chunk of logic saved and run inside the database itself — generally seen as harder to maintain than logic kept in application code.</div>
+        <div class="tweet-meta"><span>💬 2</span><span>🔁 3</span><span>❤ 18</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">SF</div>
+          <div class="who">
+            <span class="name">Shenouda Fawzy</span>
+            <span class="handle-row">@ShenoudaFawzi · 4h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          ال <span class="term" data-note="rls">RLS</span> على مستوى ال DB ده هيحميك من لو حد سهوا نسي يفصل على مستوى الابليكيشن ميحصلش unauthorized access. الحاجة التانية لو حبيت تخرِّج اي tenant بحيث يكون ليه <span class="term" data-note="infra-resources">infra resources</span> لوحده لو الدنيا مش مفصولة على مستوى ال DB الموضوع هيحتاج مجهود اكبر.
+        </div>
+        <div class="inline-note"><span class="note-term">Infra resources</span>The servers, storage, and compute assigned to run a tenant's workload — easier to carve out separately if the DB is already physically separated.</div>
+        <div class="tweet-meta"><span>💬 3</span><span>🔁 6</span><span>❤ 30</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">M</div>
+          <div class="who">
+            <span class="name">Mohie</span>
+            <span class="handle-row">@Mohhie · 1h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          مش فاهم قصدك في النقطة التانية ال<span class="term" data-note="rls">RLS</span> هيساعد ازاي في ال <span class="term" data-note="tenant-migration">tenant migration</span>؟
+        </div>
+        <div class="inline-note"><span class="note-term">Tenant migration</span>Moving a specific customer's data — e.g. to give them their own dedicated infrastructure. Mohie's pushing back that RLS doesn't really help with this.</div>
+        <div class="tweet-meta"><span>💬 1</span><span>🔁 1</span><span>❤ 9</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">AK</div>
+          <div class="who">
+            <span class="name">Al Sherif Khalaf</span>
+            <span class="handle-row">@KhalafAl31381 · 21m</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          لو فيه validation كويس لل api ممكن تعتمد علي <span class="term" data-note="application-code">application code</span>
+          شخصياً، بفضل استخدام الاثنين (<span class="term" data-note="defense-in-depth">Defense in Depth</span>)، بحيث يكون الـ Application Code هو الأساس لتوجيه العمليات، والـ <span class="term" data-note="rls">RLS (Row Level Security)</span> هو الطبقة الأخيرة التي لا يمكن تجاوزها
+        </div>
+        <div class="tweet-meta"><span>💬 2</span><span>🔁 4</span><span>❤ 16</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">A</div>
+          <div class="who">
+            <span class="name">Ali</span>
+            <span class="handle-row">@elasadeltayyeb · 10h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="rtl" lang="ar">
+          لو هستخدم mongo db بحس ان احسن حاجة ال<span class="term" data-note="sharding-tenant-id">sharding by tenant id</span> بس بصراحة حاسه ممكن يكون حل <span class="term" data-note="over-engineered">over engineered</span> شوية
+          الميزة ان mongo db بتسهل اوي موضوع الsharding وكمان هيبقى فيه <span class="term" data-note="data-isolation">data isolation</span>
+        </div>
+        <div class="inline-note"><span class="note-term">Sharding by tenant id</span>Splitting the database across multiple servers, using the tenant as the dividing line — each customer's data physically lives on a specific shard.</div>
+        <div class="inline-note"><span class="note-term">Over engineered</span>Building a more complex solution than the problem actually needs right now.</div>
+        <div class="inline-note"><span class="note-term">Data isolation</span>Customer data kept structurally separate — here, achieved by which shard the data lives on rather than a filter rule.</div>
+        <div class="tweet-meta"><span>💬 5</span><span>🔁 11</span><span>❤ 48</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+    <div class="thread-row">
+      <svg class="row-svg"></svg>
+      <article class="tweet">
+        <div class="tweet-head">
+          <div class="avatar">SK</div>
+          <div class="who">
+            <span class="name">KoZman</span>
+            <span class="handle-row">@SherifKozman · 9h</span>
+          </div>
+        </div>
+        <div class="tweet-text" dir="ltr" lang="en">
+          <span class="term" data-note="rls">RLS</span> on the <span class="term" data-note="database-level">database level</span> ensures <span class="term" data-note="hard-gated-isolation">hard gated isolation</span> that is not bound to unforeseen issues of code that might behave differently under different circumstances or underlying environment
+        </div>
+        <div class="inline-note"><span class="note-term">Database level</span>Enforced at the lowest layer of the stack — closest to where the data actually lives.</div>
+        <div class="inline-note"><span class="note-term">Hard gated isolation</span>Isolation that can't be accidentally bypassed by a bug, an edge case, or a different runtime environment — it's structurally guaranteed rather than just "usually correct."</div>
+        <div class="tweet-meta"><span>💬 4</span><span>🔁 19</span><span>❤ 88</span></div>
+      </article>
+      <div class="row-notes"></div>
+    </div>
+
+  </div>
+
+  <footer class="hint">
+    Original thread: <a href="https://x.com/Mohhie/status/2073549010074309096?s=20" target="_blank" rel="noopener">x.com/Mohhie/status/2073549010074309096</a><br>
+    <a href="../index.html">&larr; Back to blog</a>
+  </footer>
+
+</div>
+
+<script>
+  const notes = {
+    "multi-tenant-saas": { term: "Multi-tenant SaaS", text: "A single software platform — like Slack or Shopify — that serves many separate business customers from one shared piece of infrastructure." },
+    "shared-schema": { term: "Shared schema", text: "All customers' data lives in the exact same database tables. A tenant_id column is what separates Company A's rows from Company B's." },
+    "rls": { term: "RLS", text: "A database feature that blocks any query from returning rows outside the current tenant — enforced by the database engine itself, not by trusting the code." },
+    "application-code": { term: "Application code", text: "The backend code (Python, Node, Go...) is trusted to add WHERE tenant_id = X to every query itself, rather than the database enforcing it." },
+    "tenant-isolation": { term: "Tenant isolation", text: "Making sure one customer's data is fully walled off from another's — the core problem this whole thread is about." },
+    "tenancy-model": { term: "Tenancy model", text: "The overall strategy for how tenants are separated. Switching strategies later means rebuilding the data layer." },
+    "connection-pooling": { term: "Connection pooling", text: "Reusing a shared set of open database connections instead of creating a new one per request. RLS needs the database to know 'who's asking' per query — pooled, reused connections can complicate that." },
+    "unique-constraint": { term: "Unique constraint", text: "A rule that a value can't repeat. Enforcing it consistently is harder when each tenant has a separate schema." },
+    "composite-indexes": { term: "Composite indexes", text: "A search index built from more than one column at once (tenant_id + another) — needed to keep shared-schema queries fast." },
+    "blast-radius": { term: "Blast radius", text: "How far damage spreads if something goes wrong. Smaller = fewer customers affected." },
+    "threat-model": { term: "Threat model", text: "A structured guess at how your system could be attacked or broken, used to decide what's worth defending." },
+    "mitigation": { term: "Mitigation", text: "The specific fix or safeguard put in place to reduce a given risk." },
+    "routing-correctness": { term: "Routing correctness", text: "Making sure a notification, log, or event actually reaches the right tenant — beyond just database rows being separated." },
+    "isolation-enforcement": { term: "Isolation enforcement", text: "Actively guaranteeing tenant boundaries are respected everywhere data moves, not just in the database." },
+    "migrations": { term: "Migrations", text: "Scripted changes to a database's structure — harder to roll back than a normal code deploy." },
+    "security-invariant": { term: "Security invariant", text: "A rule that must always hold true, unlike business logic which is expected to change." },
+    "defense-in-depth": { term: "Defense in depth", text: "Stacking multiple independent safeguards so if one fails, another still catches the problem." },
+    "stored-procedure": { term: "Stored procedure", text: "Logic saved and run inside the database itself — generally harder to maintain than application code." },
+    "infra-resources": { term: "Infra resources", text: "The servers, storage, and compute assigned to a tenant's workload." },
+    "tenant-migration": { term: "Tenant migration", text: "Moving a specific customer's data, e.g. onto their own dedicated infrastructure." },
+    "sharding-tenant-id": { term: "Sharding by tenant id", text: "Splitting the database across multiple servers using the tenant as the dividing line." },
+    "over-engineered": { term: "Over engineered", text: "Building a more complex solution than the problem actually needs right now." },
+    "data-isolation": { term: "Data isolation", text: "Customer data kept structurally separate — here, by which shard it physically lives on." },
+    "database-level": { term: "Database level", text: "Enforced at the lowest layer of the stack, closest to where data actually lives." },
+    "hard-gated-isolation": { term: "Hard gated isolation", text: "Isolation that can't be accidentally bypassed by a bug or edge case — structurally guaranteed, not just usually correct." }
+  };
+
+  // Mark the first occurrence of each concept (document-wide) as "primary" —
+  // that's the only one that gets a note. Every later occurrence stays
+  // highlighted but dimmed, with no duplicate note.
+  function markOccurrences(){
+    const seen = new Set();
+    document.querySelectorAll('.tweet-text .term').forEach(el => {
+      const id = el.getAttribute('data-note');
+      if (seen.has(id)) {
+        el.classList.add('term-repeat');
+        el.dataset.repeat = "true";
+      } else {
+        seen.add(id);
+        el.dataset.repeat = "false";
+      }
+    });
+  }
+
+  // Lay out notes WITHIN each tweet's own row, so they never drift down
+  // the page relative to the tweet they belong to.
+  function layoutRow(row){
+    const svg = row.querySelector('.row-svg');
+    const notesCol = row.querySelector('.row-notes');
+    const primaryTerms = row.querySelectorAll('.tweet-text .term[data-repeat="false"]');
+
+    svg.innerHTML = '';
+    notesCol.innerHTML = '';
+    notesCol.style.height = '';
+
+    if (window.innerWidth <= 860 || primaryTerms.length === 0) {
+      return;
+    }
+
+    const rowRect = row.getBoundingClientRect();
+
+    const cardEls = [];
+    primaryTerms.forEach((termEl) => {
+      const id = termEl.getAttribute('data-note');
+      const data = notes[id];
+      if (!data) return;
+      const card = document.createElement('div');
+      card.className = 'note-card';
+      card.innerHTML = `<span class="note-term">${data.term}</span>${data.text}`;
+      notesCol.appendChild(card);
+      cardEls.push({ termEl, card });
+    });
+
+    let placements = cardEls.map(({termEl, card}) => {
+      const tRect = termEl.getBoundingClientRect();
+      const desiredTop = (tRect.top - rowRect.top) - 8;
+      const height = card.offsetHeight;
+      return { termEl, card, desiredTop, height };
+    });
+
+    placements.sort((a,b) => a.desiredTop - b.desiredTop);
+
+    let cursor = 0;
+    const gap = 10;
+    placements.forEach(p => {
+      let top = Math.max(p.desiredTop, cursor);
+      p.top = top;
+      cursor = top + p.height + gap;
+    });
+
+    placements.forEach(p => {
+      p.card.style.top = p.top + 'px';
+    });
+
+    const svgNS = "http://www.w3.org/2000/svg";
+    placements.forEach(p => {
+      const tRect = p.termEl.getBoundingClientRect();
+      const cRect = p.card.getBoundingClientRect();
+
+      const isRtl = p.termEl.closest('.tweet-text').getAttribute('dir') === 'rtl';
+      const startX = isRtl
+        ? (tRect.left - rowRect.left) - 2
+        : (tRect.right - rowRect.left) + 2;
+      const startY = (tRect.top - rowRect.top) + tRect.height/2;
+      const endX = (cRect.left - rowRect.left) - 2;
+      const endY = (cRect.top - rowRect.top) + 14;
+
+      const midX = startX + (endX - startX) * 0.55;
+
+      const path = document.createElementNS(svgNS, 'path');
+      const d = `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`;
+      path.setAttribute('d', d);
+      path.setAttribute('class', 'connector-path');
+      svg.appendChild(path);
+
+      const dot1 = document.createElementNS(svgNS, 'circle');
+      dot1.setAttribute('cx', startX);
+      dot1.setAttribute('cy', startY);
+      dot1.setAttribute('r', 2.4);
+      dot1.setAttribute('class', 'connector-dot');
+      svg.appendChild(dot1);
+
+      const dot2 = document.createElementNS(svgNS, 'circle');
+      dot2.setAttribute('cx', endX);
+      dot2.setAttribute('cy', endY);
+      dot2.setAttribute('r', 2.4);
+      dot2.setAttribute('class', 'connector-dot');
+      svg.appendChild(dot2);
+    });
+
+    const maxBottom = placements.reduce((m,p) => Math.max(m, p.top + p.height), 0);
+    notesCol.style.height = maxBottom + 'px';
+    svg.setAttribute('height', Math.max(maxBottom, row.offsetHeight));
+  }
+
+  function layoutAll(){
+    document.querySelectorAll('.thread-row').forEach(layoutRow);
+  }
+
+  markOccurrences();
+  window.addEventListener('load', layoutAll);
+  window.addEventListener('resize', () => {
+    clearTimeout(window._lt);
+    window._lt = setTimeout(layoutAll, 120);
+  });
+  setTimeout(layoutAll, 450);
+</script>
+
+</body>
+</html>
