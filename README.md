@@ -34,14 +34,6 @@
 </a> – FastAPI · PostgreSQL · asyncpg · Pydantic · WebSockets   
 - <a href="https://github.com/hebamuh68/task_management_api">Task Management API</a> – FastAPI · SQLModel · Alembic · Pydantic · Docker   
 
-<h4>Front-End Development</h4>
-
-- <a href="https://github.com/hebamuh68/Jack-Restaurant">Jack – Restaurant</a> – HTML · Tailwind CSS  
-- <a href="https://github.com/hebamuh68/Turo">Turo – Website</a> – HTML · CSS · Bootstrap  
-- <a href="https://github.com/hebamuh68/Fork">Fork – Restaurant Site</a> – HTML · CSS · JS  
-- <a href="https://github.com/hebamuh68/ITI-Projects">ITI Front-End Track Projects</a>  
-- <a href="https://github.com/hebamuh68/JavaScript-for-Beginners-Specialization/blob/main/README.md">JS for Beginners – Projects</a>  
-
 <h4>UI / UX</h4>
 
 - <a href="https://www.behance.net/hebamohamed3">Portfolio on Behance</a>  
