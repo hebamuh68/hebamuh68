@@ -54,7 +54,6 @@ Early Parkinson's detection from acoustic voice analysis — end to end, from ra
 - <a href="https://github.com/hebamuh68/Machine-Learning-Specialization">Machine Learning Specialization</a> – Python · NumPy · scikit-learn · TensorFlow  
 - <a href="https://github.com/hebamuh68/Go-lang">Programming with Google Go Specialization</a> – Go  
 - <a href="https://github.com/hebamuh68/Problem-Solving">Problem Solving</a> – LeetCode &amp; Codeforces in Python  
-- <a href="https://github.com/hebamuh68/Interview-Preparation">Interview Preparation</a>  
 
 </td>
 
