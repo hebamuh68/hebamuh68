@@ -14,28 +14,7 @@
 
 <!-- ----------  Recent Work  ---------- -->
 
-## 🧪 Recent Work
-
-- **[Django 6.1 `FETCH_PEERS` — killing the N+1 query problem](https://github.com/hebamuh68/django-fetch-peers-benchmark)**  
-  A reproducible benchmark over 10,000 real books and authors in PostgreSQL. Same view logic, same JSON output: **10,001 queries (1.13 s) vs 2 queries (119 ms)**. — Django 6.1 · PostgreSQL
-
-- **[Logistics System](https://github.com/hebamuh68/Logistics-System)**  
-  Frappe app for delivery operations: build a run from open orders, assign a driver, execute stops, bank the cash. Ships roles, fixtures and a dashboard card. — Frappe v16 · Python · MariaDB · Docker
-
-- **[Roof — Online Rental App](https://github.com/hebamuh68/Roof)**  
-  Apartment rental platform for Egypt. 40+ FastAPI endpoints with JWT refresh tokens, RBAC middleware, Elasticsearch search with SQL fallback, and real-time messaging; Vue 3 SPA with i18n across 5 languages including RTL. — FastAPI · SQLAlchemy · Alembic · PostgreSQL · Elasticsearch · Vue 3 · TypeScript · Pinia
-
-- **[mini-editor](https://github.com/hebamuh68/mini-editor)** ⭐  
-  A modular Vue 3 rich-text editor — customizable toolbar, preview modal, media uploader, Arabic/English with RTL–LTR switching. Published to npm, **1K+ downloads**. — Vue 3 · TypeScript · Tailwind CSS · Vite
-
-- **[Task Management API](https://github.com/hebamuh68/task_management_api)**  
-  RESTful task API demonstrating clean API design, validation and migrations. — FastAPI · SQLModel · Alembic · Pydantic · Docker
-
-
-
-<!-- ----------  Parkinson's Voice Biomarkers  ---------- -->
-
-## 🔬 Parkinson's Voice Biomarkers
+## 🔬 Recent Work — Parkinson's Voice Biomarkers
 
 Early Parkinson's detection from acoustic voice analysis — end to end, from raw `.wav` files to a clinician-facing dashboard.
 
@@ -56,6 +35,19 @@ Early Parkinson's detection from acoustic voice analysis — end to end, from ra
 <td valign="top" width="50%">
 
 <h3>💻 SWE</h3>
+
+<h4>Full-Stack Development</h4>
+
+- <a href="https://github.com/hebamuh68/Roof">Roof – Online Rental App</a> – FastAPI · SQLAlchemy · Alembic · PostgreSQL · Elasticsearch · Vue 3 · TypeScript · Pinia  
+
+<h4>Back-End Development</h4>
+
+- <a href="https://github.com/hebamuh68/pd_monitor_backend">PD Voice Monitor API</a> – Django 6.1 · DRF · praat-parselmouth · pandas  
+
+<h4>Front-End Development</h4>
+
+- <a href="https://github.com/hebamuh68/mini-editor">@hebamuh68/mini-editor (component for Vue 3 applications)</a> – Vue 3 · TypeScript · Tailwind CSS · 1K+ npm downloads  
+- <a href="https://github.com/hebamuh68/pd_monitor">PD Voice Monitor</a> – Next.js 16 · React 19 · Tailwind 4 · Recharts · next-intl  
 
 <h4>Learning &amp; Practice</h4>
 
