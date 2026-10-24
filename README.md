@@ -20,7 +20,7 @@ Early Parkinson's detection from acoustic voice analysis — end to end, from ra
 
 | Repo | What it is | Stack |
 | --- | --- | --- |
-| [pd_monitor](https://github.com/hebamuh68/pd_monitor) | Web client — recording sessions, biomarker trends, docs | Next.js 16 · React 19 · Tailwind 4 · Recharts · next-intl |
+| [pd_monitor_frontend](https://github.com/hebamuh68/pd_monitor_frontend) | Web client — recording sessions, biomarker trends, docs | Next.js 16 · React 19 · Tailwind 4 · Recharts · next-intl |
 | [pd_monitor_backend](https://github.com/hebamuh68/pd_monitor_backend) | API + acoustic feature extraction pipeline | Django 6.1 · DRF · praat-parselmouth · pandas |
 | [pd-voice-features](https://github.com/hebamuh68/pd-voice-features) | The research behind it — pitch, jitter, shimmer, HNR compared across healthy vs PD voices, split by gender | Python · Parselmouth · Jupyter |
 
