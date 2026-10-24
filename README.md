@@ -14,7 +14,7 @@
 
 <!-- ----------  Recent Work  ---------- -->
 
-## 🔬 Recent Work — Parkinson's Voice Biomarkers
+## Recent Work — Parkinson's Voice Biomarkers
 
 Early Parkinson's detection from acoustic voice analysis — end to end, from raw `.wav` files to a clinician-facing dashboard.
 
@@ -34,7 +34,7 @@ Early Parkinson's detection from acoustic voice analysis — end to end, from ra
 <tr>
 <td valign="top" width="50%">
 
-<h3>💻 SWE</h3>
+<h3>SWE</h3>
 
 <h4>Full-Stack Development</h4>
 
@@ -59,7 +59,7 @@ Early Parkinson's detection from acoustic voice analysis — end to end, from ra
 
 <td valign="top" width="50%">
 
-<h3>🧠 Bio / Neuro</h3>
+<h3>Bio / Neuro</h3>
 
 <h4>Voice Biomarkers</h4>
 
