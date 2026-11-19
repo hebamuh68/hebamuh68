@@ -5,8 +5,9 @@
   [![](https://komarev.com/ghpvc/?username=hebamuh68&color=blue&label=Profile%20Views)](https://github.com/hebamuh68/hebamuh68)
   [![](https://img.shields.io/github/followers/hebamuh68?label=GitHub%20Followers)](https://github.com/hebamuh68/hebamuh68)
   
-  Full-Stack Software Engineer @ Planning Engineer FZE — Python · FastAPI · Django · Vue · Next.js<br>
-  3+ years owning features end-to-end, from database schema to deployed UI.<br>
+  Full-Stack Software Engineer — Python · FastAPI · Django · Vue · Next.js<br>
+  4+ years of software engineering, owning features end-to-end from database schema to deployed UI — after starting out as a UI/UX designer.<br>
+  Open to remote roles (UTC+2).<br>
   Generally interested in Software Engineering, Starting from Design and <br> Ending with...hmmm...well there's no end!<br><br>
 </div>
 

@@ -264,6 +264,65 @@ section {
 }
 .exp-item:last-child { border-bottom: none; }
 .exp-content h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.1rem; }
+.exp-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.55rem;
+  margin-left: 0.5rem;
+  border-radius: 100px;
+  background: var(--green-light);
+  color: var(--green);
+  vertical-align: middle;
+}
+.career-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: -1.5rem 0 1.5rem;
+}
+.career-path span { color: var(--brown); font-weight: 500; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.testimonial {
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial.featured { grid-column: 1 / -1; }
+.testimonial blockquote {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.testimonial blockquote p + p { margin-top: 0.6rem; }
+.testimonial .author { font-size: 0.85rem; font-weight: 600; }
+.testimonial .author a { color: var(--green); text-decoration: none; }
+.testimonial .author a:hover { text-decoration: underline; }
+.testimonial .role { font-size: 0.78rem; color: var(--text-muted); }
+.testimonial .source { font-size: 0.72rem; color: var(--brown-light); margin-top: 0.15rem; }
+.testimonials-sub {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 2rem 0 1rem;
+}
 .exp-content .company { font-size: 0.85rem; color: var(--green); font-weight: 500; margin-bottom: 0.35rem; }
 .exp-content .location { font-size: 0.78rem; color: var(--brown-light); margin-bottom: 0.4rem; }
 .exp-content ul { list-style: none; padding: 0; margin: 0; }
@@ -314,6 +373,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
   nav .links.open { right: 0; }
   nav .links a { font-size: 1rem; }
   .projects-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 440px) {
@@ -332,6 +392,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
     <a href="#about">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="blog/index.html">Blog</a>
     <a href="#contact">Contact</a>
     <a href="Heba_Allah_Hashim_CV.pdf" download class="nav-btn">Download CV</a>
@@ -346,7 +407,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
   <div class="greeting">Full-Stack Software Engineer</div>
   <h1>I'm Heba Allah Hashim.</h1>
   <h4 class="hero-sub">Python · FastAPI · Django · Vue.js · Nuxt · React.js · Next.js</h4>
-  <p>I build scalable systems end-to-end — from complex desktop applications and REST APIs to production-ready frontends. Currently building a full scheduling platform at Planning Engineer FZE and teaching Python & AI at EYouth. 2+ years across teams in Egypt, Saudi Arabia, Germany, and UAE.</p>
+  <p>I build web and desktop products end-to-end — from PostgreSQL data models and REST APIs to production-ready frontends, through testing and release. 4+ years of software engineering across teams in Egypt, Saudi Arabia, Germany, and the UAE, after starting out as a UI/UX designer in 2020. I've also taught Python & AI at EYouth. Open to remote roles (UTC+2).</p>
   <div class="cta">
     <a href="#projects" class="btn btn-primary">View Projects</a>
     <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -385,14 +446,14 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
       <h3>Infrastructure</h3>
       <ul>
         <li>Docker</li><li>DigitalOcean</li><li>Git</li><li>Linux</li>
-        <li>JWT / OAuth2</li><li>CI/CD</li><li>Vercel</li>
+        <li>JWT / OAuth2</li><li>CI/CD</li><li>GitHub Actions</li><li>pytest</li><li>Vercel</li>
       </ul>
     </div>
     <div class="skill-group">
       <h3>Desktop & ML</h3>
       <ul>
         <li>PySide6 / Qt</li><li>CatBoost</li><li>Monte Carlo</li>
-        <li>Pandas</li><li>NumPy</li>
+        <li>Pandas</li><li>NumPy</li><li>Praat / Parselmouth</li>
       </ul>
     </div>
   </div>
@@ -419,6 +480,13 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
         <span>Vue 3</span><span>TypeScript</span><span>Tailwind</span><span>npm</span>
       </div>
     </a>
+    <a href="https://github.com/hebamuh68/pd_monitor_backend" target="_blank" class="project-card">
+      <h3>PD Voice Monitor — Voice Analysis <span class="arrow">&nearr;</span></h3>
+      <p>Django REST Framework API that processes voice recordings and extracts pitch, jitter, shimmer, and harmonic-to-noise ratio for Parkinson's voice biomarkers, with a Next.js client for recording sessions and trends.</p>
+      <div class="project-tags">
+        <span>Django</span><span>DRF</span><span>Parselmouth</span><span>NumPy</span><span>Next.js</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -428,43 +496,49 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
 <section id="experience" class="fade-in">
   <div class="section-label">Experience</div>
   <div class="section-title">Where I've Worked</div>
+  <div class="career-path">
+    <span>UI/UX Design</span> &rarr; <span>UI Development</span> &rarr; <span>Backend</span> &rarr; <span>Frontend</span> &rarr; <span>Full-Stack / Python</span> + <span>Teaching</span>
+  </div>
 
   <div class="exp-item">
     <div class="exp-content">
-      <h3>Software Engineer</h3>
-      <div class="company">Planning Engineer FZE. — Apr 2026 – Present</div>
-      <div class="location">Qesm El Maadi, Cairo, Egypt (On-site)</div>
+      <h3>Python Software Engineer <span class="exp-tag">Full-Stack</span></h3>
+      <div class="company">Planning Engineer FZE — Feb 2026 – Nov 2026</div>
+      <div class="location">Cairo, Egypt (On-site, Full-time)</div>
       <ul>
-        <li>Own the full product stack end-to-end: PySide6/Qt desktop client, FastAPI backend, and embedded PostgreSQL database</li>
+        <li>Led development of features for a project planning and scheduling desktop application (Python, PySide6/Qt, FastAPI): project scheduling, crew management, workload insights, resource charts, combined timelines, and a custom report builder</li>
         <li>Designed and implemented a CPM scheduling engine with calendar-aware critical path analysis, supporting all relationship types (FS, SS, FF, SF) with lag and multi-calendar support</li>
         <li>Built data ingestion pipelines parsing Excel, XER, and PDF project files into structured scheduling data</li>
-        <li>Developed interactive Gantt chart and cashflow visualizations; integrated ML-powered risk analysis (CatBoost, Monte Carlo simulation)</li>
+        <li>Designed and maintained PostgreSQL data models and implemented schema changes through Alembic migrations</li>
         <li>Architected authentication from scratch: JWT sessions, OTP verification, and device-bound access control</li>
-        <li>Managed full deployment pipeline: Docker, DigitalOcean, managed PostgreSQL, and S3-compatible object storage</li>
+        <li>Managed desktop application releases, including staging and production builds, installer signing, and update workflows, deployed on Docker and DigitalOcean</li>
+        <li>Reviewed team pull requests and coordinated technical reviews across the main application, its shared UI library, and database migrations</li>
+        <li>Owned the app-wide Dark, Light, and Primavera P6-style themes, and built reusable widgets for a shared UI component library</li>
       </ul>
     </div>
   </div>
 
   <div class="exp-item">
     <div class="exp-content">
-      <h3>Computer Science Instructor</h3>
-      <div class="company">EYouth — Jan 2026 – Present</div>
+      <h3>Computer Science Instructor <span class="exp-tag">Teaching</span></h3>
+      <div class="company">EYouth — Jan 2026 – Mar 2026</div>
       <div class="location">Cairo, Egypt (Remote, Part-time)</div>
       <ul>
-        <li>Design and deliver a 7-week progressive curriculum (49+ lessons) covering Python, AI foundations, and data science</li>
-        <li>Teach Python programming, data wrangling, machine learning concepts, and data analysis to beginner-level students</li>
+        <li>Designed and delivered a 7-week progressive curriculum (49+ lessons) covering Python, AI foundations, and data science</li>
+        <li>Taught Python programming, data wrangling, machine learning concepts, and data analysis to beginner-level students</li>
       </ul>
     </div>
   </div>
 
   <div class="exp-item">
     <div class="exp-content">
-      <h3>Frontend Developer</h3>
+      <h3>Frontend Developer <span class="exp-tag">Frontend</span></h3>
       <div class="company">Mahjoz — Oct 2024 – Jan 2026</div>
-      <div class="location">Riyadh, Saudi Arabia (Remote)</div>
+      <div class="location">Riyadh, Saudi Arabia (Remote, Full-time)</div>
       <ul>
-        <li>Built and maintained a large-scale SaaS dashboard with 43+ modules and 75+ API integrations</li>
-        <li>Managed complex state across 56 Pinia stores handling bookings, orders, and real-time notifications via WebSockets</li>
+        <li>Built and maintained a large-scale SaaS dashboard (43+ modules) and an e-store using Nuxt with SSR, dynamic product pages, and seamless checkout flows</li>
+        <li>Architected and managed complex state across 56 Pinia stores, handling bookings, orders, customers, and real-time notifications via WebSockets (Pusher)</li>
+        <li>Integrated 75+ RESTful API endpoints with a typed Axios service layer: token-based auth, error interceptors, rate limiting, and server-side validation handling</li>
         <li>Built 20+ reusable responsive UI components with Vue 3, TypeScript, and Tailwind CSS</li>
         <li>Implemented full Arabic/English bilingual support with RTL/LTR layout switching</li>
       </ul>
@@ -473,26 +547,124 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
 
   <div class="exp-item">
     <div class="exp-content">
-      <h3>Backend Developer</h3>
-      <div class="company">Buguard — Jul 2025 – Oct 2025</div>
+      <h3>Backend Developer <span class="exp-tag">Backend</span></h3>
+      <div class="company">Buguard — Mar 2024 – Jun 2024</div>
       <div class="location">Cairo, Egypt (Remote)</div>
       <ul>
-        <li>Developed RESTful APIs with FastAPI for vulnerability scanning and security reporting workflows</li>
-        <li>Built internal Python tools for automated vulnerability assessment and report generation</li>
-        <li>Containerized applications with Docker and debugged production issues</li>
+        <li>Developed and maintained RESTful APIs using FastAPI to support vulnerability scanning and security reporting workflows</li>
+        <li>Built internal security tools with Python for automated vulnerability assessment and report generation</li>
+        <li>Collaborated with design and frontend teams to align API functionality with UI/UX requirements</li>
+        <li>Containerized applications with Docker and debugged complex backend issues in production environments</li>
       </ul>
     </div>
   </div>
 
   <div class="exp-item">
     <div class="exp-content">
-      <h3>UI Developer</h3>
-      <div class="company">RayaGate — Oct 2023 – Jan 2024</div>
-      <div class="location">Berlin, Germany (Remote)</div>
+      <h3>UI Developer <span class="exp-tag">UI Development</span></h3>
+      <div class="company">RayaGate — Oct 2022 – Jan 2024</div>
+      <div class="location">Berlin, Germany (Remote, Full-time)</div>
       <ul>
-        <li>Developed and maintained responsive user interfaces with Vue.js and Tailwind CSS</li>
-        <li>Led UI design and information architecture enhancements for a startup product</li>
+        <li>Developed and maintained responsive user interfaces with React.js and Tailwind CSS for a Germany-based startup, improving usability and user engagement</li>
+        <li>Led UI design and information architecture enhancements, translating Figma designs into production-ready code</li>
+        <li>Built a reusable component library and collaborated with marketing and business teams to align UI with business goals</li>
       </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-content">
+      <h3>UI/UX Designer <span class="exp-tag">Design</span></h3>
+      <div class="company">04 Academy — Jan 2021 – Nov 2022</div>
+      <div class="location">Dubai, United Arab Emirates (Remote, Full-time)</div>
+      <ul>
+        <li>Designed the web and mobile (Android/iOS) interfaces of 04 Academy, an Arabic e-learning platform offering interactive courses to learners across the Middle East</li>
+        <li>Produced wireframes, user flows, and high-fidelity designs in Figma, with right-to-left Arabic layouts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-content">
+      <h3>UI/UX Designer <span class="exp-tag">Design</span></h3>
+      <div class="company">PHRAISE — Feb 2020 – Mar 2021</div>
+      <div class="location">Berlin, Germany (Remote, Freelance)</div>
+    </div>
+  </div>
+</section>
+
+<section><div class="divider"></div></section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="fade-in">
+  <div class="section-label">Testimonials</div>
+  <div class="section-title">What People Say</div>
+
+  <div class="testimonials-sub">LinkedIn Recommendations</div>
+  <div class="testimonials-grid">
+    <div class="testimonial featured">
+      <blockquote>
+        <p>"I highly recommend Heba as a Frontend Engineer and UI/UX Designer. During her nearly two years with us, she played a pivotal role in transforming our product's interface in a truly meaningful way.</p>
+        <p>Heba combines strong design intuition with solid technical expertise, allowing her to turn ideas into seamless, practical user experiences. She is professional, results-driven, and approaches challenges with a clear, pragmatic mindset.</p>
+        <p>What stands out most about Heba is her commitment to deadlines. Timely delivery is extremely important to me, and she consistently met expectations — organized, detail-oriented, and highly reliable. On top of her skills, she is easy to work with, collaborative, and brings a positive energy to the team.</p>
+        <p>In short, Heba is a valuable addition to any team, and I strongly recommend hiring and working with her."</p>
+      </blockquote>
+      <div class="author"><a href="https://www.linkedin.com/in/goni-mohammed-147252132/" target="_blank">Goni Mohammed</a></div>
+      <div class="role">CEO &amp; Co-Founder at Mahjoz</div>
+      <div class="source">LinkedIn · April 2026</div>
+    </div>
+    <div class="testimonial">
+      <blockquote>
+        <p>"Honestly, Heba is one of the best people I've worked with at Mahjoz — and I don't say that lightly. We worked together for over a year, and every time our work crossed paths, things just... went smoothly. She gets UI/frontend right, not just making it look very good, but writing code that actually holds up. And as someone on the backend side, I really appreciated how quickly she'd grasp API changes and never made integration look hard.</p>
+        <p>She's also just really easy to work with. Reliable, has high standards and never settles for anything half-baked, and always delivers. Whoever brings her on next is getting a good one."</p>
+      </blockquote>
+      <div class="author"><a href="https://www.linkedin.com/in/abdalla-hisham-9a604312b/" target="_blank">Abdalla Hisham</a></div>
+      <div class="role">Senior Software Engineer · Worked on the same team at Mahjoz</div>
+      <div class="source">LinkedIn · April 2026</div>
+    </div>
+    <div class="testimonial">
+      <blockquote>
+        <p>"I had the pleasure of working with Heba Allah Hashim, and I can confidently recommend her as a skilled UI/UX Designer and Web Developer. She brings a solid mix of creativity and technical ability to her projects, always ensuring her work is accurate and well-crafted. Heba is dedicated, proactive about learning new skills, and a truly reliable team member."</p>
+      </blockquote>
+      <div class="author"><a href="https://www.linkedin.com/in/heba333/details/recommendations/" target="_blank">Abdualmajeed Alharbi</a></div>
+      <div class="role">CTO at Mahjoz · Managed Heba directly</div>
+      <div class="source">LinkedIn · March 2026</div>
+    </div>
+  </div>
+
+  <div class="testimonials-sub">Upwork Clients · 5.0 ★</div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <blockquote>
+        <p>"Such an outstanding designer! She demonstrated true dedication to our project, making her an invaluable addition. Her work ethic is impressive; she was highly responsive and consistently met every deadline. I highly recommend Heba to anyone in search of a professional, experienced, and exceptional designer."</p>
+      </blockquote>
+      <div class="author">Upwork client</div>
+      <div class="role">Web design for a web application</div>
+      <div class="source">Upwork · Oct 2023 – Mar 2024 · 5.0 ★</div>
+    </div>
+    <div class="testimonial">
+      <blockquote>
+        <p>"Excellent design. Heba delivered an outstanding performance in designing the cleaning app, excelling in both Arabic and English versions. Her freelance work was truly impressive."</p>
+      </blockquote>
+      <div class="author">Upwork client</div>
+      <div class="role">App redesign</div>
+      <div class="source">Upwork · Jun 2023 · 5.0 ★</div>
+    </div>
+    <div class="testimonial">
+      <blockquote>
+        <p>"She works very well, very attentive, cooperative and delivers the project on time!"</p>
+      </blockquote>
+      <div class="author">Upwork client</div>
+      <div class="role">UX/UI design project</div>
+      <div class="source">Upwork · Jun 2023 · 5.0 ★</div>
+    </div>
+    <div class="testimonial">
+      <blockquote>
+        <p>"Heba was a quick and very capable designer. I would happily work with her again."</p>
+      </blockquote>
+      <div class="author">Upwork client</div>
+      <div class="role">Design for a web app</div>
+      <div class="source">Upwork · Jun 2023 · 5.0 ★</div>
     </div>
   </div>
 </section>
@@ -528,7 +700,7 @@ footer { text-align: center; padding: 3rem 2rem; font-size: 0.8rem; color: var(-
 <script>
 const observer = new IntersectionObserver(
   (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
-  { threshold: 0.15 }
+  { threshold: 0.05 }
 );
 document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
